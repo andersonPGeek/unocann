@@ -1,0 +1,345 @@
+[Root]
+Most Recent Package=UNOCANN - Força de Venda
+Most Recent Deploy=força de venda
+
+
+[Package|Força de Venda|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\Arquivos de programas\Microsoft Visual Studio\Projeto Unocann\Package
+
+[Package|Força de Venda|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Força de Venda|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Força de Venda|Files Found]
+
+[Package|Força de Venda|Files Released]
+
+[Package|Força de Venda|Missing Dependency Information]
+C:\WINDOWS\system32\ActiveCal.ocx=
+C:\WINDOWS\system32\ActiveDate.ocx=
+C:\WINDOWS\system32\Masked.ocx=
+C:\WINDOWS\system32\axGrid.ocx=
+C:\WINDOWS\system32\Combo_DB.ocx=
+C:\Arquivos de programas\Arquivos comuns\System\ado\msado26.tlb=
+C:\Arquivos de programas\Seagate Software\Shared\sscsdk80.dll=
+C:\Arquivos de programas\Seagate Software\Shared\SAStarter.dll=
+C:\WINDOWS\system32\P2bdao.dll=
+C:\WINDOWS\system32\Crystl32.ocx=
+C:\WINDOWS\system32\crpe32.dll=
+
+[Package|Força de Venda|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\MSINET.OCX=
+C:\WINDOWS\system32\TABCTL32.OCX=
+C:\WINDOWS\system32\scrrun.dll=
+C:\WINDOWS\system32\MSSTDFMT.DLL=
+C:\WINDOWS\system32\MSCOMCTL.OCX=
+
+[Package|Força de Venda|Files Added]
+
+[Package|Força de Venda|Files Removed]
+c:\windows\system32\msvcrt.dll=
+
+[Package|Força de Venda|Files In Project]
+C:\Arquivos de programas\Microsoft Visual Studio\Projeto Unocann\ProjUno.exe=Yes
+C:\WINDOWS\system32\MSVBVM60.DLL=Yes
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\system32\crpe32.dll=Yes
+C:\WINDOWS\system32\Crystl32.ocx=Yes
+C:\WINDOWS\system32\P2bdao.dll=Yes
+C:\Arquivos de programas\Seagate Software\Shared\pg32conv.dll=Yes
+C:\Arquivos de programas\Seagate Software\Shared\SAStarter.dll=Yes
+C:\Arquivos de programas\Seagate Software\Shared\sscsdk80.dll=Yes
+C:\Arquivos de programas\Arquivos comuns\System\ado\msado26.tlb=Yes
+C:\WINDOWS\system32\MSBIND.DLL=Yes
+C:\WINDOWS\system32\MSSTDFMT.DLL=Yes
+C:\WINDOWS\system32\scrrun.dll=Yes
+C:\WINDOWS\system32\msvcrt.dll=No
+C:\WINDOWS\system32\craxdrt.dll=Yes
+C:\WINDOWS\system32\MSFLXGRD.OCX=Yes
+C:\WINDOWS\system32\TABCTL32.OCX=Yes
+C:\WINDOWS\system32\MSMASK32.OCX=Yes
+C:\WINDOWS\system32\MSDATGRD.OCX=Yes
+C:\WINDOWS\system32\MSDATLST.OCX=Yes
+C:\WINDOWS\system32\mscomctl.ocx=Yes
+C:\WINDOWS\system32\RICHTX32.OCX=Yes
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=Yes
+C:\WINDOWS\system32\Combo_DB.ocx=Yes
+C:\WINDOWS\system32\axGrid.ocx=Yes
+C:\WINDOWS\system32\Masked.ocx=Yes
+C:\WINDOWS\system32\MSINET.OCX=Yes
+C:\WINDOWS\system32\ActiveDate.ocx=Yes
+C:\WINDOWS\system32\MSCHRT20.OCX=Yes
+C:\WINDOWS\system32\ActiveCal.ocx=Yes
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Força de Venda|Configure Registry Files]
+Applicable=No
+
+[Package|Força de Venda|Configure Remote Servers]
+Applicable=No
+
+[Package|Força de Venda|Install Locations]
+C:\Arquivos de programas\Microsoft Visual Studio\Projeto Unocann\ProjUno.exe=$(AppPath)
+C:\WINDOWS\system32\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\crpe32.dll=$(WinSysPath)
+C:\WINDOWS\system32\Crystl32.ocx=$(WinSysPath)
+C:\WINDOWS\system32\P2bdao.dll=$(WinSysPath)
+C:\Arquivos de programas\Seagate Software\Shared\pg32conv.dll=$(AppPath)
+C:\Arquivos de programas\Seagate Software\Shared\SAStarter.dll=$(WinSysPath)
+C:\Arquivos de programas\Seagate Software\Shared\sscsdk80.dll=$(WinSysPath)
+C:\Arquivos de programas\Arquivos comuns\System\ado\msado26.tlb=$(WinSysPath)
+C:\WINDOWS\system32\MSBIND.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINDOWS\system32\scrrun.dll=$(WinSysPath)
+C:\WINDOWS\system32\craxdrt.dll=$(WinSysPath)
+C:\WINDOWS\system32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\system32\TABCTL32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSMASK32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSDATGRD.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSDATLST.OCX=$(WinSysPath)
+C:\WINDOWS\system32\mscomctl.ocx=$(WinSysPath)
+C:\WINDOWS\system32\RICHTX32.OCX=$(WinSysPath)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\Combo_DB.ocx=$(WinSysPath)
+C:\WINDOWS\system32\axGrid.ocx=$(WinSysPath)
+C:\WINDOWS\system32\Masked.ocx=$(WinSysPath)
+C:\WINDOWS\system32\MSINET.OCX=$(WinSysPath)
+C:\WINDOWS\system32\ActiveDate.ocx=$(WinSysPath)
+C:\WINDOWS\system32\MSCHRT20.OCX=$(WinSysPath)
+C:\WINDOWS\system32\ActiveCal.ocx=$(WinSysPath)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Força de Venda|Configure Shared Files]
+Applicable=Yes
+C:\Arquivos de programas\Microsoft Visual Studio\Projeto Unocann\ProjUno.exe=No
+C:\Arquivos de programas\Seagate Software\Shared\pg32conv.dll=No
+
+[Package|Força de Venda|Distribution]
+Type=single
+Size=
+Title=ProjUNO
+
+[Package|Força de Venda|Package]
+PackageFolder=C:\Arquivos de programas\Microsoft Visual Studio\Projeto Unocann\Package
+ProjectFolder=C:\Arquivos de programas\Microsoft Visual Studio\Projeto Unocann
+ServerSideCab=
+File1=C:\Arquivos de programas\Microsoft Visual Studio\Projeto Unocann\Package\setup.exe
+File2=C:\Arquivos de programas\Microsoft Visual Studio\Projeto Unocann\Package\Setup.Lst
+File3=C:\Arquivos de programas\Microsoft Visual Studio\Projeto Unocann\Package\ProjUno.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|Força de Venda|IconGroups]
+Group0=ProjUNO
+PrivateGroup0=-1
+Parent0=$(Programs)
+
+[Package|Força de Venda|ProjUNO]
+Icon1=ProjUno.exe
+Title1=ProjUNO
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Deploy|força de venda|Root]
+Package=Força de Venda
+Handler=PDWizard.FolderDplySubWiz
+Folder=C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard
+
+
+[Package|UNOCANN - Força de Venda|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\Documents and Settings\Administrador\Meus documentos\André\UNOCANN - Força de Venda
+
+[Package|UNOCANN - Força de Venda|Configure DAO ISAMs]
+Applicable=No
+
+[Package|UNOCANN - Força de Venda|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|UNOCANN - Força de Venda|Files Found]
+
+[Package|UNOCANN - Força de Venda|Files Released]
+user.DLL=
+
+[Package|UNOCANN - Força de Venda|Missing Dependency Information]
+C:\WINDOWS\system32\ActiveCal.ocx=
+C:\WINDOWS\system32\ActiveDate.ocx=
+C:\WINDOWS\system32\Masked.ocx=
+C:\WINDOWS\system32\axGrid.ocx=
+C:\WINDOWS\system32\Combo_DB.ocx=
+C:\Arquivos de programas\Arquivos comuns\System\ado\msado26.tlb=
+C:\Arquivos de programas\Seagate Software\Shared\sscsdk80.dll=
+C:\Arquivos de programas\Seagate Software\Shared\SAStarter.dll=
+C:\WINDOWS\system32\P2bdao.dll=
+C:\WINDOWS\system32\Crystl32.ocx=
+C:\WINDOWS\system32\crpe32.dll=
+C:\WINDOWS\system32\craxdrt.dll=
+C:\Program Files\Common Files\System\ado\msado26.tlb=
+
+[Package|UNOCANN - Força de Venda|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\MSINET.OCX=
+C:\WINDOWS\system32\TABCTL32.OCX=
+C:\WINDOWS\system32\scrrun.dll=
+C:\WINDOWS\system32\MSSTDFMT.DLL=
+C:\WINDOWS\system32\MSCOMCTL.OCX=
+C:\WINDOWS\system32\RICHTX32.OCX=
+
+[Package|UNOCANN - Força de Venda|Files Added]
+
+[Package|UNOCANN - Força de Venda|Files Removed]
+
+[Package|UNOCANN - Força de Venda|Files In Project]
+C:\WINDOWS\system32\MSVBVM60.DLL=Yes
+C:\WINDOWS\system32\Crystl32.ocx=Yes
+C:\WINDOWS\system32\MSBIND.DLL=Yes
+C:\WINDOWS\system32\MSSTDFMT.DLL=Yes
+C:\WINDOWS\system32\scrrun.dll=Yes
+C:\WINDOWS\system32\MSFLXGRD.OCX=Yes
+C:\WINDOWS\system32\TABCTL32.OCX=Yes
+C:\WINDOWS\system32\MSMASK32.OCX=Yes
+C:\WINDOWS\system32\MSDATGRD.OCX=Yes
+C:\WINDOWS\system32\MSDATLST.OCX=Yes
+C:\WINDOWS\system32\mscomctl.ocx=Yes
+C:\WINDOWS\system32\RICHTX32.OCX=Yes
+C:\WINDOWS\system32\Combo_DB.ocx=Yes
+C:\WINDOWS\system32\Masked.ocx=Yes
+C:\WINDOWS\system32\MSINET.OCX=Yes
+C:\WINDOWS\system32\ActiveDate.ocx=Yes
+C:\WINDOWS\system32\MSCHRT20.OCX=Yes
+C:\WINDOWS\system32\ActiveCal.ocx=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+C:\Program Files\ProjUNO\ProjUno.exe=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Program Files\Common Files\System\ado\msado26.tlb=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT.DLL=Yes
+C:\Program Files\Seagate Software\Report Designer Component\craxdrt.dll=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=Yes
+C:\WINDOWS\system32\crpe32.dll=Yes
+C:\Program Files\Seagate Software\Viewers\ActiveXViewer\crviewer.dll=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|UNOCANN - Força de Venda|Configure Registry Files]
+Applicable=No
+
+[Package|UNOCANN - Força de Venda|Configure Remote Servers]
+Applicable=No
+
+[Package|UNOCANN - Força de Venda|Install Locations]
+C:\Arquivos de programas\Microsoft Visual Studio\Projeto Unocann\ProjUno.exe=$(AppPath)
+C:\WINDOWS\system32\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\crpe32.dll=$(WinSysPath)
+C:\WINDOWS\system32\Crystl32.ocx=$(WinSysPath)
+C:\WINDOWS\system32\P2bdao.dll=$(WinSysPath)
+C:\Arquivos de programas\Seagate Software\Shared\pg32conv.dll=$(AppPath)
+C:\Arquivos de programas\Seagate Software\Shared\SAStarter.dll=$(WinSysPath)
+C:\Arquivos de programas\Seagate Software\Shared\sscsdk80.dll=$(WinSysPath)
+C:\Arquivos de programas\Arquivos comuns\System\ado\msado26.tlb=$(WinSysPath)
+C:\WINDOWS\system32\MSBIND.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINDOWS\system32\scrrun.dll=$(WinSysPath)
+C:\WINDOWS\system32\craxdrt.dll=$(WinSysPath)
+C:\WINDOWS\system32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\system32\TABCTL32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSMASK32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSDATGRD.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSDATLST.OCX=$(WinSysPath)
+C:\WINDOWS\system32\mscomctl.ocx=$(WinSysPath)
+C:\WINDOWS\system32\RICHTX32.OCX=$(WinSysPath)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\Combo_DB.ocx=$(WinSysPath)
+C:\WINDOWS\system32\axGrid.ocx=$(WinSysPath)
+C:\WINDOWS\system32\Masked.ocx=$(WinSysPath)
+C:\WINDOWS\system32\MSINET.OCX=$(WinSysPath)
+C:\WINDOWS\system32\ActiveDate.ocx=$(WinSysPath)
+C:\WINDOWS\system32\MSCHRT20.OCX=$(WinSysPath)
+C:\WINDOWS\system32\ActiveCal.ocx=$(WinSysPath)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\Documents and Settings\Administrador\Meus documentos\André\ProjUno.exe=$(AppPath)
+C:\WINDOWS\system32\msvcrt.dll=$(WinSysPathSysFile)
+C:\Dados\ProjUno.exe=$(AppPath)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Program Files\ProjUNO\ProjUno.exe=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Common Files\System\ado\msado26.tlb=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Seagate Software\Report Designer Component\craxdrt.dll=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Seagate Software\Viewers\ActiveXViewer\crviewer.dll=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|UNOCANN - Força de Venda|Configure Shared Files]
+Applicable=Yes
+C:\Arquivos de programas\Microsoft Visual Studio\Projeto Unocann\ProjUno.exe=No
+C:\Arquivos de programas\Seagate Software\Shared\pg32conv.dll=Yes
+C:\Documents and Settings\Administrador\Meus documentos\André\ProjUno.exe=Yes
+C:\Dados\ProjUno.exe=Yes
+C:\Program Files\ProjUNO\ProjUno.exe=No
+
+[Package|UNOCANN - Força de Venda|Distribution]
+Type=single
+Size=
+Title=UNOCANN - Força de Venda
+
+[Package|UNOCANN - Força de Venda|Package]
+PackageFolder=C:\Documents and Settings\Administrador\Meus documentos\André\UNOCANN - Força de Venda
+ProjectFolder=C:\Força de Venda
+ServerSideCab=
+File1=C:\Documents and Settings\Administrador\Meus documentos\André\UNOCANN - Força de Venda\setup.exe
+File2=C:\Documents and Settings\Administrador\Meus documentos\André\UNOCANN - Força de Venda\Setup.Lst
+File3=C:\Documents and Settings\Administrador\Meus documentos\André\UNOCANN - Força de Venda\ProjUno.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|UNOCANN - Força de Venda|IconGroups]
+Group0=UNOCANN - Força de Venda
+PrivateGroup0=0
+Parent0=$(Programs)
+
+[Package|UNOCANN - Força de Venda|UNOCANN - Força de Venda]
+Icon1=ProjUno.exe
+Title1=UNOCANN - Força de Venda
+StartIn1=$(AppPath)
+Key1=Icon1
