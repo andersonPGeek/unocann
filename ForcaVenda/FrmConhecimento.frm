@@ -6466,7 +6466,6 @@ Private Sub Bto_Aplica_tubos_conexoes_irri_azuis_Click()
     If desconto_tubos_conexoes_irri_azuis.Text <> "" Then
         If desconto_tubos_conexoes_irri_azuis.Text > 36 Then
             MsgBox "Desconto maior do que o permitido", vbOKOnly, "Atenção"
-            'desconto_tubos_conexoes_irri_azuis.Text = 34.2
         End If
     End If
     
@@ -7690,7 +7689,7 @@ Private Sub CarregaGrid(sqlAux As String, grid As MSFlexGrid)
     sql = sql & " valcusadicqtd,"
     sql = sql & " AlqImpFed"
     sql = sql & " FROM ##tmp_produto WHERE CODIGO IN ( " & sqlAux & ")"
-    sql = sql & " AND (PRODUTO LIKE 'TB%' OR PRODUTO LIKE 'TU%') ORDER BY SUBSTRING(PRODUTO,CASE WHEN CODIGO = 314 THEN 2 ELSE 1 END,CASE WHEN PATINDEX('%[0-9]%',PRODUTO) = 0 THEN LEN(PRODUTO) ELSE PATINDEX('%[0-9]%',PRODUTO)-1 END), CAST(dbo.udf_GetNumeric(produto) AS BIGINT) asc"
+    sql = sql & " AND (PRODUTO LIKE 'TB%' OR PRODUTO LIKE 'TU%') ORDER BY SUBSTRING(PRODUTO,CASE WHEN CODIGO = 314 THEN 2 ELSE 1 END,CASE WHEN PATINDEX('%[0-9]%',PRODUTO) = 0 THEN LEN(PRODUTO) ELSE PATINDEX('%[0-9]%',PRODUTO)-1 END),SUBSTRING(PRODUTO,PATINDEX('%º%',PRODUTO)-2, 3), CAST(dbo.udf_GetNumeric(produto) AS BIGINT) asc"
     
     Call Consulta(sql)
 
@@ -7728,7 +7727,7 @@ Private Sub CarregaGrid(sqlAux As String, grid As MSFlexGrid)
     sql = sql & " FROM ##tmp_produto a WHERE a.CODIGO IN ( " & sqlAux & ")"
     sql = sql & " and NOT EXISTS (SELECT * FROM ##tmp_produto p"
     sql = sql & " WHERE (p.PRODUTO LIKE 'TB%' or p.PRODUTO LIKE 'TU%') AND p.CODIGO = a.CODIGO)"
-    sql = sql & " order by SUBSTRING(PRODUTO,CASE WHEN CODIGO = 314 THEN 2 ELSE 1 END,CASE WHEN PATINDEX('%[0-9]%',PRODUTO) = 0 THEN LEN(PRODUTO) ELSE PATINDEX('%[0-9]%',PRODUTO)-1 END), CAST(dbo.udf_GetNumeric(a.produto) AS BIGINT) asc"
+    sql = sql & " order by SUBSTRING(PRODUTO,CASE WHEN CODIGO = 314 THEN 2 ELSE 1 END,CASE WHEN PATINDEX('%[0-9]%',PRODUTO) = 0 THEN LEN(PRODUTO) ELSE PATINDEX('%[0-9]%',PRODUTO)-1 END), SUBSTRING(PRODUTO,PATINDEX('%º%',PRODUTO)-2, 3), CAST(dbo.udf_GetNumeric(a.produto) AS BIGINT) asc"
     
     Call Consulta(sql)
 
@@ -8203,11 +8202,11 @@ Function Numero_Ped() As Boolean
     
     Call Consulta(sgQuery)
     
-    If IsNull(Rs("Pedido")) = True Then
+    If IsNull(Rs("pedido")) = True Then
     
         Dim x As Double
-        x = Val(Mid(Rs("Pedido"), 2, 5))
-        MskNroPedido.Text = Mid(Rs("Pedido"), 1, 1) + (Format(x + 1, "00000"))
+        x = Val(Mid(Rs("pedido"), 2, 5))
+        MskNroPedido.Text = Mid(Rs("pedido"), 1, 1) + (Format(x + 1, "00000"))
     
        ' MskNroPedido.Text = SeqIni
         
