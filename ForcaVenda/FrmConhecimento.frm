@@ -1099,53 +1099,53 @@ Begin VB.Form FrmConhecimento
       TabCaption(1)   =   "Comunicação"
       TabPicture(1)   =   "FrmConhecimento.frx":126E
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "LblResultNegocio"
-      Tab(1).Control(1)=   "Label24"
-      Tab(1).Control(2)=   "Label46"
-      Tab(1).Control(3)=   "TxtObserva"
+      Tab(1).Control(0)=   "cmdUP"
+      Tab(1).Control(0).Enabled=   0   'False
+      Tab(1).Control(1)=   "CmdDN"
+      Tab(1).Control(1).Enabled=   0   'False
+      Tab(1).Control(2)=   "TxtNegocio"
+      Tab(1).Control(3)=   "CmdCancelar"
+      Tab(1).Control(3).Enabled=   0   'False
       Tab(1).Control(4)=   "Frame10"
-      Tab(1).Control(5)=   "CmdCancelar"
-      Tab(1).Control(5).Enabled=   0   'False
-      Tab(1).Control(6)=   "TxtNegocio"
-      Tab(1).Control(7)=   "CmdDN"
-      Tab(1).Control(7).Enabled=   0   'False
-      Tab(1).Control(8)=   "cmdUP"
-      Tab(1).Control(8).Enabled=   0   'False
+      Tab(1).Control(5)=   "TxtObserva"
+      Tab(1).Control(6)=   "Label46"
+      Tab(1).Control(7)=   "Label24"
+      Tab(1).Control(8)=   "LblResultNegocio"
       Tab(1).ControlCount=   9
       TabCaption(2)   =   "Posição do Cliente"
       TabPicture(2)   =   "FrmConhecimento.frx":128A
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "LblCliNome"
-      Tab(2).Control(1)=   "lblCliEndereco"
-      Tab(2).Control(2)=   "LblCliCGC"
-      Tab(2).Control(3)=   "LblCliBairro"
-      Tab(2).Control(4)=   "LblCliUF"
-      Tab(2).Control(5)=   "LblCliContr"
-      Tab(2).Control(6)=   "LblCliCid"
-      Tab(2).Control(7)=   "LblCliInscr"
-      Tab(2).Control(8)=   "LblCliCep"
-      Tab(2).Control(9)=   "Label31"
-      Tab(2).Control(10)=   "Label29"
-      Tab(2).Control(11)=   "Label32"
+      Tab(2).Control(0)=   "Frame8"
+      Tab(2).Control(1)=   "LblFone"
+      Tab(2).Control(2)=   "Label45"
+      Tab(2).Control(3)=   "LblSimBahia"
+      Tab(2).Control(4)=   "LblCliUltimo"
+      Tab(2).Control(5)=   "Label40"
+      Tab(2).Control(6)=   "LblCliPrimeira"
+      Tab(2).Control(7)=   "Label38"
+      Tab(2).Control(8)=   "Label37"
+      Tab(2).Control(9)=   "Label36"
+      Tab(2).Control(10)=   "Label35"
+      Tab(2).Control(11)=   "Label34"
       Tab(2).Control(12)=   "Label33"
-      Tab(2).Control(13)=   "Label34"
-      Tab(2).Control(14)=   "Label35"
-      Tab(2).Control(15)=   "Label36"
-      Tab(2).Control(16)=   "Label37"
-      Tab(2).Control(17)=   "Label38"
-      Tab(2).Control(18)=   "LblCliPrimeira"
-      Tab(2).Control(19)=   "Label40"
-      Tab(2).Control(20)=   "LblCliUltimo"
-      Tab(2).Control(21)=   "LblSimBahia"
-      Tab(2).Control(22)=   "Label45"
-      Tab(2).Control(23)=   "LblFone"
-      Tab(2).Control(24)=   "Frame8"
+      Tab(2).Control(13)=   "Label32"
+      Tab(2).Control(14)=   "Label29"
+      Tab(2).Control(15)=   "Label31"
+      Tab(2).Control(16)=   "LblCliCep"
+      Tab(2).Control(17)=   "LblCliInscr"
+      Tab(2).Control(18)=   "LblCliCid"
+      Tab(2).Control(19)=   "LblCliContr"
+      Tab(2).Control(20)=   "LblCliUF"
+      Tab(2).Control(21)=   "LblCliBairro"
+      Tab(2).Control(22)=   "LblCliCGC"
+      Tab(2).Control(23)=   "lblCliEndereco"
+      Tab(2).Control(24)=   "LblCliNome"
       Tab(2).ControlCount=   25
       TabCaption(3)   =   "Entregas"
       TabPicture(3)   =   "FrmConhecimento.frx":12A6
       Tab(3).ControlEnabled=   0   'False
-      Tab(3).Control(0)=   "GrdEntrega"
-      Tab(3).Control(1)=   "Text1"
+      Tab(3).Control(0)=   "Text1"
+      Tab(3).Control(1)=   "GrdEntrega"
       Tab(3).ControlCount=   2
       Begin VB.Frame FraGrupo 
          BackColor       =   &H00FFFFFF&
@@ -2159,62 +2159,62 @@ Begin VB.Form FrmConhecimento
          TabCaption(1)   =   "PREDIAL SOLDÁVEL MARROM"
          TabPicture(1)   =   "FrmConhecimento.frx":2A5A
          Tab(1).ControlEnabled=   0   'False
-         Tab(1).Control(0)=   "desconto_tubos_conexoes_agua"
-         Tab(1).Control(1)=   "Bto_aplica_tubos_conexoes_agua"
-         Tab(1).Control(1).Enabled=   0   'False
+         Tab(1).Control(0)=   "Label8"
+         Tab(1).Control(1)=   "Label2"
          Tab(1).Control(2)=   "tubos_conexoes_agua"
-         Tab(1).Control(3)=   "Label2"
-         Tab(1).Control(4)=   "Label8"
+         Tab(1).Control(3)=   "Bto_aplica_tubos_conexoes_agua"
+         Tab(1).Control(3).Enabled=   0   'False
+         Tab(1).Control(4)=   "desconto_tubos_conexoes_agua"
          Tab(1).ControlCount=   5
          TabCaption(2)   =   "PREDIAL ROSCÁVEL BRANCO"
          TabPicture(2)   =   "FrmConhecimento.frx":2A76
          Tab(2).ControlEnabled=   0   'False
-         Tab(2).Control(0)=   "desconto_tubos_conexoes_roscaveis"
-         Tab(2).Control(1)=   "Bto_aplica__tubos_conexoes_roscaveis"
-         Tab(2).Control(1).Enabled=   0   'False
+         Tab(2).Control(0)=   "Label48"
+         Tab(2).Control(1)=   "Label47"
          Tab(2).Control(2)=   "tubos_conexoes_roscaveis"
-         Tab(2).Control(3)=   "Label47"
-         Tab(2).Control(4)=   "Label48"
+         Tab(2).Control(3)=   "Bto_aplica__tubos_conexoes_roscaveis"
+         Tab(2).Control(3).Enabled=   0   'False
+         Tab(2).Control(4)=   "desconto_tubos_conexoes_roscaveis"
          Tab(2).ControlCount=   5
          TabCaption(3)   =   "IRRIGA AGROPECUÁRIO AZUL"
          TabPicture(3)   =   "FrmConhecimento.frx":2A92
          Tab(3).ControlEnabled=   0   'False
-         Tab(3).Control(0)=   "Bto_Aplica_tubos_conexoes_irri_azuis"
-         Tab(3).Control(0).Enabled=   0   'False
-         Tab(3).Control(1)=   "desconto_tubos_conexoes_irri_azuis"
+         Tab(3).Control(0)=   "Label68"
+         Tab(3).Control(1)=   "Label69"
          Tab(3).Control(2)=   "tubos_conexoes_irri_azuis"
-         Tab(3).Control(3)=   "Label69"
-         Tab(3).Control(4)=   "Label68"
+         Tab(3).Control(3)=   "desconto_tubos_conexoes_irri_azuis"
+         Tab(3).Control(4)=   "Bto_Aplica_tubos_conexoes_irri_azuis"
+         Tab(3).Control(4).Enabled=   0   'False
          Tab(3).ControlCount=   5
          TabCaption(4)   =   "INFRA ESGOTO OCRE"
          TabPicture(4)   =   "FrmConhecimento.frx":2AAE
          Tab(4).ControlEnabled=   0   'False
-         Tab(4).Control(0)=   "Label65"
-         Tab(4).Control(1)=   "Label64"
+         Tab(4).Control(0)=   "desconto_tubos_conexoes_coletor_esgoto_ocre"
+         Tab(4).Control(1)=   "Bto_aplica_tubos_conexoes_coletor_esgoto_ocre"
+         Tab(4).Control(1).Enabled=   0   'False
          Tab(4).Control(2)=   "tubo_tubos_conexoes_coletor_esgoto"
-         Tab(4).Control(3)=   "Bto_aplica_tubos_conexoes_coletor_esgoto_ocre"
-         Tab(4).Control(3).Enabled=   0   'False
-         Tab(4).Control(4)=   "desconto_tubos_conexoes_coletor_esgoto_ocre"
+         Tab(4).Control(3)=   "Label64"
+         Tab(4).Control(4)=   "Label65"
          Tab(4).ControlCount=   5
          TabCaption(5)   =   "INFRA PBA JUNTA ELÁSTICA MARROM"
          TabPicture(5)   =   "FrmConhecimento.frx":2ACA
          Tab(5).ControlEnabled=   0   'False
-         Tab(5).Control(0)=   "desconto_tubos_conexoes_pba"
-         Tab(5).Control(1)=   "Bto_aplica_tubos_conexoes_pba"
-         Tab(5).Control(1).Enabled=   0   'False
+         Tab(5).Control(0)=   "Label63"
+         Tab(5).Control(1)=   "Label62"
          Tab(5).Control(2)=   "tubo_conexoes_pba"
-         Tab(5).Control(3)=   "Label62"
-         Tab(5).Control(4)=   "Label63"
+         Tab(5).Control(3)=   "Bto_aplica_tubos_conexoes_pba"
+         Tab(5).Control(3).Enabled=   0   'False
+         Tab(5).Control(4)=   "desconto_tubos_conexoes_pba"
          Tab(5).ControlCount=   5
          TabCaption(6)   =   "INFRA DEFOFO AZUL"
          TabPicture(6)   =   "FrmConhecimento.frx":2AE6
          Tab(6).ControlEnabled=   0   'False
-         Tab(6).Control(0)=   "Bto_aplica_tubos_conexoes_defofo"
-         Tab(6).Control(0).Enabled=   0   'False
-         Tab(6).Control(1)=   "desconto_tubos_conexoes_defofo"
+         Tab(6).Control(0)=   "Label61"
+         Tab(6).Control(1)=   "Label60"
          Tab(6).Control(2)=   "tubo_conexoes_defofo"
-         Tab(6).Control(3)=   "Label60"
-         Tab(6).Control(4)=   "Label61"
+         Tab(6).Control(3)=   "desconto_tubos_conexoes_defofo"
+         Tab(6).Control(4)=   "Bto_aplica_tubos_conexoes_defofo"
+         Tab(6).Control(4).Enabled=   0   'False
          Tab(6).ControlCount=   5
          TabCaption(7)   =   "RESUMO"
          TabPicture(7)   =   "FrmConhecimento.frx":2B02
@@ -5292,6 +5292,8 @@ Private Sub GrdNotaCliente_KeyPress(KeyAscii As Integer)
             CalculaTotalResumo GrdNotaCliente.row, GrdNotaCliente
             CalculaIndice
             
+            DefineCorResumo GrdNotaCliente
+            
             dlDesc = Format(Trim(MskDatEmiNf), "##0.00")
     
             If dlDesc > dlSumDscItem Then
@@ -6768,6 +6770,7 @@ Private Sub Bto_Aplica_resumo_Click()
     Next
     
     CalculaIndice
+    DefineCorResumo GrdNotaCliente
     
     For i = 1 To tubo_conexoes_defofo.rows - 1
         For J = 1 To GrdNotaCliente.rows - 1
@@ -6834,7 +6837,7 @@ Private Sub Bto_Aplica_resumo_Click()
             If Format(tubos_conexoes_agua.TextMatrix(i, 1), "0000") = GrdNotaCliente.TextMatrix(J, 0) And Format(tubos_conexoes_agua.TextMatrix(i, 6), "##0.00") <> GrdNotaCliente.TextMatrix(J, 6) Then
                 tubos_conexoes_agua.TextMatrix(i, 6) = GrdNotaCliente.TextMatrix(J, 6)
                 tubos_conexoes_agua.TextMatrix(i, 7) = Format$((tubos_conexoes_agua.TextMatrix(i, 5) - ((tubos_conexoes_agua.TextMatrix(i, 5) * GrdNotaCliente.TextMatrix(J, 6)) / 100)), "Currency")
-                CalculaTotal i, tubo_conexoes_pba
+                CalculaTotal i, tubos_conexoes_agua
             End If
         Next
     Next
@@ -6976,6 +6979,7 @@ Private Sub carregaResumo(row As Integer, grid As MSFlexGrid)
                 Else
                     GrdNotaCliente.RemoveItem (i)
                     CalculaIndice
+                    DefineCorResumo GrdNotaCliente
                     LblSub.Caption = Format(dlTotBru, "##,###,##0.00")
                     LblVlSimples.Caption = Format(dlSimples, "##,###,##0.00")
                     LblTot.Caption = Format(dlTotLiq, "##,###,##0.00")
@@ -7106,7 +7110,6 @@ Private Sub carregaResumo(row As Integer, grid As MSFlexGrid)
         grid.TextMatrix(row, 4) = 0
         grid.TextMatrix(row, 7) = grid.TextMatrix(row, 5)
         grid.TextMatrix(row, 8) = Format$(0, "Currency")
-        ''MskNumNf.SetFocus
         
         Exit Sub
         
@@ -7207,40 +7210,14 @@ Private Sub carregaResumo(row As Integer, grid As MSFlexGrid)
     'Inclui o produto na lista.
     '*************************************************************************************
     
-    Dim CodProduto As Integer
-    Dim DscProduto As String
-    Dim QntEmb As Integer
-    Dim QntVendida As Integer
-    Dim PrecoUnit As Double
-    Dim IdentTabela As String
-    Dim Desconto As Double
-    Dim TotalLiq As Double
-    Dim CodGrupo As Integer
-    Dim TotalBru As Double
-    Dim LiqBru As Double
-    Dim PesoBru As Double
-    Dim IdealVenda As Double
-    Dim PrecoUnitBruto As Double
-    Dim MargemLucro As Double
-    Dim Kit As Integer
-    Dim CusUnitAquiProduto As Double
-    Dim CusUnitAdicAquiProduto As Double
-    Dim AliqImpFederal As Double
-    Dim MargInd As Double
+    ilind = GrdNotaCliente.rows
     
-    'ilind = GrdNotaCliente.rows
-    
-    'GrdNotaCliente.rows = GrdNotaCliente.rows + 1
-    'GrdNotaCliente.TextMatrix(ilind, 0) = Format(Trim(MskNumNf), "0000")
-    CodProduto = Format(Trim(MskNumNf), "0000")
-    'GrdNotaCliente.TextMatrix(ilind, 1) = Trim(LblRotaRec.Caption)
-    DscProduto = Trim(LblRotaRec.Caption)
-    'GrdNotaCliente.TextMatrix(ilind, 2) = ilQtdEmb
-    QntEmb = ilQtdEmb
-    'GrdNotaCliente.TextMatrix(ilind, 3) = IIf(Trim(MskSerie) = "", "0", MskSerie)
-    QntVendida = IIf(Trim(MskSerie) = "", "0", MskSerie)
-    'GrdNotaCliente.TextMatrix(ilind, 4) = IIf(Trim(MskVlrUnit) = "", "0", Format(MskVlrUnit, "##,###,##0.00"))
-    PrecoUnit = IIf(Trim(MskVlrUnit) = "", "0", Format(MskVlrUnit, "##,###,##0.00"))
+    GrdNotaCliente.rows = GrdNotaCliente.rows + 1
+    GrdNotaCliente.TextMatrix(ilind, 0) = Format(Trim(MskNumNf), "0000")
+    GrdNotaCliente.TextMatrix(ilind, 1) = Trim(LblRotaRec.Caption)
+    GrdNotaCliente.TextMatrix(ilind, 2) = ilQtdEmb
+    GrdNotaCliente.TextMatrix(ilind, 3) = IIf(Trim(MskSerie) = "", "0", MskSerie)
+    GrdNotaCliente.TextMatrix(ilind, 4) = IIf(Trim(MskVlrUnit) = "", "0", Format(MskVlrUnit, "##,###,##0.00"))
     
     '*************************************************************************************
     'Identifica a tabela aplicada: vazio para tabela normal ou tabelas A e B.
@@ -7248,23 +7225,19 @@ Private Sub carregaResumo(row As Integer, grid As MSFlexGrid)
     
     If ilNumTab = 0 Then
         
-        'GrdNotaCliente.TextMatrix(ilind, 5) = ""
-        IdentTabela = ""
+        GrdNotaCliente.TextMatrix(ilind, 5) = ""
         
     Else
     
         If ilNumTab = 1 Then
-            'GrdNotaCliente.TextMatrix(ilind, 5) = "A"
-            IdentTabela = "A"
+            GrdNotaCliente.TextMatrix(ilind, 5) = "A"
         Else
-            'GrdNotaCliente.TextMatrix(ilind, 5) = "B"
-            IdentTabela = "B"
+            GrdNotaCliente.TextMatrix(ilind, 5) = "B"
         End If
         
     End If
     
-    'GrdNotaCliente.TextMatrix(ilind, 6) = IIf(Trim(MskDatEmiNf) = "", "0", Format(MskDatEmiNf, "##0.00"))
-    Desconto = IIf(Trim(MskDatEmiNf) = "", "0", Format(MskDatEmiNf, "##0.00"))
+    GrdNotaCliente.TextMatrix(ilind, 6) = IIf(Trim(MskDatEmiNf) = "", "0", Format(MskDatEmiNf, "##0.00"))
     
     '*************************************************************************************
     'Se houver desconto aplicado ao produto, o valor total do item será o preço bruto,
@@ -7278,14 +7251,10 @@ Private Sub carregaResumo(row As Integer, grid As MSFlexGrid)
         dlValItem = (MskVlrUnit - ((MskVlrUnit * MskDatEmiNf) / 100)) * Trim(MskSerie)
     End If
     
-    'GrdNotaCliente.TextMatrix(ilind, 7) = Format((GrdNotaCliente.TextMatrix(ilind, 4) - ((GrdNotaCliente.TextMatrix(ilind, 4) * MskDatEmiNf) / 100)), "##,###,##0.00")
-    TotalLiq = Format(PrecoUnit - ((PrecoUnit * MskDatEmiNf) / 100), "##,###,##0.00")
-    'GrdNotaCliente.TextMatrix(ilind, 18) = Format(dlValItem, "##,###,##0.00")
-    MargInd = Format(dlValItem, "##,###,##0.00")
-    'GrdNotaCliente.TextMatrix(ilind, 8) = ilIdeGrp
-    CodGrupo = ilIdeGrp
-    'GrdNotaCliente.TextMatrix(ilind, 9) = Format(Trim(MskVlrUnit) * (Trim(MskSerie)), "##,###,##0.00")
-    TotalBru = Format(Trim(MskVlrUnit) * (Trim(MskSerie)), "##,###,##0.00")
+    GrdNotaCliente.TextMatrix(ilind, 7) = Format((GrdNotaCliente.TextMatrix(ilind, 4) - ((GrdNotaCliente.TextMatrix(ilind, 4) * MskDatEmiNf) / 100)), "##,###,##0.00")
+    GrdNotaCliente.TextMatrix(ilind, 18) = Format(dlValItem, "##,###,##0.00")
+    GrdNotaCliente.TextMatrix(ilind, 8) = ilIdeGrp
+    GrdNotaCliente.TextMatrix(ilind, 9) = Format(Trim(MskVlrUnit) * (Trim(MskSerie)), "##,###,##0.00")
     
     '*************************************************************************************
     'O cálculo do peso bruto do produto é simples: multiplica-se o peso unitário da peça
@@ -7295,8 +7264,7 @@ Private Sub carregaResumo(row As Integer, grid As MSFlexGrid)
     
     dlPesBru = dlPesUnt * (Trim(MskSerie))
     
-    'GrdNotaCliente.TextMatrix(ilind, 10) = Format(dlPesBru, "###,##0.0000")
-    PesoBru = Format(dlPesBru, "###,##0.0000")
+    GrdNotaCliente.TextMatrix(ilind, 10) = Format(dlPesBru, "###,##0.0000")
     
     '*************************************************************************************
     'A linha a seguir calcula aquilo que foi chamado de "valor ideal" do produto: trata-se
@@ -7306,110 +7274,14 @@ Private Sub carregaResumo(row As Integer, grid As MSFlexGrid)
     
     VlIdealItem = (dlValUntN - ((dlValUntN * dlSumDscItemORIG) / 100)) * (Trim(MskSerie))
     
-    'GrdNotaCliente.TextMatrix(ilind, 11) = Format(VlIdealItem, "###,##0.00")
-    IdealVenda = Format(VlIdealItem, "###,##0.00")
-    'GrdNotaCliente.TextMatrix(ilind, 12) = Format(dlValUntN, "###,##0.00")
-    PrecoUnitBruto = Format(dlValUntN, "###,##0.00")
-    'GrdNotaCliente.TextMatrix(ilind, 13) = Format(dlMrgPrd, "##0.000")
-    MargemLucro = Format(dlMrgPrd, "##0.000")
-    'GrdNotaCliente.TextMatrix(ilind, 14) = ilFlgKit
-    Kit = ilFlgKit
-    'GrdNotaCliente.TextMatrix(ilind, 15) = Format(dlValCusUntQtd, "###,##0.00")
-    CusUnitAquiProduto = Format(dlValCusUntQtd, "###,##0.00")
-    'GrdNotaCliente.TextMatrix(ilind, 16) = Format(dlValCusAdicQtd, "###,##0.00")
-    CusUnitAdicAquiProduto = Format(dlValCusAdicQtd, "###,##0.00")
-    'GrdNotaCliente.TextMatrix(ilind, 17) = Format(dlAlqImpFed, "###,##0.000")
-    AliqImpFederal = Format(dlAlqImpFed, "###,##0.000")
+    GrdNotaCliente.TextMatrix(ilind, 11) = Format(VlIdealItem, "###,##0.00")
+    GrdNotaCliente.TextMatrix(ilind, 12) = Format(dlValUntN, "###,##0.00")
+    GrdNotaCliente.TextMatrix(ilind, 13) = Format(dlMrgPrd, "##0.000")
+    GrdNotaCliente.TextMatrix(ilind, 14) = ilFlgKit
+    GrdNotaCliente.TextMatrix(ilind, 15) = Format(dlValCusUntQtd, "###,##0.00")
+    GrdNotaCliente.TextMatrix(ilind, 16) = Format(dlValCusAdicQtd, "###,##0.00")
+    GrdNotaCliente.TextMatrix(ilind, 17) = Format(dlAlqImpFed, "###,##0.000")
     
-    Dim sql_tmp As String
-    
-    sql_tmp = "INSERT INTO ##tmp_produto_aux ("
-    sql_tmp = sql_tmp & " CAMPO1,"
-    sql_tmp = sql_tmp & " CAMPO2,"
-    sql_tmp = sql_tmp & " CAMPO3,"
-    sql_tmp = sql_tmp & " CAMPO4,"
-    sql_tmp = sql_tmp & " CAMPO5,"
-    sql_tmp = sql_tmp & " CAMPO6,"
-    sql_tmp = sql_tmp & " CAMPO7,"
-    sql_tmp = sql_tmp & " CAMPO8,"
-    sql_tmp = sql_tmp & " CAMPO9,"
-    sql_tmp = sql_tmp & " CAMPO10,"
-    sql_tmp = sql_tmp & " CAMPO11,"
-    sql_tmp = sql_tmp & " CAMPO12,"
-    sql_tmp = sql_tmp & " CAMPO13,"
-    sql_tmp = sql_tmp & " CAMPO14,"
-    sql_tmp = sql_tmp & " CAMPO15,"
-    sql_tmp = sql_tmp & " CAMPO16,"
-    sql_tmp = sql_tmp & " CAMPO17,"
-    sql_tmp = sql_tmp & " CAMPO18,"
-    sql_tmp = sql_tmp & " CAMPO19,"
-    sql_tmp = sql_tmp & " CAMPO20"
-    sql_tmp = sql_tmp & " )"
-    sql_tmp = sql_tmp & " VALUES ( "
-    sql_tmp = sql_tmp & CodProduto & " , "
-    sql_tmp = sql_tmp & "'" & DscProduto & "' , "
-    sql_tmp = sql_tmp & QntEmb & " , "
-    sql_tmp = sql_tmp & QntVendida & " , "
-    sql_tmp = sql_tmp & Replace(PrecoUnit, ",", ".") & " , "
-    sql_tmp = sql_tmp & "'" & IdentTabela & "' , "
-    sql_tmp = sql_tmp & Replace(Desconto, ",", ".") & " , "
-    sql_tmp = sql_tmp & Replace(TotalLiq, ",", ".") & " , "
-    sql_tmp = sql_tmp & CodGrupo & " ,    "
-    sql_tmp = sql_tmp & Replace(TotalBru, ",", ".") & " , "
-    sql_tmp = sql_tmp & Replace(LiqBru, ",", ".") & " , "
-    sql_tmp = sql_tmp & Replace(PesoBru, ",", ".") & " , "
-    sql_tmp = sql_tmp & Replace(IdealVenda, ",", ".") & " , "
-    sql_tmp = sql_tmp & Replace(PrecoUnitBruto, ",", ".") & " , "
-    sql_tmp = sql_tmp & Replace(MargemLucro, ",", ".") & " , "
-    sql_tmp = sql_tmp & Kit & " , "
-    sql_tmp = sql_tmp & Replace(CusUnitAquiProduto, ",", ".") & " , "
-    sql_tmp = sql_tmp & Replace(CusUnitAdicAquiProduto, ",", ".") & " , "
-    sql_tmp = sql_tmp & Replace(AliqImpFederal, ",", ".") & " , "
-    sql_tmp = sql_tmp & Replace(MargInd, ",", ".") & " ) "
-
-    Conexao.Execute sql_tmp
-    
-    sql_tmp = " SELECT "
-    sql_tmp = sql_tmp & " CAMPO1,"
-    sql_tmp = sql_tmp & " CAMPO2,"
-    sql_tmp = sql_tmp & " CAMPO3,"
-    sql_tmp = sql_tmp & " CAMPO4,"
-    sql_tmp = sql_tmp & " CAMPO5,"
-    sql_tmp = sql_tmp & " CAMPO6,"
-    sql_tmp = sql_tmp & " CAMPO7,"
-    sql_tmp = sql_tmp & " CAMPO8,"
-    sql_tmp = sql_tmp & " CAMPO9,"
-    sql_tmp = sql_tmp & " CAMPO10,"
-    sql_tmp = sql_tmp & " CAMPO11,"
-    sql_tmp = sql_tmp & " CAMPO12,"
-    sql_tmp = sql_tmp & " CAMPO13,"
-    sql_tmp = sql_tmp & " CAMPO14,"
-    sql_tmp = sql_tmp & " CAMPO15,"
-    sql_tmp = sql_tmp & " CAMPO16,"
-    sql_tmp = sql_tmp & " CAMPO17,"
-    sql_tmp = sql_tmp & " CAMPO18,"
-    sql_tmp = sql_tmp & " CAMPO19,"
-    sql_tmp = sql_tmp & " CAMPO20"
-    sql_tmp = sql_tmp & " FROM ##tmp_produto_aux a "
-    'sql_tmp = sql_tmp & " WHERE NOT EXISTS (SELECT 1 FROM ##tmp_produto_aux p WHERE p.CAMPO1 = a.CAMPO1)"
-    sql_tmp = sql_tmp & " order by SUBSTRING(CAMPO2,CASE WHEN CAMPO1 = 314 THEN 2 ELSE 1 END,CASE WHEN PATINDEX('%[0-9]%',CAMPO2) = 0 THEN LEN(CAMPO2) ELSE PATINDEX('%[0-9]%',CAMPO2)-1 END), SUBSTRING(CAMPO2,PATINDEX('%º%',CAMPO2)-2, 3), CAST(dbo.udf_GetNumeric(a.CAMPO2) AS BIGINT) asc"
-    
-    Call Consulta(sql_tmp)
-    
-    'define o numero de linhas e colunas e configura o grid
-    GrdNotaCliente.rows = Rs.RecordCount + 1
-    GrdNotaCliente.Cols = Rs.Fields.Count + 1
-    GrdNotaCliente.row = 1
-    GrdNotaCliente.col = 0
-    GrdNotaCliente.RowSel = GrdNotaCliente.rows - 1
-    GrdNotaCliente.ColSel = GrdNotaCliente.Cols - 1
-    
-    'estamos usando a propriedade Clip e o método GetString para selecionar uma região do grid
-    GrdNotaCliente.Clip = Rs.GetString(adClipString, -1, Chr(9), Chr(13), vbNullString)
-    GrdNotaCliente.row = 1
-    GrdNotaCliente.Visible = True
-    
-    GrdNotaCliente.Refresh
     '*****************************************************************************************
     'Limpra os campos por onde o produto foi inserido.
     '*****************************************************************************************
@@ -7473,12 +7345,14 @@ Private Sub carregaResumo(row As Integer, grid As MSFlexGrid)
         
         GrdNotaCliente.col = 19
         GrdNotaCliente.row = ilind
-        
-        If GrdIndice.TextMatrix(ilind, 15) < 10 Then
+    
+        If GrdIndice.TextMatrix(ilind, 15) < 6 Then
             GrdNotaCliente.CellBackColor = &HFF&
-        ElseIf GrdIndice.TextMatrix(ilind, 15) >= 10 And GrdIndice.TextMatrix(ilind, 15) < 15 Then
+        ElseIf GrdIndice.TextMatrix(ilind, 15) >= 6 And GrdIndice.TextMatrix(ilind, 15) < 8.6 Then
+            GrdNotaCliente.CellBackColor = &H80FFFF 'Amarelo
+        ElseIf GrdIndice.TextMatrix(ilind, 15) >= 8.6 And GrdIndice.TextMatrix(ilind, 15) <= 12 Then
             GrdNotaCliente.CellBackColor = &HFF00&
-        ElseIf GrdIndice.TextMatrix(ilind, 15) >= 15 Then
+        ElseIf GrdIndice.TextMatrix(ilind, 15) > 12 Then
             GrdNotaCliente.CellBackColor = &HFF0000
         End If
         
@@ -7487,6 +7361,29 @@ Private Sub carregaResumo(row As Integer, grid As MSFlexGrid)
     GrdNotaCliente.col = 1
     GrdNotaCliente.Sort = flexSortGenericAscending
     GrdNotaCliente.Refresh
+End Sub
+
+Private Sub DefineCorResumo(grid As MSFlexGrid)
+    
+    Dim ilind As Integer
+    
+    ilind = grid.rows - 1
+        
+    grid.col = 19
+    grid.row = ilind
+        
+    If GrdIndice.TextMatrix(ilind, 15) < 6 Then
+        grid.CellBackColor = &HFF&
+    ElseIf GrdIndice.TextMatrix(ilind, 15) >= 6 And GrdIndice.TextMatrix(ilind, 15) < 8.6 Then
+        grid.CellBackColor = &H80FFFF 'Amarelo
+    ElseIf GrdIndice.TextMatrix(ilind, 15) >= 8.6 And GrdIndice.TextMatrix(ilind, 15) <= 12 Then
+        grid.CellBackColor = &HFF00&
+    ElseIf GrdIndice.TextMatrix(ilind, 15) > 12 Then
+        grid.CellBackColor = &HFF0000
+    End If
+    
+    grid.Refresh
+    
 End Sub
 
 Private Sub AtualizaValorComDescontoResumo(row As Integer, grid As MSFlexGrid)
@@ -7588,6 +7485,7 @@ Private Sub GrdNotaCliente_SelChange()
             CalculaTotalResumo rowAuxGrdNotaCliente, GrdNotaCliente
             'carregaResumo rowAuxTubosConexoesIrriAzuis, tubos_conexoes_irri_azuis
             CalculaIndice
+            DefineCorResumo GrdNotaCliente
             AtualizaGridAuxiliar
             houveDigitacaoGrdNotaCliente = False
             auxSelChangeGrdNotaCliente = False
@@ -7735,34 +7633,6 @@ Private Sub CarregaTemporaria()
     sql_tmp = sql_tmp & " valcusuntqtd DECIMAL(10,3),"
     sql_tmp = sql_tmp & " valcusadicqtd DECIMAL(10,3),"
     sql_tmp = sql_tmp & " AlqImpFed DECIMAL(6,3)"
-    sql_tmp = sql_tmp & ")"
-    sql_tmp = sql_tmp & " END "
-    
-    Conexao.Execute sql_tmp
-    
-    sql_tmp = "IF OBJECT_ID('TempDB.dbo.##tmp_produto_aux') IS NULL"
-    sql_tmp = sql_tmp & " BEGIN "
-    sql_tmp = sql_tmp & " CREATE TABLE ##tmp_produto_aux ("
-    sql_tmp = sql_tmp & " CAMPO1 bigint not null,"
-    sql_tmp = sql_tmp & " CAMPO2 varchar(200) not null,"
-    sql_tmp = sql_tmp & " CAMPO3 bigint not null,"
-    sql_tmp = sql_tmp & " CAMPO4 bigint not null,"
-    sql_tmp = sql_tmp & " CAMPO5  decimal(7,3) not null,"
-    sql_tmp = sql_tmp & " CAMPO6 varchar(1) not null,"
-    sql_tmp = sql_tmp & " CAMPO7 decimal(7,3) not null,"
-    sql_tmp = sql_tmp & " CAMPO8 decimal(7,3) not null,"
-    sql_tmp = sql_tmp & " CAMPO9 bigint,"
-    sql_tmp = sql_tmp & " CAMPO10 decimal(7,3) not null,"
-    sql_tmp = sql_tmp & " CAMPO11 decimal(7,3) not null,"
-    sql_tmp = sql_tmp & " CAMPO12 decimal(7,3) not null,"
-    sql_tmp = sql_tmp & " CAMPO13 decimal(7,3) not null,"
-    sql_tmp = sql_tmp & " CAMPO14 decimal(7,3) not null,"
-    sql_tmp = sql_tmp & " CAMPO15 decimal(7,3) not null,"
-    sql_tmp = sql_tmp & " CAMPO16 bigint,"
-    sql_tmp = sql_tmp & " CAMPO17 DECIMAL(6,3),"
-    sql_tmp = sql_tmp & " CAMPO18 DECIMAL(6,3),"
-    sql_tmp = sql_tmp & " CAMPO19 DECIMAL(6,3),"
-    sql_tmp = sql_tmp & " CAMPO20 DECIMAL(6,3)"
     sql_tmp = sql_tmp & ")"
     sql_tmp = sql_tmp & " END "
     
@@ -7935,19 +7805,25 @@ Private Sub DefineClassificacao(grid As MSFlexGrid)
         grid.TextMatrix(x, 7) = (grid.TextMatrix(x, 5) - (grid.TextMatrix(x, 5) * (34.2 / 100) * 1))
         
         
-        If grid.TextMatrix(x, 15) < 10 Then
+        If grid.TextMatrix(x, 15) < 6 Then
         
             grid.col = 2
             grid.row = x
             grid.CellForeColor = &HFF&
             
-        ElseIf grid.TextMatrix(x, 15) >= 10 And grid.TextMatrix(x, 15) < 15 Then
+        ElseIf grid.TextMatrix(x, 15) >= 6 And grid.TextMatrix(x, 15) < 8.5 Then
+            
+            grid.col = 2
+            grid.row = x
+            grid.CellForeColor = &HC0C0&
+            
+        ElseIf grid.TextMatrix(x, 15) >= 8.6 And grid.TextMatrix(x, 15) <= 12 Then
             
             grid.col = 2
             grid.row = x
             grid.CellForeColor = &HC000&
             
-        ElseIf grid.TextMatrix(x, 15) >= 15 Then
+        ElseIf grid.TextMatrix(x, 15) > 12 Then
             
             grid.col = 2
             grid.row = x
@@ -9762,11 +9638,11 @@ Function LimpaGeral()
     
     End If
 
-    Dim sql As String
+    'Dim sql As String
     
-    sql = "DROP TABLE ##tmp_produto_aux"
+    'sql = "DROP TABLE ##tmp_produto_aux"
     
-    Conexao.Execute sql
+    'Conexao.Execute sql
     
     DoEvents
     
@@ -12053,11 +11929,11 @@ Function CalculaIndice() As Boolean
 '        Status.BackColor = &HFF0000 'azul
 '    End If
     
-    If dlMargemGeral < 7 Then
+    If dlMargemGeral < 6 Then
         Novacor.BackColor = &HFF&       'vermelha
-    ElseIf dlMargemGeral > 7 And dlMargemGeral < 8.99 Then
-        Novacor.BackColor = &HFF&       'vermelha '&H80FFFF          ' amarela
-    ElseIf dlMargemGeral > 9 And dlMargemGeral <= 12 Then
+    ElseIf dlMargemGeral >= 6 And dlMargemGeral < 8.6 Then
+        Novacor.BackColor = &H80FFFF          ' amarela &HFF&       'vermelha '
+    ElseIf dlMargemGeral >= 8.6 And dlMargemGeral <= 12 Then
         Novacor.BackColor = &HFF00&    ' verde
     ElseIf Format(dlMargemGeral, "##0,00") > 12 Then
         Novacor.BackColor = &HFF0000 'azul
@@ -13225,7 +13101,7 @@ Private Sub BtoGrava_Click()
                 
                     Exit Sub
                 
-                ElseIf MskMargem.Texto > 8 And MskMargem.Texto <= 9 Then
+                ElseIf MskMargem.Texto > 8 And MskMargem.Texto <= 8.5 Then
                 
                     MsgBox "Esse pedido está PRÓXIMO da política comercial da Unocann. " & vbCrLf & vbCrLf & _
                     "Reveja os descontos praticados e mix de produtos até que a cor fique VERDE.", vbInformation, "Atenção!"
@@ -13250,7 +13126,7 @@ Private Sub BtoGrava_Click()
                 
                     Exit Sub
                 
-                ElseIf MskMargem.Texto > 7 And MskMargem.Texto <= 9 Then
+                ElseIf MskMargem.Texto > 7 And MskMargem.Texto <= 8.5 Then
                 
                     MsgBox "Esse pedido está PRÓXIMO da política comercial da Unocann. " & vbCrLf & vbCrLf & _
                     "Reveja os descontos praticados e mix de produtos até que a cor fique VERDE.", vbInformation, "Atenção!"
