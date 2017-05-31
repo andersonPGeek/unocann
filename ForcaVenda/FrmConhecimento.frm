@@ -1099,61 +1099,61 @@ Begin VB.Form FrmConhecimento
       TabCaption(1)   =   "Comunicação"
       TabPicture(1)   =   "FrmConhecimento.frx":126E
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "cmdUP"
-      Tab(1).Control(0).Enabled=   0   'False
-      Tab(1).Control(1)=   "CmdDN"
-      Tab(1).Control(1).Enabled=   0   'False
-      Tab(1).Control(2)=   "TxtNegocio"
-      Tab(1).Control(3)=   "CmdCancelar"
-      Tab(1).Control(3).Enabled=   0   'False
+      Tab(1).Control(0)=   "LblResultNegocio"
+      Tab(1).Control(1)=   "Label24"
+      Tab(1).Control(2)=   "Label46"
+      Tab(1).Control(3)=   "TxtObserva"
       Tab(1).Control(4)=   "Frame10"
-      Tab(1).Control(5)=   "TxtObserva"
-      Tab(1).Control(6)=   "Label46"
-      Tab(1).Control(7)=   "Label24"
-      Tab(1).Control(8)=   "LblResultNegocio"
+      Tab(1).Control(5)=   "CmdCancelar"
+      Tab(1).Control(5).Enabled=   0   'False
+      Tab(1).Control(6)=   "TxtNegocio"
+      Tab(1).Control(7)=   "CmdDN"
+      Tab(1).Control(7).Enabled=   0   'False
+      Tab(1).Control(8)=   "cmdUP"
+      Tab(1).Control(8).Enabled=   0   'False
       Tab(1).ControlCount=   9
       TabCaption(2)   =   "Posição do Cliente"
       TabPicture(2)   =   "FrmConhecimento.frx":128A
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Frame8"
-      Tab(2).Control(1)=   "LblFone"
-      Tab(2).Control(2)=   "Label45"
-      Tab(2).Control(3)=   "LblSimBahia"
-      Tab(2).Control(4)=   "LblCliUltimo"
-      Tab(2).Control(5)=   "Label40"
-      Tab(2).Control(6)=   "LblCliPrimeira"
-      Tab(2).Control(7)=   "Label38"
-      Tab(2).Control(8)=   "Label37"
-      Tab(2).Control(9)=   "Label36"
-      Tab(2).Control(10)=   "Label35"
-      Tab(2).Control(11)=   "Label34"
+      Tab(2).Control(0)=   "LblCliNome"
+      Tab(2).Control(1)=   "lblCliEndereco"
+      Tab(2).Control(2)=   "LblCliCGC"
+      Tab(2).Control(3)=   "LblCliBairro"
+      Tab(2).Control(4)=   "LblCliUF"
+      Tab(2).Control(5)=   "LblCliContr"
+      Tab(2).Control(6)=   "LblCliCid"
+      Tab(2).Control(7)=   "LblCliInscr"
+      Tab(2).Control(8)=   "LblCliCep"
+      Tab(2).Control(9)=   "Label31"
+      Tab(2).Control(10)=   "Label29"
+      Tab(2).Control(11)=   "Label32"
       Tab(2).Control(12)=   "Label33"
-      Tab(2).Control(13)=   "Label32"
-      Tab(2).Control(14)=   "Label29"
-      Tab(2).Control(15)=   "Label31"
-      Tab(2).Control(16)=   "LblCliCep"
-      Tab(2).Control(17)=   "LblCliInscr"
-      Tab(2).Control(18)=   "LblCliCid"
-      Tab(2).Control(19)=   "LblCliContr"
-      Tab(2).Control(20)=   "LblCliUF"
-      Tab(2).Control(21)=   "LblCliBairro"
-      Tab(2).Control(22)=   "LblCliCGC"
-      Tab(2).Control(23)=   "lblCliEndereco"
-      Tab(2).Control(24)=   "LblCliNome"
+      Tab(2).Control(13)=   "Label34"
+      Tab(2).Control(14)=   "Label35"
+      Tab(2).Control(15)=   "Label36"
+      Tab(2).Control(16)=   "Label37"
+      Tab(2).Control(17)=   "Label38"
+      Tab(2).Control(18)=   "LblCliPrimeira"
+      Tab(2).Control(19)=   "Label40"
+      Tab(2).Control(20)=   "LblCliUltimo"
+      Tab(2).Control(21)=   "LblSimBahia"
+      Tab(2).Control(22)=   "Label45"
+      Tab(2).Control(23)=   "LblFone"
+      Tab(2).Control(24)=   "Frame8"
       Tab(2).ControlCount=   25
       TabCaption(3)   =   "Entregas"
       TabPicture(3)   =   "FrmConhecimento.frx":12A6
       Tab(3).ControlEnabled=   0   'False
-      Tab(3).Control(0)=   "Text1"
-      Tab(3).Control(1)=   "GrdEntrega"
+      Tab(3).Control(0)=   "GrdEntrega"
+      Tab(3).Control(1)=   "Text1"
       Tab(3).ControlCount=   2
       Begin VB.Frame FraGrupo 
          BackColor       =   &H00FFFFFF&
          BorderStyle     =   0  'None
          Height          =   7095
-         Left            =   600
+         Left            =   0
          TabIndex        =   145
-         Top             =   2880
+         Top             =   3000
          Visible         =   0   'False
          Width           =   12375
          Begin VB.CommandButton CmdRetorna 
@@ -1211,9 +1211,9 @@ Begin VB.Form FrmConhecimento
          End
          Begin MSFlexGridLib.MSFlexGrid GrdProduto 
             Height          =   5535
-            Left            =   3960
+            Left            =   4320
             TabIndex        =   148
-            Top             =   4320
+            Top             =   4200
             Width           =   7935
             _ExtentX        =   13996
             _ExtentY        =   9763
@@ -2159,72 +2159,72 @@ Begin VB.Form FrmConhecimento
          TabCaption(1)   =   "PREDIAL SOLDÁVEL MARROM"
          TabPicture(1)   =   "FrmConhecimento.frx":2A5A
          Tab(1).ControlEnabled=   0   'False
-         Tab(1).Control(0)=   "Label8"
-         Tab(1).Control(1)=   "Label2"
+         Tab(1).Control(0)=   "desconto_tubos_conexoes_agua"
+         Tab(1).Control(1)=   "Bto_aplica_tubos_conexoes_agua"
+         Tab(1).Control(1).Enabled=   0   'False
          Tab(1).Control(2)=   "tubos_conexoes_agua"
-         Tab(1).Control(3)=   "Bto_aplica_tubos_conexoes_agua"
-         Tab(1).Control(3).Enabled=   0   'False
-         Tab(1).Control(4)=   "desconto_tubos_conexoes_agua"
+         Tab(1).Control(3)=   "Label2"
+         Tab(1).Control(4)=   "Label8"
          Tab(1).ControlCount=   5
          TabCaption(2)   =   "PREDIAL ROSCÁVEL BRANCO"
          TabPicture(2)   =   "FrmConhecimento.frx":2A76
          Tab(2).ControlEnabled=   0   'False
-         Tab(2).Control(0)=   "Label48"
-         Tab(2).Control(1)=   "Label47"
+         Tab(2).Control(0)=   "desconto_tubos_conexoes_roscaveis"
+         Tab(2).Control(1)=   "Bto_aplica__tubos_conexoes_roscaveis"
+         Tab(2).Control(1).Enabled=   0   'False
          Tab(2).Control(2)=   "tubos_conexoes_roscaveis"
-         Tab(2).Control(3)=   "Bto_aplica__tubos_conexoes_roscaveis"
-         Tab(2).Control(3).Enabled=   0   'False
-         Tab(2).Control(4)=   "desconto_tubos_conexoes_roscaveis"
+         Tab(2).Control(3)=   "Label47"
+         Tab(2).Control(4)=   "Label48"
          Tab(2).ControlCount=   5
          TabCaption(3)   =   "IRRIGA AGROPECUÁRIO AZUL"
          TabPicture(3)   =   "FrmConhecimento.frx":2A92
          Tab(3).ControlEnabled=   0   'False
-         Tab(3).Control(0)=   "Label68"
-         Tab(3).Control(1)=   "Label69"
+         Tab(3).Control(0)=   "Bto_Aplica_tubos_conexoes_irri_azuis"
+         Tab(3).Control(0).Enabled=   0   'False
+         Tab(3).Control(1)=   "desconto_tubos_conexoes_irri_azuis"
          Tab(3).Control(2)=   "tubos_conexoes_irri_azuis"
-         Tab(3).Control(3)=   "desconto_tubos_conexoes_irri_azuis"
-         Tab(3).Control(4)=   "Bto_Aplica_tubos_conexoes_irri_azuis"
-         Tab(3).Control(4).Enabled=   0   'False
+         Tab(3).Control(3)=   "Label69"
+         Tab(3).Control(4)=   "Label68"
          Tab(3).ControlCount=   5
          TabCaption(4)   =   "INFRA ESGOTO OCRE"
          TabPicture(4)   =   "FrmConhecimento.frx":2AAE
          Tab(4).ControlEnabled=   0   'False
-         Tab(4).Control(0)=   "desconto_tubos_conexoes_coletor_esgoto_ocre"
-         Tab(4).Control(1)=   "Bto_aplica_tubos_conexoes_coletor_esgoto_ocre"
-         Tab(4).Control(1).Enabled=   0   'False
+         Tab(4).Control(0)=   "Label65"
+         Tab(4).Control(1)=   "Label64"
          Tab(4).Control(2)=   "tubo_tubos_conexoes_coletor_esgoto"
-         Tab(4).Control(3)=   "Label64"
-         Tab(4).Control(4)=   "Label65"
+         Tab(4).Control(3)=   "Bto_aplica_tubos_conexoes_coletor_esgoto_ocre"
+         Tab(4).Control(3).Enabled=   0   'False
+         Tab(4).Control(4)=   "desconto_tubos_conexoes_coletor_esgoto_ocre"
          Tab(4).ControlCount=   5
          TabCaption(5)   =   "INFRA PBA JUNTA ELÁSTICA MARROM"
          TabPicture(5)   =   "FrmConhecimento.frx":2ACA
          Tab(5).ControlEnabled=   0   'False
-         Tab(5).Control(0)=   "Label63"
-         Tab(5).Control(1)=   "Label62"
+         Tab(5).Control(0)=   "desconto_tubos_conexoes_pba"
+         Tab(5).Control(1)=   "Bto_aplica_tubos_conexoes_pba"
+         Tab(5).Control(1).Enabled=   0   'False
          Tab(5).Control(2)=   "tubo_conexoes_pba"
-         Tab(5).Control(3)=   "Bto_aplica_tubos_conexoes_pba"
-         Tab(5).Control(3).Enabled=   0   'False
-         Tab(5).Control(4)=   "desconto_tubos_conexoes_pba"
+         Tab(5).Control(3)=   "Label62"
+         Tab(5).Control(4)=   "Label63"
          Tab(5).ControlCount=   5
          TabCaption(6)   =   "INFRA DEFOFO AZUL"
          TabPicture(6)   =   "FrmConhecimento.frx":2AE6
          Tab(6).ControlEnabled=   0   'False
-         Tab(6).Control(0)=   "Label61"
-         Tab(6).Control(1)=   "Label60"
+         Tab(6).Control(0)=   "Bto_aplica_tubos_conexoes_defofo"
+         Tab(6).Control(0).Enabled=   0   'False
+         Tab(6).Control(1)=   "desconto_tubos_conexoes_defofo"
          Tab(6).Control(2)=   "tubo_conexoes_defofo"
-         Tab(6).Control(3)=   "desconto_tubos_conexoes_defofo"
-         Tab(6).Control(4)=   "Bto_aplica_tubos_conexoes_defofo"
-         Tab(6).Control(4).Enabled=   0   'False
+         Tab(6).Control(3)=   "Label60"
+         Tab(6).Control(4)=   "Label61"
          Tab(6).ControlCount=   5
          TabCaption(7)   =   "RESUMO"
          TabPicture(7)   =   "FrmConhecimento.frx":2B02
          Tab(7).ControlEnabled=   0   'False
-         Tab(7).Control(0)=   "Label66"
-         Tab(7).Control(1)=   "Label67"
+         Tab(7).Control(0)=   "desconto_resumo"
+         Tab(7).Control(1)=   "Bto_Aplica_resumo"
+         Tab(7).Control(1).Enabled=   0   'False
          Tab(7).Control(2)=   "GrdNotaCliente"
-         Tab(7).Control(3)=   "Bto_Aplica_resumo"
-         Tab(7).Control(3).Enabled=   0   'False
-         Tab(7).Control(4)=   "desconto_resumo"
+         Tab(7).Control(3)=   "Label67"
+         Tab(7).Control(4)=   "Label66"
          Tab(7).ControlCount=   5
          Begin VB.CommandButton Bto_Aplica_tubos_conexoes_irri_azuis 
             BackColor       =   &H00FF0000&
@@ -6855,7 +6855,7 @@ Private Sub CarregaGridConsulta()
                 tubo_conexoes_defofo.TextMatrix(i, 6) = GrdNotaCliente.TextMatrix(J, 6)
                 tubo_conexoes_defofo.TextMatrix(i, 7) = Format$((tubo_conexoes_defofo.TextMatrix(i, 5) - ((tubo_conexoes_defofo.TextMatrix(i, 5) * GrdNotaCliente.TextMatrix(J, 6)) / 100)), "Currency")
                 tubo_conexoes_defofo.TextMatrix(i, 4) = GrdNotaCliente.TextMatrix(J, 3)
-                tubo_conexoes_defofo.TextMatrix(i, 8) = GrdNotaCliente.TextMatrix(J, 9)
+                tubo_conexoes_defofo.TextMatrix(i, 8) = Format$(GrdNotaCliente.TextMatrix(J, 9), "Currency")
             End If
         Next
     Next
@@ -6866,7 +6866,7 @@ Private Sub CarregaGridConsulta()
                 tubos_conexoes_irri_azuis.TextMatrix(i, 6) = GrdNotaCliente.TextMatrix(J, 6)
                 tubos_conexoes_irri_azuis.TextMatrix(i, 7) = Format$((tubos_conexoes_irri_azuis.TextMatrix(i, 5) - ((tubos_conexoes_irri_azuis.TextMatrix(i, 5) * GrdNotaCliente.TextMatrix(J, 6)) / 100)), "Currency")
                 tubos_conexoes_irri_azuis.TextMatrix(i, 4) = GrdNotaCliente.TextMatrix(J, 3)
-                tubos_conexoes_irri_azuis.TextMatrix(i, 8) = GrdNotaCliente.TextMatrix(J, 9)
+                tubos_conexoes_irri_azuis.TextMatrix(i, 8) = Format$(GrdNotaCliente.TextMatrix(J, 9), "Currency")
             End If
         Next
     Next
@@ -6877,7 +6877,7 @@ Private Sub CarregaGridConsulta()
                 tubos_conexoes_roscaveis.TextMatrix(i, 6) = GrdNotaCliente.TextMatrix(J, 6)
                 tubos_conexoes_roscaveis.TextMatrix(i, 7) = Format$((tubos_conexoes_roscaveis.TextMatrix(i, 5) - ((tubos_conexoes_roscaveis.TextMatrix(i, 5) * GrdNotaCliente.TextMatrix(J, 6)) / 100)), "Currency")
                 tubos_conexoes_roscaveis.TextMatrix(i, 4) = GrdNotaCliente.TextMatrix(J, 3)
-                tubos_conexoes_roscaveis.TextMatrix(i, 8) = GrdNotaCliente.TextMatrix(J, 9)
+                tubos_conexoes_roscaveis.TextMatrix(i, 8) = Format$(GrdNotaCliente.TextMatrix(J, 9), "Currency")
             End If
         Next
     Next
@@ -6888,7 +6888,7 @@ Private Sub CarregaGridConsulta()
                 tubos_conexoes_predial.TextMatrix(i, 6) = GrdNotaCliente.TextMatrix(J, 6)
                 tubos_conexoes_predial.TextMatrix(i, 7) = Format$((tubos_conexoes_predial.TextMatrix(i, 5) - ((tubos_conexoes_predial.TextMatrix(i, 5) * GrdNotaCliente.TextMatrix(J, 6)) / 100)), "Currency")
                 tubos_conexoes_predial.TextMatrix(i, 4) = GrdNotaCliente.TextMatrix(J, 3)
-                tubos_conexoes_predial.TextMatrix(i, 8) = GrdNotaCliente.TextMatrix(J, 9)
+                tubos_conexoes_predial.TextMatrix(i, 8) = Format$(GrdNotaCliente.TextMatrix(J, 9), "Currency")
             End If
         Next
     Next
@@ -6899,7 +6899,7 @@ Private Sub CarregaGridConsulta()
                 tubo_tubos_conexoes_coletor_esgoto.TextMatrix(i, 6) = GrdNotaCliente.TextMatrix(J, 6)
                 tubo_tubos_conexoes_coletor_esgoto.TextMatrix(i, 7) = Format$((tubo_tubos_conexoes_coletor_esgoto.TextMatrix(i, 5) - ((tubo_tubos_conexoes_coletor_esgoto.TextMatrix(i, 5) * GrdNotaCliente.TextMatrix(J, 6)) / 100)), "Currency")
                 tubo_tubos_conexoes_coletor_esgoto.TextMatrix(i, 4) = GrdNotaCliente.TextMatrix(J, 3)
-                tubo_tubos_conexoes_coletor_esgoto.TextMatrix(i, 8) = GrdNotaCliente.TextMatrix(J, 9)
+                tubo_tubos_conexoes_coletor_esgoto.TextMatrix(i, 8) = Format$(GrdNotaCliente.TextMatrix(J, 9), "Currency")
             End If
         Next
     Next
@@ -6910,7 +6910,7 @@ Private Sub CarregaGridConsulta()
                 tubo_conexoes_pba.TextMatrix(i, 6) = GrdNotaCliente.TextMatrix(J, 6)
                 tubo_conexoes_pba.TextMatrix(i, 7) = Format$((tubo_conexoes_pba.TextMatrix(i, 5) - ((tubo_conexoes_pba.TextMatrix(i, 5) * GrdNotaCliente.TextMatrix(J, 6)) / 100)), "Currency")
                 tubo_conexoes_pba.TextMatrix(i, 4) = GrdNotaCliente.TextMatrix(J, 3)
-                tubo_conexoes_pba.TextMatrix(i, 8) = GrdNotaCliente.TextMatrix(J, 9)
+                tubo_conexoes_pba.TextMatrix(i, 8) = Format$(GrdNotaCliente.TextMatrix(J, 9), "Currency")
             End If
         Next
     Next
@@ -6921,7 +6921,7 @@ Private Sub CarregaGridConsulta()
                 tubos_conexoes_agua.TextMatrix(i, 6) = GrdNotaCliente.TextMatrix(J, 6)
                 tubos_conexoes_agua.TextMatrix(i, 7) = Format$((tubos_conexoes_agua.TextMatrix(i, 5) - ((tubos_conexoes_agua.TextMatrix(i, 5) * GrdNotaCliente.TextMatrix(J, 6)) / 100)), "Currency")
                 tubos_conexoes_agua.TextMatrix(i, 4) = GrdNotaCliente.TextMatrix(J, 3)
-                tubos_conexoes_agua.TextMatrix(i, 8) = GrdNotaCliente.TextMatrix(J, 9)
+                tubos_conexoes_agua.TextMatrix(i, 8) = Format$(GrdNotaCliente.TextMatrix(J, 9), "Currency")
             End If
         Next
     Next
@@ -7668,6 +7668,131 @@ Private Sub CarregaTemporaria()
 
     Conexao.Execute sql_tmp
     
+    slUFOri = "MG"
+    slUFRep = ""
+    slNomRep = ""
+    dlPerCusFrt = 0
+    dlPerComiN = 0
+    dlPerComiA = 0
+    dlPerComiB = 0
+    dlPerDesFOB = 0
+    dlIdxPDD = 0
+    dlIdxAzul = 0
+    slFlgSugComi = ""
+    dlValPedMin = 0
+    dlValLimPrz1 = 0
+    dlValParMin = 0
+    ilPrzMed1 = 0
+    ilPrzMed2 = 0
+   
+    sgQuery = "select * from REPRESENTANTE where CodRep = " & Trim(sgRepresentante)
+    
+    Call Consulta2(sgQuery)
+    
+    If Not Rs2.EOF Then
+    
+        slNomRep = IIf(IsNull(Rs2!NomRep), "", Trim(Rs2!NomRep))
+        slUFRep = IIf(IsNull(Rs2!UFRep), "", Trim(Rs2!UFRep))
+        dlPerCusFrt = IIf(IsNull(Rs2!PerCusFrt), 0, Trim(Rs2!PerCusFrt))
+        dlPerComiN = IIf(IsNull(Rs2!PerComiN), 0, Trim(Rs2!PerComiN))
+        dlPerComiA = IIf(IsNull(Rs2!PerComiA), 0, Trim(Rs2!PerComiA))
+        dlPerComiB = IIf(IsNull(Rs2!PerComiB), 0, Trim(Rs2!PerComiB))
+        dlPerDesFOB = IIf(IsNull(Rs2!PerDesFOB), 0, Trim(Rs2!PerDesFOB))
+        slFlgSugComi = IIf(IsNull(Rs2!FlgSugComi), "", Trim(Rs2!FlgSugComi))
+        dlIdxPDD = IIf(IsNull(Rs2!IdxPDD), 0, Trim(Rs2!IdxPDD))
+        dlIdxAzul = IIf(IsNull(Rs2!IdxAzul), 0, Trim(Rs2!IdxAzul))
+        dlPerComiCalc = dlPerComiN
+        dlPerTubo100Rep = IIf(IsNull(Rs2!PerTubo100), 0, Trim(Rs2!PerTubo100))
+        dlValPedMin = IIf(IsNull(Rs2!ValPedMin), 0, Trim(Rs2!ValPedMin))
+        dlValLimPrz1 = IIf(IsNull(Rs2!ValLimPrz1), 0, Trim(Rs2!ValLimPrz1))
+        dlValParMin = IIf(IsNull(Rs2!ValParMin), 0, Trim(Rs2!ValParMin))
+        ilPrzMed1 = IIf(IsNull(Rs2!PrzMed1), 0, Trim(Rs2!PrzMed1))
+        ilPrzMed2 = IIf(IsNull(Rs2!PrzMed2), 0, Trim(Rs2!PrzMed2))
+    
+    Else
+    
+        MsgBox "Registro do Representante não encontrado, informe ao administrador do sistema", vbExclamation + vbOKOnly, "Atenção!"
+    
+    End If
+  
+    Rs2.Close
+    
+    Set Rs2 = Nothing
+   
+    'leitura BALIZA_SUGESTAO (situação [1] Abaixo do limite)
+    PerSug1Ini = 0
+    PerSug1FimA = 0
+    PerSug1FimB = 0
+
+    sgQuery = "select * from BALIZA_SUGESTAO where CodRep = " & Trim(ilCodRep) & " and NroSit = 1 "
+    
+    Call Consulta2(sgQuery)
+    
+    If Not Rs2.EOF Then
+        
+        PerSug1Ini = IIf(IsNull(Rs2!PerSugIni), 0, Trim(Rs2!PerSugIni))
+        PerSug1FimA = IIf(IsNull(Rs2!PerSugFimA), 0, Trim(Rs2!PerSugFimA))
+        PerSug1FimB = IIf(IsNull(Rs2!PerSugFimB), 0, Trim(Rs2!PerSugFimB))
+        
+    Else
+    
+        Rs2.Close
+        
+        Set Rs2 = Nothing
+        
+        sgQuery = "select * from BALIZA_SUGESTAO where CodRep is null and NroSit = 1"
+        
+        Call Consulta2(sgQuery)
+        
+        If Not Rs2.EOF Then
+            PerSug1Ini = IIf(IsNull(Rs2!PerSugIni), 0, Trim(Rs2!PerSugIni))
+            PerSug1FimA = IIf(IsNull(Rs2!PerSugFimA), 0, Trim(Rs2!PerSugFimA))
+            PerSug1FimB = IIf(IsNull(Rs2!PerSugFimB), 0, Trim(Rs2!PerSugFimB))
+        End If
+        
+    End If
+    
+    Rs2.Close
+    
+    Set Rs2 = Nothing
+   
+    'leitura BALIZA_SUGESTAO (situação [2] Acima do limite)
+    PerSug2Ini = 0
+    PerSug2FimA = 0
+    PerSug2FimB = 0
+   
+    sgQuery = "select * from BALIZA_SUGESTAO where CodRep = " & Trim(ilCodRep) & " and NroSit = 2 "
+    
+    Call Consulta2(sgQuery)
+    
+    If Not Rs2.EOF Then
+        
+        PerSug2Ini = IIf(IsNull(Rs2!PerSugIni), 0, Trim(Rs2!PerSugIni))
+        PerSug2FimA = IIf(IsNull(Rs2!PerSugFimA), 0, Trim(Rs2!PerSugFimA))
+        PerSug2FimB = IIf(IsNull(Rs2!PerSugFimB), 0, Trim(Rs2!PerSugFimB))
+        
+    Else
+    
+        Rs2.Close
+        
+        Set Rs2 = Nothing
+        
+        sgQuery = "select * from BALIZA_SUGESTAO where CodRep is null and NroSit = 2"
+        
+        Call Consulta2(sgQuery)
+        
+        If Not Rs2.EOF Then
+            PerSug2Ini = IIf(IsNull(Rs2!PerSugIni), 0, Trim(Rs2!PerSugIni))
+            PerSug2FimA = IIf(IsNull(Rs2!PerSugFimA), 0, Trim(Rs2!PerSugFimA))
+            PerSug2FimB = IIf(IsNull(Rs2!PerSugFimB), 0, Trim(Rs2!PerSugFimB))
+        End If
+    
+    End If
+    
+    Rs2.Close
+    
+    Set Rs2 = Nothing
+    
 End Sub
 
 Private Sub CarregaGrid(sqlAux As String, grid As MSFlexGrid)
@@ -8401,6 +8526,7 @@ Function Activate_Ped()
         MskNroPedido.Text = igNroPed
         MskNroPedido_LostFocus
         'CarregaTela
+        'Exit Function
         
     End If
    
@@ -13083,13 +13209,15 @@ Private Sub BtoGrava_Click()
     End If
    
 '----------------------------------------------
-    If iDscForaRegiao < 1 Then
+    'If iDscForaRegiao < 1 Then
     
-        BtoGrava.Enabled = False
-   
-    Else
+        'BtoGrava.Enabled = False
         
-        If iDscForaRegiao >= 1 Then
+        'Exit Sub
+        
+    'Else
+        
+        'If iDscForaRegiao >= 1 Then
             
             If Date >= CDate("04/02/2017") Then
                 
@@ -13141,13 +13269,13 @@ Private Sub BtoGrava_Click()
                 
                 End If
            End If
-      Else
+      'Else
             
-            Me.Caption = "UNOCANN Tubos e Conexões - Manutenção de Pedidos  [" & Trim(slNomRep) & "]"
+            'Me.Caption = "UNOCANN Tubos e Conexões - Manutenção de Pedidos  [" & Trim(slNomRep) & "]"
         
-      End If
+      'End If
 
-    End If
+    'End If
 
     
 

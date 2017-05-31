@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{65E121D4-0C60-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCHRT20.OCX"
-Object = "{703944EE-9203-11D2-8865-AD1268A0A52F}#1.0#0"; "ActiveCal.ocx"
+Object = "{703944EE-9203-11D2-8865-AD1268A0A52F}#1.0#0"; "ActiveCal.OCX"
 Begin VB.Form FrmMisc 
    BackColor       =   &H00FFFFFF&
    BorderStyle     =   1  'Fixed Single
@@ -701,6 +701,11 @@ Private Sub Form_Load()
 
     AjustaJanela Me, 14145, 9510, 700, 10
    
+    Dim fso As New Scripting.FileSystemObject
+    Dim ts As Scripting.TextStream
+    
+    Set ts = fso.OpenTextFile("c:\forca\log.txt", ForWriting, True)  'abre um arquivo para escrita , se não existir cria
+    
     'sgQuery = "BACKUP LOG unocann WITH TRUNCATE_ONLY"
     'Conexao.Execute sgQuery
 
@@ -714,7 +719,7 @@ Private Sub Form_Load()
     sgQuery = sgQuery & " and                 convert(datetime, '" & Format(datah, "dd/mm/yyyy") & " 23:59:59',103) "
     sgQuery = sgQuery & " and b.SitPed = 'N'"
     sgQuery = sgQuery & " and b.codrep = " & sgRepresentante
-   
+    
     'sgQuery = "select sum(vlrite) as vlrite, sum(qtdped) as qtdped from"
     'sgQuery = sgQuery & " (select sum(vlrIte) - sum(distinct vlrsimples) as VlrIte, count(distinct b.NroPed) as QtdPed  from item_pedido a, Pedido b "
     'sgQuery = sgQuery & "Where a.NroPed = b.NroPed "
@@ -952,6 +957,10 @@ Private Sub Form_Load()
     
     Consulta sgQuery
 
+    ts.Write "Executei Gráfico Pedidos: " & sgQuery
+    ts.Write "\n"
+    'ts.Close
+    
     reg = Rs.RecordCount
     
     'GrfPedidos.chartType = 2 'barra em duas dimensões
@@ -965,7 +974,7 @@ Private Sub Form_Load()
     
         For i = 1 To reg
         
-            GrfPedidos.Row = i
+            GrfPedidos.row = i
             
             Select Case Rs("Mes")
                 
