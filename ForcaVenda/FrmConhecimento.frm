@@ -5292,7 +5292,7 @@ Private Sub GrdNotaCliente_KeyPress(KeyAscii As Integer)
             CalculaTotalResumo GrdNotaCliente.row, GrdNotaCliente
             CalculaIndice
             
-            DefineCorResumo GrdNotaCliente
+            DefineCorResumo GrdNotaCliente.row, GrdNotaCliente
             
             dlDesc = Format(Trim(MskDatEmiNf), "##0.00")
     
@@ -6770,7 +6770,7 @@ Private Sub Bto_Aplica_resumo_Click()
     Next
     
     CalculaIndice
-    DefineCorResumo GrdNotaCliente
+    DefineCorResumo GrdNotaCliente.row, GrdNotaCliente
     
     For i = 1 To tubo_conexoes_defofo.rows - 1
         For J = 1 To GrdNotaCliente.rows - 1
@@ -6979,7 +6979,7 @@ Private Sub carregaResumo(row As Integer, grid As MSFlexGrid)
                 Else
                     GrdNotaCliente.RemoveItem (i)
                     CalculaIndice
-                    DefineCorResumo GrdNotaCliente
+                    DefineCorResumo GrdNotaCliente.row, GrdNotaCliente
                     LblSub.Caption = Format(dlTotBru, "##,###,##0.00")
                     LblVlSimples.Caption = Format(dlSimples, "##,###,##0.00")
                     LblTot.Caption = Format(dlTotLiq, "##,###,##0.00")
@@ -7363,11 +7363,11 @@ Private Sub carregaResumo(row As Integer, grid As MSFlexGrid)
     GrdNotaCliente.Refresh
 End Sub
 
-Private Sub DefineCorResumo(grid As MSFlexGrid)
+Private Sub DefineCorResumo(row As Integer, grid As MSFlexGrid)
     
     Dim ilind As Integer
     
-    ilind = grid.rows - 1
+    ilind = row
         
     grid.col = 19
     grid.row = ilind
@@ -7485,7 +7485,7 @@ Private Sub GrdNotaCliente_SelChange()
             CalculaTotalResumo rowAuxGrdNotaCliente, GrdNotaCliente
             'carregaResumo rowAuxTubosConexoesIrriAzuis, tubos_conexoes_irri_azuis
             CalculaIndice
-            DefineCorResumo GrdNotaCliente
+            DefineCorResumo rowAuxGrdNotaCliente, GrdNotaCliente
             AtualizaGridAuxiliar
             houveDigitacaoGrdNotaCliente = False
             auxSelChangeGrdNotaCliente = False
@@ -11347,6 +11347,41 @@ Function CalculaIndice() As Boolean
     '*****************************************************************************************
     
     RecalculaDescontoGrid
+    
+    If bgConsultaPed = True Then
+        
+        sgQuery = "SELECT b.PerCusFin "
+        sgQuery = sgQuery + " from CONDICAO a, CUSTO_CONDICAO b "
+        sgQuery = sgQuery + "  Where a.CodCnd = " & Trim(ilCodCnd)
+        sgQuery = sgQuery + "    and a.codcnd = b.codcnd"
+        sgQuery = sgQuery + "    and b.datativ = (select max(datativ) from CUSTO_CONDICAO"
+        sgQuery = sgQuery + "                      Where Codcnd = b.codcnd"
+        sgQuery = sgQuery + "                        and datativ <= convert(datetime,'" & Trim(Datped) & "',103))"
+        
+        Call Consulta(sgQuery)
+        
+        If Rs.EOF Then
+        
+            MsgBox "Erro na leitura da Condição de Pagamento", vbExclamation + vbOKOnly, "Atenção!"
+            
+            Rs.Close
+            
+            Set Rs = Nothing
+            
+            LimpaGeral
+            
+            Exit Function
+            
+        Else
+        
+            dlPerCusFin = IIf(IsNull(Rs!PerCusFin), 0, Trim(Rs!PerCusFin))
+        
+        End If
+    
+        Rs.Close
+    
+        Set Rs = Nothing
+    End If
 
     '*****************************************************************************************
     'Começa a calcular e compor o grid com os índices do pedido.

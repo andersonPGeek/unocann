@@ -83,9 +83,9 @@ Public Sub AbreConexao()
         
         Select Case sgRepresentante
            Case 2 'Evaldo
-                .ConnectionString = "PROVIDER=SQLOLEDB;SERVER=UNOCANN-PC;DATABASE=Unocann;UID=sa;PWD=unocann2017"
+                '.ConnectionString = "PROVIDER=SQLOLEDB;SERVER=UNOCANN-PC;DATABASE=Unocann;UID=sa;PWD=unocann2017"
                 '.ConnectionString = "PROVIDER=SQLOLEDB;SERVER=201.65.158.20;DATABASE=Unocann;UID=sa;PWD=#unoforte5600!"
-                '.ConnectionString = "PROVIDER=SQLOLEDB;SERVER=UNOMOBILE001\SQLEXPRESS;DATABASE=Unocann;UID=sa;PWD=sysadmpss1"
+                .ConnectionString = "PROVIDER=SQLOLEDB;SERVER=UNOMOBILE001\SQLEXPRESS;DATABASE=Unocann;UID=sa;PWD=sysadmpss1"
            Case 7 'Galvão
                 .ConnectionString = "PROVIDER=SQLOLEDB;SERVER=UNOMOBILE05;DATABASE=Unocann;UID=sa;PWD=sysadmpss1"
            Case 8 'Luciano
