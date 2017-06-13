@@ -1,19 +1,19 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
-Object = "{368CC970-FF03-11D7-9B5A-000B6A03449D}#1.1#0"; "Combo_DB.ocx"
+Object = "{368CC970-FF03-11D7-9B5A-000B6A03449D}#1.1#0"; "Combo_DB.OCX"
 Object = "{F454059D-91FE-11D2-8865-AD1268A0A52F}#2.0#0"; "ActiveDate.ocx"
 Begin VB.Form FrmPosiPed 
    BackColor       =   &H00FFFFFF&
    Caption         =   "Posição de Pedidos"
-   ClientHeight    =   10065
+   ClientHeight    =   8460
    ClientLeft      =   -210
    ClientTop       =   1515
    ClientWidth     =   15240
    LinkTopic       =   "Form1"
    MDIChild        =   -1  'True
    Moveable        =   0   'False
-   ScaleHeight     =   10065
+   ScaleHeight     =   8460
    ScaleWidth      =   15240
    WindowState     =   2  'Maximized
    Begin MSMask.MaskEdBox MskNroPedido 
@@ -311,7 +311,7 @@ Function CompoeGridPed() As Boolean
     Dim blI As Integer
     
     If CboRemet.Criterio <> "" Then
-        ilCodCli = CboRemet.Codigo
+        ilCodCli = CboRemet.codigo
     End If
     
     If MskNroPedido.Text <> "" Then
@@ -330,6 +330,7 @@ Function CompoeGridPed() As Boolean
     sgQuery = sgQuery & "    and a.nroped = b.nroped"
     sgQuery = sgQuery & "    and a.codcli = c.codcli"
     sgQuery = sgQuery & "    and a.codcnd = d.codcnd"
+    sgQuery = sgQuery & "    and Year(a.datped) > 2012"
     
     If MskNroPedido.Text <> "" Then
         sgQuery = sgQuery & "    and a.nroped = '" & Trim(MskNroPedido.Text) & "'"
@@ -363,7 +364,7 @@ Function CompoeGridPed() As Boolean
         MsgBox "Resultado retornou mais de 50 linhas." & Chr(13) & "Favor refazer seu filtro de pesquisa.", vbExclamation + vbOKOnly, "Atenção!"
     End If
     
-    GrdPedido.Rows = 1
+    GrdPedido.rows = 1
     GrdPedido.Visible = False
 
     blI = 0
@@ -376,7 +377,7 @@ Function CompoeGridPed() As Boolean
         
         blI = blI + 1
         
-        GrdPedido.Rows = GrdPedido.Rows + 1
+        GrdPedido.rows = GrdPedido.rows + 1
         GrdPedido.TextMatrix(blI, 0) = Format(Trim(Rs!NroPed), "000000")
         GrdPedido.TextMatrix(blI, 1) = Format(Trim(Rs!Datped), "dd/mm/yyyy")
         GrdPedido.TextMatrix(blI, 2) = Format(Trim(Rs!Codcli), "00000")
@@ -390,18 +391,18 @@ Function CompoeGridPed() As Boolean
         GrdPedido.TextMatrix(blI, 10) = IIf(IsNull(Rs!NroNot), "", Rs!TipNot & Format(Trim(Rs!NroNot), "000000"))
         GrdPedido.TextMatrix(blI, 11) = IIf(IsNull(Rs!DatEmiNot), "", Format(Trim(Rs!DatEmiNot), "dd/mm/yyyy"))
         GrdPedido.TextMatrix(blI, 12) = Rs!codrep
-        GrdPedido.TextMatrix(blI, 13) = IIf(IsNull(Rs!FlgAlt), "", Rs!FlgAlt)
-        GrdPedido.Row = blI
-        GrdPedido.Col = 0
+        GrdPedido.TextMatrix(blI, 13) = IIf(IsNull(Rs!flgalt), "", Rs!flgalt)
+        GrdPedido.row = blI
+        GrdPedido.col = 0
         GrdPedido.CellForeColor = &HFFFF&
         
-        If Trim(Rs!FlgAlt) = "L" Then
+        If Trim(Rs!flgalt) = "L" Then
             
             GrdPedido.CellBackColor = &H800080 'Roxo
             
         Else
         
-            If Trim(Rs!FlgAlt) = "N" Then
+            If Trim(Rs!flgalt) = "N" Then
                 
                 GrdPedido.CellBackColor = &H40C0& 'Marrom
                 GrdPedido.CellForeColor = &HFFFFFF
@@ -414,7 +415,7 @@ Function CompoeGridPed() As Boolean
             
         End If
       
-        GrdPedido.Col = 15
+        GrdPedido.col = 15
         GrdPedido.CellBackColor = &HFFFFFF 'Branco
         
         If Not IsNull(Rs!DatEmiNot) And Trim(Rs!SitPed) <> "U" And Trim(Rs!SitPed) <> "C" Then
@@ -467,6 +468,7 @@ Function CompoeGridPed() As Boolean
     sgQuery = sgQuery & "    and a.nroped = b.nroped"
     sgQuery = sgQuery & "    and a.codcli = c.codcli"
     sgQuery = sgQuery & "    and a.codcnd = d.codcnd"
+    sgQuery = sgQuery & "    and Year(a.datped) > 2012"
     
     If MskNroPedido.Text <> "" Then
         sgQuery = sgQuery & "    and a.nroped = '" & Trim(MskNroPedido.Text) & "'"
@@ -510,7 +512,7 @@ Function CompoeGridPed() As Boolean
    
         blI = blI + 1
    
-        GrdPedido.Rows = GrdPedido.Rows + 1
+        GrdPedido.rows = GrdPedido.rows + 1
         GrdPedido.TextMatrix(blI, 0) = Format(Trim(Rs!NroPed), "000000")
         GrdPedido.TextMatrix(blI, 1) = Format(Trim(Rs!Datped), "dd/mm/yyyy")
         GrdPedido.TextMatrix(blI, 2) = Format(Trim(Rs!Codcli), "00000")
@@ -524,46 +526,46 @@ Function CompoeGridPed() As Boolean
         GrdPedido.TextMatrix(blI, 10) = IIf(IsNull(Rs!NroNot), "", Rs!TipNot & Format(Trim(Rs!NroNot), "000000"))
         GrdPedido.TextMatrix(blI, 11) = IIf(IsNull(Rs!DatEmiNot), "", Format(Trim(Rs!DatEmiNot), "dd/mm/yyyy"))
         GrdPedido.TextMatrix(blI, 12) = Rs!codrep
-        GrdPedido.TextMatrix(blI, 13) = IIf(IsNull(Rs!FlgAlt), "", Rs!FlgAlt)
-        GrdPedido.Row = blI
+        GrdPedido.TextMatrix(blI, 13) = IIf(IsNull(Rs!flgalt), "", Rs!flgalt)
+        GrdPedido.row = blI
         
         If Not IsNull(Rs!DatEnv) And IsNull(Rs!DatEmiNot) Then
             
-            GrdPedido.Col = 0
+            GrdPedido.col = 0
             GrdPedido.CellBackColor = vbYellow
                     
         End If
         
         If Not IsNull(Rs!DatEmiNot) Then
             
-            GrdPedido.Col = 0
+            GrdPedido.col = 0
             GrdPedido.CellBackColor = &HFF00& 'Verde
         
         End If
         
-        If Trim(Rs!FlgAlt) = "A" Then
+        If Trim(Rs!flgalt) = "A" Then
             
             GrdPedido.TextMatrix(blI, 14) = "A"
             
-            GrdPedido.Col = 0
+            GrdPedido.col = 0
             GrdPedido.CellBackColor = &H800080 'Roxo
             GrdPedido.CellForeColor = &HFFFFFF
             
-            GrdPedido.Col = 14
+            GrdPedido.col = 14
             GrdPedido.CellBackColor = &H800080 'Roxo
             GrdPedido.CellForeColor = &HFFFFFF
             
         Else
             
-            If Trim(Rs!FlgAlt) = "O" Then
+            If Trim(Rs!flgalt) = "O" Then
                 
                 GrdPedido.TextMatrix(blI, 14) = "N"
                 
-                GrdPedido.Col = 0
+                GrdPedido.col = 0
                 GrdPedido.CellBackColor = &H40C0& 'Marrom
                 GrdPedido.CellForeColor = &HFFFFFF
                 
-                GrdPedido.Col = 14
+                GrdPedido.col = 14
                 GrdPedido.CellBackColor = &H40C0& 'Marrom
                 GrdPedido.CellForeColor = &HFFFFFF
                 
@@ -571,7 +573,7 @@ Function CompoeGridPed() As Boolean
             
         End If
         
-        GrdPedido.Col = 15
+        GrdPedido.col = 15
         GrdPedido.CellBackColor = &HFFFFFF 'Branco
         
         If Not IsNull(Rs!DatEmiNot) And Trim(Rs!SitPed) <> "U" And Trim(Rs!SitPed) <> "C" Then
@@ -604,7 +606,7 @@ Function CompoeGridPed() As Boolean
         
         If Trim(Rs!SitPed) = "C" Or Trim(Rs!SitPed) = "U" Then
             
-            GrdPedido.Col = 0
+            GrdPedido.col = 0
             GrdPedido.CellBackColor = &H80000012 'Preto
             GrdPedido.CellForeColor = &HFFFF&
             

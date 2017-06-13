@@ -8866,7 +8866,7 @@ Function CarregaTela() As Boolean
         
         
         dlPerComiNeg = Rs!ComiNeg
-        slFlgAlt = IIf(IsNull(Rs!FlgAlt), "", Trim(Rs!FlgAlt))
+        slFlgAlt = IIf(IsNull(Rs!flgalt), "", Trim(Rs!flgalt))
         slClasCor = Rs!ClasCor
         
         If Rs!VlrSimples > 0 Then
@@ -13120,23 +13120,25 @@ Private Sub BtoGrava_Click()
     
     '*********************************************
     'Pedido com apenas tubo de 100 não pode ser gravado
+    'A não ser que sua margem supere os 9%
     '***********************************************
     
-    If bSo100 = True Then
-        MsgBox "Pedido com item apenas TUBO DE 100MM," & vbCr & _
-        "não pode ser gravado," & vbCr & _
-        "inclua novos itens ou feche o Pedido!", vbExclamation + vbOKOnly, "Atenção!"
-     '   MskNroPedido
-        Exit Sub
+    If MskMargem.Texto < 9 Then
+        If bSo100 = True Then
+            MsgBox "Pedido com item apenas TUBO DE 100MM," & vbCr & _
+            "não pode ser gravado," & vbCr & _
+            "inclua novos itens ou feche o Pedido!", vbExclamation + vbOKOnly, "Atenção!"
+         '   MskNroPedido
+            Exit Sub
+        End If
+        
+        If (dlTotLiq * 0.7) < dTotb100 Then
+            MsgBox "Esse Pedido está com item TUBO DE 100MM," & vbCr & _
+            "maior que 70% do total permitido para venda!", vbExclamation + vbOKOnly, "Atenção!"
+         '   MskNroPedido
+            Exit Sub
+        End If
     End If
-    
-    If (dlTotLiq * 0.7) < dTotb100 Then
-        MsgBox "Esse Pedido está com item TUBO DE 100MM," & vbCr & _
-        "maior que 70% do total permitido para venda!", vbExclamation + vbOKOnly, "Atenção!"
-     '   MskNroPedido
-        Exit Sub
-    End If
-    
     
     
     '*****************************************************************************************
