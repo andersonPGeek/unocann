@@ -8101,7 +8101,7 @@ Function GravaCTRCTMK()
         '@MgrMin decimal(6, 3) ,
         .Parameters(13).Value = Format(Trim(LblI.Caption), "########.###")
         '@MgrTot decimal(6, 3) ,
-        .Parameters(14).Value = Format(Trim(MskMargem.Texto), "####.##")
+        .Parameters(14).Value = Format(Trim(MskMargem.CampoDb), "####.##")
         '@IdxFin decimal(6, 3) ,
         .Parameters(15).Value = dlPerCusFin
         '@IdxFrt decimal(6, 3) ,
@@ -9438,7 +9438,7 @@ Function GravaCTRC()
         '@MgrMin decimal(6, 3) ,
         .Parameters(13).Value = 0 'Format(Trim(LblI.Caption), "########.###")
         '@MgrTot decimal(6, 3) ,
-        .Parameters(14).Value = Format(Trim(MskMargem.Texto), "####.##")
+        .Parameters(14).Value = Format(Trim(MskMargem.CampoDb), "####.##")
         '@IdxFin decimal(6, 3) ,
         .Parameters(15).Value = dlPerCusFin
         '@IdxFrt decimal(6, 3) ,
@@ -9492,7 +9492,7 @@ Function GravaCTRC()
         If Trim(slFlgAlt) = "" Then
             
             If iDscForaRegiao >= 1 Then
-               If MskMargem.Texto < 9 Then
+               If MskMargem.CampoDb < 9 Then
                   .Parameters(29).Value = "F"
                Else
                   .Parameters(29).Value = Null
@@ -12491,7 +12491,7 @@ Private Sub CalculaMargem(grid As MSFlexGrid)
 
 TrataErro:
 
-    Rotina_Erro "CalculaIndice"
+    'Rotina_Erro "CalculaIndice"
 End Sub
 
 Function EnableLinhaNF()
@@ -13123,7 +13123,7 @@ Private Sub BtoGrava_Click()
     'A não ser que sua margem supere os 9%
     '***********************************************
     
-    If MskMargem.Texto < 9 Then
+    If MskMargem.CampoDb < 9 Then
         If bSo100 = True Then
             MsgBox "Pedido com item apenas TUBO DE 100MM," & vbCr & _
             "não pode ser gravado," & vbCr & _
@@ -13258,7 +13258,7 @@ Private Sub BtoGrava_Click()
             
             If Date >= CDate("04/02/2017") Then
                 
-                If MskMargem.Texto <= 7.99 Then
+                If MskMargem.CampoDb <= 7.99 Then
                     MsgBox "Esse pedido está FORA da política comercial da Unocann. " & vbCrLf & _
                     "Corrija os descontos praticados até que essa mensagem não apareça.", vbCritical, "Atenção!"
                     
@@ -13266,7 +13266,7 @@ Private Sub BtoGrava_Click()
                 
                     Exit Sub
                 
-                ElseIf MskMargem.Texto > 8 And MskMargem.Texto <= 8.5 Then
+                ElseIf MskMargem.CampoDb > 8 And MskMargem.CampoDb <= 8.5 Then
                 
                     MsgBox "Esse pedido está PRÓXIMO da política comercial da Unocann. " & vbCrLf & vbCrLf & _
                     "Reveja os descontos praticados e mix de produtos até que a cor fique VERDE.", vbInformation, "Atenção!"
@@ -13283,7 +13283,7 @@ Private Sub BtoGrava_Click()
             
             Else
             
-                If MskMargem.Texto <= 7 Then
+                If MskMargem.CampoDb <= 7 Then
                     MsgBox "Esse pedido está FORA da política comercial da Unocann. " & vbCrLf & _
                     "Corrija os descontos praticados até que essa mensagem não apareça.", vbCritical, "Atenção!"
                     
@@ -13291,7 +13291,7 @@ Private Sub BtoGrava_Click()
                 
                     Exit Sub
                 
-                ElseIf MskMargem.Texto > 7 And MskMargem.Texto <= 8.5 Then
+                ElseIf MskMargem.CampoDb > 7 And MskMargem.CampoDb <= 8.5 Then
                 
                     MsgBox "Esse pedido está PRÓXIMO da política comercial da Unocann. " & vbCrLf & vbCrLf & _
                     "Reveja os descontos praticados e mix de produtos até que a cor fique VERDE.", vbInformation, "Atenção!"
@@ -13435,7 +13435,7 @@ Private Sub BtoSair_Click()
             Else
                 If iDscForaRegiao > 1 Then
                 
-                    If MskMargem.Texto <= 7 Then
+                    If MskMargem.CampoDb <= 7 Then
                 
                     MsgBox "Esse pedido está FORA da política comercial da Unocann. " & vbCrLf & _
                                       "Corrija os descontos praticados até que essa mensagem não apareça.", vbCritical, "Atenção!"
@@ -13447,7 +13447,7 @@ Private Sub BtoSair_Click()
                         Exit Sub
                    ' End If
                 
-                ElseIf MskMargem.Texto >= 7 And MskMargem.Texto <= 9 Then
+                ElseIf MskMargem.CampoDb >= 7 And MskMargem.CampoDb <= 9 Then
                 
                      MsgBox "Esse pedido está PRÓXIMO da política comercial da Unocann. " & vbCrLf & _
                              "Reveja os descontos praticados e mix de produtos para facilitar a liberação." & vbCrLf & vbCrLf & _
@@ -14084,7 +14084,7 @@ Private Sub Form_Load()
     End If
     
     'TUBOS E CONEXÕES COLETOR ESGOTO OCRE
-    CarregaGrid "531,530,532,591,245,246,247,593,403,1093,439,633,1207,508,442,273,444,325,211,335,495,435,516,515,221,513,251,433,324,252,501,509,253,285,511,470,510,499,494", tubo_tubos_conexoes_coletor_esgoto
+    CarregaGrid "463,531,530,532,591,245,246,247,593,403,1093,439,633,1207,508,442,273,444,325,211,335,495,435,516,515,221,513,251,433,324,252,501,509,253,285,511,470,510,499,494", tubo_tubos_conexoes_coletor_esgoto
     ConfiguraFlexGrid tubo_tubos_conexoes_coletor_esgoto
     DefineClassificacao tubo_tubos_conexoes_coletor_esgoto
     

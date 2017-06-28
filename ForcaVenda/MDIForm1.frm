@@ -2,9 +2,9 @@ VERSION 5.00
 Begin VB.MDIForm MDIProjUNO 
    BackColor       =   &H8000000C&
    Caption         =   "V1.05 -  U N O C A N N   T U B O S   E   C O N E X Õ E S  -  Força de Venda    "
-   ClientHeight    =   9690
+   ClientHeight    =   7860
    ClientLeft      =   165
-   ClientTop       =   840
+   ClientTop       =   -690
    ClientWidth     =   13035
    LinkTopic       =   "MDIForm1"
    MousePointer    =   99  'Custom
@@ -357,7 +357,7 @@ Private Sub mnuInterface_Click()
     End If
 
 End If
-   FrmInterface.Show
+   'FrmInterface.Show
     
 End Sub
 

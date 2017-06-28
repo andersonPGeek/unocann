@@ -1,6 +1,6 @@
-MdlConectaDb = 67, 85, 858, 653, Z
+MdlConectaDb = 67, 85, 858, 653, 
 MdlVariaveis = 132, 132, 847, 702, 
-FrmConhecimento = 13, 1, 860, 613, , -7, 12, 1082, 626, C
+FrmConhecimento = 13, 1, 860, 613, Z, -7, 12, 1082, 626, C
 MDIProjUNO = 58, 23, 861, 580, , 100, 100, 979, 535, C
 FrmInterface = -71, 30, 951, 644, , 125, 125, 1004, 560, C
 FrmAcessar = 66, 87, 776, 510, , 50, 50, 929, 485, C
