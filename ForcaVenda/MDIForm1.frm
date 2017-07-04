@@ -181,6 +181,26 @@ End Sub
 
 Private Sub MDIForm_Load()
        
+    On Error GoTo TrataErro
+    
+    Dim fso As FileSystemObject
+    Dim ts As TextStream
+    Dim final As String
+    Set fso = New FileSystemObject
+    Set ts = fso.OpenTextFile("C:\Forca\VERSAOLOCAL.txt", ForReading)
+    Do Until ts.AtEndOfStream
+        TempS = ts.ReadLine
+    Loop
+    ts.Close
+
+    Me.Caption = "V1." & TempS & " - U N O C A N N   T U B O S   E   C O N E X Õ E S  -  Força de Venda    "
+    
+TrataErro:
+    If Err.Number = 53 Then
+        TempS = "0"
+        Me.Caption = "V1." & TempS & " - U N O C A N N   T U B O S   E   C O N E X Õ E S  -  Força de Venda    "
+    End If
+    
     '*****************************************************************************
     'Zera o código do representante se o usuário logado for um Administrador.
     '*****************************************************************************
@@ -357,7 +377,8 @@ Private Sub mnuInterface_Click()
     End If
 
 End If
-   'FrmInterface.Show
+    
+    FrmInterface.Show
     
 End Sub
 
