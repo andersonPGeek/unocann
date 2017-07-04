@@ -4635,7 +4635,12 @@ Private Sub GrdNotaCliente_KeyDown(KeyCode As Integer, Shift As Integer)
         
         If sgQuery = vbYes Or sgQuery = vbOK Then
             LimpaRegistroGridAuxiliar GrdNotaCliente.TextMatrix(row, 0)
-            GrdNotaCliente.RemoveItem row
+            If GrdNotaCliente.rows = 2 Then
+                GrdNotaCliente.rows = GrdNotaCliente.rows - 1
+            Else
+                GrdNotaCliente.RemoveItem row
+            End If
+            
             CalculaIndice
             Exit Sub
         End If
