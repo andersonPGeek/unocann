@@ -6662,7 +6662,7 @@ Private Sub LimpaRegistroGridAuxiliar(codigo As Integer)
         If tubo_conexoes_defofo.TextMatrix(i, 1) = codigo Then
             tubo_conexoes_defofo.TextMatrix(i, 6) = 0
             tubo_conexoes_defofo.TextMatrix(i, 4) = 0
-            tubo_conexoes_defofo.TextMatrix(i, 7) = Format$(0, "Currency")
+            tubo_conexoes_defofo.TextMatrix(i, 7) = tubo_conexoes_defofo.TextMatrix(i, 5)
             CalculaTotal i, tubo_conexoes_defofo
             Exit Sub
         End If
@@ -6672,7 +6672,7 @@ Private Sub LimpaRegistroGridAuxiliar(codigo As Integer)
         If tubos_conexoes_irri_azuis.TextMatrix(i, 1) = codigo Then
             tubos_conexoes_irri_azuis.TextMatrix(i, 6) = 0
             tubos_conexoes_irri_azuis.TextMatrix(i, 4) = 0
-            tubos_conexoes_irri_azuis.TextMatrix(i, 7) = Format$(0, "Currency")
+            tubos_conexoes_irri_azuis.TextMatrix(i, 7) = tubos_conexoes_irri_azuis.TextMatrix(i, 5)
             CalculaTotal i, tubos_conexoes_irri_azuis
             Exit Sub
         End If
@@ -6682,7 +6682,7 @@ Private Sub LimpaRegistroGridAuxiliar(codigo As Integer)
         If tubos_conexoes_roscaveis.TextMatrix(i, 1) = codigo Then
             tubos_conexoes_roscaveis.TextMatrix(i, 6) = 0
             tubos_conexoes_roscaveis.TextMatrix(i, 4) = 0
-            tubos_conexoes_roscaveis.TextMatrix(i, 7) = Format$(0, "Currency")
+            tubos_conexoes_roscaveis.TextMatrix(i, 7) = tubos_conexoes_roscaveis.TextMatrix(i, 5)
             CalculaTotal i, tubos_conexoes_roscaveis
             Exit Sub
         End If
@@ -6692,7 +6692,7 @@ Private Sub LimpaRegistroGridAuxiliar(codigo As Integer)
         If tubos_conexoes_predial.TextMatrix(i, 1) = codigo Then
             tubos_conexoes_predial.TextMatrix(i, 6) = 0
             tubos_conexoes_predial.TextMatrix(i, 4) = 0
-            tubos_conexoes_predial.TextMatrix(i, 7) = Format$(0, "Currency")
+            tubos_conexoes_predial.TextMatrix(i, 7) = tubos_conexoes_predial.TextMatrix(i, 5)
             CalculaTotal i, tubos_conexoes_predial
             Exit Sub
         End If
@@ -6702,7 +6702,7 @@ Private Sub LimpaRegistroGridAuxiliar(codigo As Integer)
         If tubo_tubos_conexoes_coletor_esgoto.TextMatrix(i, 1) = codigo Then
             tubo_tubos_conexoes_coletor_esgoto.TextMatrix(i, 6) = 0
             tubo_tubos_conexoes_coletor_esgoto.TextMatrix(i, 4) = 0
-            tubo_tubos_conexoes_coletor_esgoto.TextMatrix(i, 7) = Format$(0, "Currency")
+            tubo_tubos_conexoes_coletor_esgoto.TextMatrix(i, 7) = tubo_tubos_conexoes_coletor_esgoto.TextMatrix(i, 5)
             CalculaTotal i, tubo_tubos_conexoes_coletor_esgoto
             Exit Sub
         End If
@@ -6712,7 +6712,7 @@ Private Sub LimpaRegistroGridAuxiliar(codigo As Integer)
         If tubo_conexoes_pba.TextMatrix(i, 1) = codigo Then
             tubo_conexoes_pba.TextMatrix(i, 6) = 0
             tubo_conexoes_pba.TextMatrix(i, 4) = 0
-            tubo_conexoes_pba.TextMatrix(i, 7) = Format$(0, "Currency")
+            tubo_conexoes_pba.TextMatrix(i, 7) = tubo_conexoes_pba.TextMatrix(i, 5)
             CalculaTotal i, tubo_conexoes_pba
             Exit Sub
         End If
@@ -6722,7 +6722,7 @@ Private Sub LimpaRegistroGridAuxiliar(codigo As Integer)
         If tubos_conexoes_agua.TextMatrix(i, 1) = codigo Then
             tubos_conexoes_agua.TextMatrix(i, 6) = 0
             tubos_conexoes_agua.TextMatrix(i, 4) = 0
-            tubos_conexoes_agua.TextMatrix(i, 7) = Format$(0, "Currency")
+            tubos_conexoes_agua.TextMatrix(i, 7) = tubos_conexoes_agua.TextMatrix(i, 5)
             CalculaTotal i, tubos_conexoes_agua
             Exit Sub
         End If
