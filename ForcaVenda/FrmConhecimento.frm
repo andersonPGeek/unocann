@@ -11199,19 +11199,6 @@ End Function
 
 Function CalculaIndice() As Boolean
 
-    sgQuery = " SELECT COUNT(*) contador "
-    sgQuery = sgQuery + " From log_pedidos "
-    sgQuery = sgQuery + " WHERE NroPedido = '" & MskNroPedido.Text & "'"
-    
-    Call Consulta(sgQuery)
-    
-    If Rs!contador > 0 Then
-    
-        sgQuery = "DELETE log_pedidos WHERE NroPedido = '" & MskNroPedido.Text & "'"
-        
-        Conexao.Execute sgQuery
-    
-    End If
     '*************************************************************************************
     'Rotina responsável por calcular os índices de custos e margem de lucro que ficam além
     'das margens do formulário visíveis aos representantes.
@@ -11876,59 +11863,6 @@ Function CalculaIndice() As Boolean
             GrdIndice.CellBackColor = &HFF&
         End If
         
-        sgQuery = "INSERT INTO log_pedidos ("
-        sgQuery = sgQuery + "NroPedido,"
-        sgQuery = sgQuery + "CodProduto ,"
-        sgQuery = sgQuery + "NomeProduto ,"
-        sgQuery = sgQuery + "ilSumQtd ,"
-        sgQuery = sgQuery + "IdxFix ,"
-        sgQuery = sgQuery + "dlPerCusFin ,"
-        sgQuery = sgQuery + "dlPerComiCalc ,"
-        sgQuery = sgQuery + "dlPerCusFrtCalc ,"
-        sgQuery = sgQuery + "dlIdxPDD ,"
-        sgQuery = sgQuery + "dlMrgPrd ,"
-        sgQuery = sgQuery + "PerCusIcm ,"
-        sgQuery = sgQuery + "dlCusUntQtd ,"
-        sgQuery = sgQuery + "dlCusAdiQtd ,"
-        sgQuery = sgQuery + "dlAlqImpFed ,"
-        sgQuery = sgQuery + "ValCusUnt ,"
-        sgQuery = sgQuery + "dlSumPes ,"
-        sgQuery = sgQuery + "dlSumGrd ,"
-        sgQuery = sgQuery + "slPedSimples ,"
-        sgQuery = sgQuery + "blVlUnt ,"
-        sgQuery = sgQuery + "data,"
-        sgQuery = sgQuery + "condicao,"
-        sgQuery = sgQuery + "SlTabela,"
-        sgQuery = sgQuery + "PerCusFin,"
-        sgQuery = sgQuery + "dlValMargem ) VALUES ( "
-        sgQuery = sgQuery + "'" & MskNroPedido.Text & "',"
-        sgQuery = sgQuery + "" & GrdIndice.TextMatrix(ilI, 0) & ","
-        sgQuery = sgQuery + "'" & GrdIndice.TextMatrix(ilI, 1) & "',"
-        sgQuery = sgQuery + "'" & ilSumQtd & "',"
-        sgQuery = sgQuery + "'" & GrdIndice.TextMatrix(ilI, 2) & "',"
-        sgQuery = sgQuery + "'" & dlPerCusFin & "',"
-        sgQuery = sgQuery + "'" & dlPerComiCalc & "',"
-        sgQuery = sgQuery + "'" & dlPerCusFrtCalc & "',"
-        sgQuery = sgQuery + "'" & dlIdxPDD & "',"
-        sgQuery = sgQuery + "'" & dlMrgPrd & "',"
-        sgQuery = sgQuery + "'" & PerCusIcm & "',"
-        sgQuery = sgQuery + "'" & dlCusUntQtd & "',"
-        sgQuery = sgQuery + "'" & dlCusAdiQtd & "',"
-        sgQuery = sgQuery + "'" & dlAlqImpFed & "',"
-        sgQuery = sgQuery + "'" & Rs!ValCusUnt & "',"
-        sgQuery = sgQuery + "'" & dlSumPes & "',"
-        sgQuery = sgQuery + "'" & dlSumGrd & "',"
-        sgQuery = sgQuery + "'" & slPedSimples & "',"
-        sgQuery = sgQuery + "'" & blVlUnt & "',"
-        sgQuery = sgQuery + " GETDATE(),"
-        sgQuery = sgQuery + "'" & ilCodCnd & "',"
-        sgQuery = sgQuery + "'" & SlTabela & "',"
-        sgQuery = sgQuery + "'" & dlPerCusFin & "',"
-        sgQuery = sgQuery + "'" & Round(dlValMargem, 7) & "'"
-        sgQuery = sgQuery + ")"
-        
-        Conexao.Execute sgQuery
-        
         Rs.Close
             
         Set Rs = Nothing
@@ -11975,19 +11909,6 @@ Function CalculaIndice() As Boolean
     
     MskMargem.Texto = dlMargemGeral
     
-    sgQuery = " SELECT COUNT(*) contador "
-    sgQuery = sgQuery + " From log_pedidos "
-    sgQuery = sgQuery + " WHERE NroPedido = '" & MskNroPedido.Text & "'"
-    
-    Call Consulta(sgQuery)
-    
-    If Rs!contador > 0 Then
-    
-        sgQuery = "UPDATE log_pedidos SET dlMargemGeral = '" & Round(dlMargemGeral, 7) & "' WHERE NroPedido = '" & MskNroPedido.Text & "'"
-        
-        Conexao.Execute sgQuery
-    
-    End If
     
     '*****************************************************************************************
     'Se a margem geral for maior que zero, seu valor será exibido com fonte verde. Se a margem
