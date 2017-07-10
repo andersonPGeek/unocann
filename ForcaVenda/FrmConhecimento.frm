@@ -11782,7 +11782,7 @@ Function CalculaIndice() As Boolean
         '*************************************************************************************
         
         If blVlUnt = True Then
-        
+            
             '*********************************************************************************
             'Calcula outros custos multiplicando o preço líqüido do produto pelo fator de
             'cálculo e dividinho o resultado por 100. Essa conta faz sentido, já que o fator
@@ -11810,7 +11810,18 @@ Function CalculaIndice() As Boolean
             'Calcula a margem real de lucro (em percentual) dividindo o valor do lucro em
             'moeda pelo preço total líqüido e dividindo seu resultado por 100.
             '*********************************************************************************
-            dlMargemReal = (dlValMargem / dlSumGrd) * 100
+            
+            '*********************************************************************************
+            'Trecho incluido para contemplar o novo grupo 3500 09/07
+            '*********************************************************************************
+            'dlMargemReal = (dlValMargem / dlSumGrd) * 100
+            
+            If ilIdeGrp = 3500 Then
+               dlMargemReal = ((dlSumGrd / dVlrMin) - 1) * 100
+                               
+            Else
+                dlMargemReal = (dlValMargem / dlSumGrd) * 100
+            End If
             
         Else
             
