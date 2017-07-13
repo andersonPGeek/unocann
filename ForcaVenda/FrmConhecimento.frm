@@ -4304,6 +4304,7 @@ Dim MskDatEmiNf As Double   'Desconto
 Dim MskNumNf As String      'Código do produto
 Dim ControleLostFocus As Boolean
 Dim ControleAtualizaGrid As Boolean
+Dim ControleDeleteItemAbaResumo As Boolean
 
 Private Sub CboCondPag_KeyPress(KeyAscii As Integer)
 
@@ -4641,6 +4642,9 @@ Private Sub GrdNotaCliente_KeyDown(KeyCode As Integer, Shift As Integer)
                 GrdNotaCliente.RemoveItem row
             End If
             
+            'Variável define que houve retirada de item da aba resumo
+            ControleDeleteItemAbaResumo = True
+                
             CalculaIndice
             Exit Sub
         End If
@@ -5300,7 +5304,10 @@ Private Sub GrdNotaCliente_KeyPress(KeyAscii As Integer)
             'CalculaTotalResumo GrdNotaCliente.row, GrdNotaCliente
             'CalculaIndice
             AtualizaGridAuxiliar rowAuxGrdNotaCliente
-            DefineCorResumo GrdNotaCliente.row, GrdNotaCliente
+            
+            If ControleDeleteItemAbaResumo = False Then
+                DefineCorResumo GrdNotaCliente.row, GrdNotaCliente
+            End If
             
             dlDesc = Format(Trim(MskDatEmiNf), "##0.00")
     
@@ -6524,6 +6531,7 @@ Private Sub AtualizaGridAuxiliar(row As Integer)
             CalculaTotal i, tubo_conexoes_defofo
             ControleAtualizaGrid = True
             carregaResumo i, tubo_conexoes_defofo
+            Exit Sub
         End If
     Next
     
@@ -6536,6 +6544,7 @@ Private Sub AtualizaGridAuxiliar(row As Integer)
             CalculaTotal i, tubos_conexoes_irri_azuis
             ControleAtualizaGrid = True
             carregaResumo i, tubos_conexoes_irri_azuis
+            Exit Sub
         End If
     Next
     
@@ -6548,6 +6557,7 @@ Private Sub AtualizaGridAuxiliar(row As Integer)
             CalculaTotal i, tubos_conexoes_roscaveis
             ControleAtualizaGrid = True
             carregaResumo i, tubos_conexoes_roscaveis
+            Exit Sub
         End If
     Next
     
@@ -6560,6 +6570,7 @@ Private Sub AtualizaGridAuxiliar(row As Integer)
             CalculaTotal i, tubos_conexoes_predial
             ControleAtualizaGrid = True
             carregaResumo i, tubos_conexoes_predial
+            Exit Sub
         End If
     Next
     
@@ -6572,6 +6583,7 @@ Private Sub AtualizaGridAuxiliar(row As Integer)
             CalculaTotal i, tubo_tubos_conexoes_coletor_esgoto
             ControleAtualizaGrid = True
             carregaResumo i, tubo_tubos_conexoes_coletor_esgoto
+            Exit Sub
         End If
     Next
     
@@ -6584,6 +6596,7 @@ Private Sub AtualizaGridAuxiliar(row As Integer)
             CalculaTotal i, tubo_conexoes_pba
             ControleAtualizaGrid = True
             carregaResumo i, tubo_conexoes_pba
+            Exit Sub
         End If
     Next
     
@@ -6596,6 +6609,7 @@ Private Sub AtualizaGridAuxiliar(row As Integer)
             CalculaTotal i, tubos_conexoes_agua
             ControleAtualizaGrid = True
             carregaResumo i, tubos_conexoes_agua
+            Exit Sub
         End If
     Next
     
@@ -6863,7 +6877,7 @@ Private Sub CarregaGridConsulta()
                 tubo_conexoes_defofo.TextMatrix(i, 6) = GrdNotaCliente.TextMatrix(J, 6)
                 tubo_conexoes_defofo.TextMatrix(i, 7) = Format$((tubo_conexoes_defofo.TextMatrix(i, 5) - ((tubo_conexoes_defofo.TextMatrix(i, 5) * GrdNotaCliente.TextMatrix(J, 6)) / 100)), "Currency")
                 tubo_conexoes_defofo.TextMatrix(i, 4) = GrdNotaCliente.TextMatrix(J, 3)
-                tubo_conexoes_defofo.TextMatrix(i, 8) = Format$(GrdNotaCliente.TextMatrix(J, 9), "Currency")
+                CalculaTotal i, tubo_conexoes_defofo
             End If
         Next
     Next
@@ -6874,7 +6888,7 @@ Private Sub CarregaGridConsulta()
                 tubos_conexoes_irri_azuis.TextMatrix(i, 6) = GrdNotaCliente.TextMatrix(J, 6)
                 tubos_conexoes_irri_azuis.TextMatrix(i, 7) = Format$((tubos_conexoes_irri_azuis.TextMatrix(i, 5) - ((tubos_conexoes_irri_azuis.TextMatrix(i, 5) * GrdNotaCliente.TextMatrix(J, 6)) / 100)), "Currency")
                 tubos_conexoes_irri_azuis.TextMatrix(i, 4) = GrdNotaCliente.TextMatrix(J, 3)
-                tubos_conexoes_irri_azuis.TextMatrix(i, 8) = Format$(GrdNotaCliente.TextMatrix(J, 9), "Currency")
+                CalculaTotal i, tubos_conexoes_irri_azuis
             End If
         Next
     Next
@@ -6885,7 +6899,7 @@ Private Sub CarregaGridConsulta()
                 tubos_conexoes_roscaveis.TextMatrix(i, 6) = GrdNotaCliente.TextMatrix(J, 6)
                 tubos_conexoes_roscaveis.TextMatrix(i, 7) = Format$((tubos_conexoes_roscaveis.TextMatrix(i, 5) - ((tubos_conexoes_roscaveis.TextMatrix(i, 5) * GrdNotaCliente.TextMatrix(J, 6)) / 100)), "Currency")
                 tubos_conexoes_roscaveis.TextMatrix(i, 4) = GrdNotaCliente.TextMatrix(J, 3)
-                tubos_conexoes_roscaveis.TextMatrix(i, 8) = Format$(GrdNotaCliente.TextMatrix(J, 9), "Currency")
+                CalculaTotal i, tubos_conexoes_roscaveis
             End If
         Next
     Next
@@ -6896,7 +6910,7 @@ Private Sub CarregaGridConsulta()
                 tubos_conexoes_predial.TextMatrix(i, 6) = GrdNotaCliente.TextMatrix(J, 6)
                 tubos_conexoes_predial.TextMatrix(i, 7) = Format$((tubos_conexoes_predial.TextMatrix(i, 5) - ((tubos_conexoes_predial.TextMatrix(i, 5) * GrdNotaCliente.TextMatrix(J, 6)) / 100)), "Currency")
                 tubos_conexoes_predial.TextMatrix(i, 4) = GrdNotaCliente.TextMatrix(J, 3)
-                tubos_conexoes_predial.TextMatrix(i, 8) = Format$(GrdNotaCliente.TextMatrix(J, 9), "Currency")
+                CalculaTotal i, tubos_conexoes_predial
             End If
         Next
     Next
@@ -6907,7 +6921,7 @@ Private Sub CarregaGridConsulta()
                 tubo_tubos_conexoes_coletor_esgoto.TextMatrix(i, 6) = GrdNotaCliente.TextMatrix(J, 6)
                 tubo_tubos_conexoes_coletor_esgoto.TextMatrix(i, 7) = Format$((tubo_tubos_conexoes_coletor_esgoto.TextMatrix(i, 5) - ((tubo_tubos_conexoes_coletor_esgoto.TextMatrix(i, 5) * GrdNotaCliente.TextMatrix(J, 6)) / 100)), "Currency")
                 tubo_tubos_conexoes_coletor_esgoto.TextMatrix(i, 4) = GrdNotaCliente.TextMatrix(J, 3)
-                tubo_tubos_conexoes_coletor_esgoto.TextMatrix(i, 8) = Format$(GrdNotaCliente.TextMatrix(J, 9), "Currency")
+                CalculaTotal i, tubo_tubos_conexoes_coletor_esgoto
             End If
         Next
     Next
@@ -6918,7 +6932,7 @@ Private Sub CarregaGridConsulta()
                 tubo_conexoes_pba.TextMatrix(i, 6) = GrdNotaCliente.TextMatrix(J, 6)
                 tubo_conexoes_pba.TextMatrix(i, 7) = Format$((tubo_conexoes_pba.TextMatrix(i, 5) - ((tubo_conexoes_pba.TextMatrix(i, 5) * GrdNotaCliente.TextMatrix(J, 6)) / 100)), "Currency")
                 tubo_conexoes_pba.TextMatrix(i, 4) = GrdNotaCliente.TextMatrix(J, 3)
-                tubo_conexoes_pba.TextMatrix(i, 8) = Format$(GrdNotaCliente.TextMatrix(J, 9), "Currency")
+                CalculaTotal i, tubo_conexoes_pba
             End If
         Next
     Next
@@ -6929,7 +6943,7 @@ Private Sub CarregaGridConsulta()
                 tubos_conexoes_agua.TextMatrix(i, 6) = GrdNotaCliente.TextMatrix(J, 6)
                 tubos_conexoes_agua.TextMatrix(i, 7) = Format$((tubos_conexoes_agua.TextMatrix(i, 5) - ((tubos_conexoes_agua.TextMatrix(i, 5) * GrdNotaCliente.TextMatrix(J, 6)) / 100)), "Currency")
                 tubos_conexoes_agua.TextMatrix(i, 4) = GrdNotaCliente.TextMatrix(J, 3)
-                tubos_conexoes_agua.TextMatrix(i, 8) = Format$(GrdNotaCliente.TextMatrix(J, 9), "Currency")
+                CalculaTotal i, tubos_conexoes_agua
             End If
         Next
     Next
@@ -6971,6 +6985,9 @@ Private Sub carregaResumo(row As Integer, grid As MSFlexGrid)
     
     rowsResumo = GrdNotaCliente.rows
     
+    'Variável define que não houve retirada de item da aba resumo
+    ControleDeleteItemAbaResumo = False
+    
     If rowsResumo > 1 Then
         For i = 1 To GrdNotaCliente.rows - 1
             If GrdNotaCliente.TextMatrix(i, 0) = Format(grid.TextMatrix(row, 1), "0000") And GrdNotaCliente.TextMatrix(i, 6) = Format(grid.TextMatrix(row, 6), "##0.00") And GrdNotaCliente.TextMatrix(i, 3) = grid.TextMatrix(row, 4) And ControleAtualizaGrid = False Then
@@ -6980,6 +6997,7 @@ Private Sub carregaResumo(row As Integer, grid As MSFlexGrid)
             If GrdNotaCliente.TextMatrix(i, 0) = Format(grid.TextMatrix(row, 1), "0000") And grid.TextMatrix(row, 4) = 0 Then
                 If GrdNotaCliente.rows = 2 Then
                     GrdNotaCliente.rows = GrdNotaCliente.rows - 1
+                    CalculaIndice
                     LblSub.Caption = Format(0, "##,###,##0.00")
                     LblVlSimples.Caption = Format(0, "##,###,##0.00")
                     LblTot.Caption = Format(0, "##,###,##0.00")
@@ -6987,13 +7005,15 @@ Private Sub carregaResumo(row As Integer, grid As MSFlexGrid)
                 Else
                     GrdNotaCliente.RemoveItem (i)
                     CalculaIndice
-                    DefineCorResumo GrdNotaCliente.row, GrdNotaCliente
                     LblSub.Caption = Format(dlTotBru, "##,###,##0.00")
                     LblVlSimples.Caption = Format(dlSimples, "##,###,##0.00")
                     LblTot.Caption = Format(dlTotLiq, "##,###,##0.00")
                     LblDesc.Caption = Format(dlTotBru - (dlTotLiq + dlSimples), "##,###,##0.00")
                 End If
-                'grid_resumo.Rows = grid_resumo.Rows - 1
+                
+                'Variável define que houve retirada de item da aba resumo
+                ControleDeleteItemAbaResumo = True
+                
                 Exit Sub
             End If
             
@@ -7004,6 +7024,8 @@ Private Sub carregaResumo(row As Integer, grid As MSFlexGrid)
                     GrdNotaCliente.RemoveItem (i)
                     GrdNotaCliente.Refresh
                 End If
+                'Variável define que houve retirada de item da aba resumo
+                ControleDeleteItemAbaResumo = True
                 Exit For
             End If
             
@@ -7014,6 +7036,8 @@ Private Sub carregaResumo(row As Integer, grid As MSFlexGrid)
                     GrdNotaCliente.RemoveItem (i)
                     GrdNotaCliente.Refresh
                 End If
+                'Variável define que houve retirada de item da aba resumo
+                ControleDeleteItemAbaResumo = True
                 Exit For
             End If
             
@@ -7494,7 +7518,11 @@ Private Sub GrdNotaCliente_SelChange()
             'carregaResumo rowAuxTubosConexoesIrriAzuis, tubos_conexoes_irri_azuis
             'CalculaIndice
             AtualizaGridAuxiliar rowAuxGrdNotaCliente
-            DefineCorResumo rowAuxGrdNotaCliente, GrdNotaCliente
+            
+            If ControleDeleteItemAbaResumo = False Then
+                DefineCorResumo rowAuxGrdNotaCliente, GrdNotaCliente
+            End If
+            
             houveDigitacaoGrdNotaCliente = False
             auxSelChangeGrdNotaCliente = False
         End If
@@ -7621,34 +7649,83 @@ Private Sub CarregaTemporaria()
 
     Dim sql_tmp As String
     
-    'CRIANDO TABELA TEMPORÁRIA DE PRODUTOS
-    sql_tmp = "INSERT INTO tmp_produto ("
-    sql_tmp = sql_tmp & " CODIGO,"
-    sql_tmp = sql_tmp & " PRODUTO,"
-    sql_tmp = sql_tmp & " EMBALAGEM,"
-    sql_tmp = sql_tmp & " QUANTIDADE,"
-    sql_tmp = sql_tmp & " TABELA,"
-    sql_tmp = sql_tmp & " DESCONTO,"
-    sql_tmp = sql_tmp & " PRECO_UNITARIO,"
-    sql_tmp = sql_tmp & " VALOR_TOTAL,"
-    sql_tmp = sql_tmp & " SITUACAO,"
-    sql_tmp = sql_tmp & " CUSTO,"
-    sql_tmp = sql_tmp & " CUSTO_TOTAL,"
-    sql_tmp = sql_tmp & " IdeGrp,"
-    sql_tmp = sql_tmp & " PesUnt,"
-    sql_tmp = sql_tmp & " MrgPrd,"
-    sql_tmp = sql_tmp & " valcusuntqtd,"
-    sql_tmp = sql_tmp & " valcusadicqtd,"
-    sql_tmp = sql_tmp & " AlqImpFed"
-    sql_tmp = sql_tmp & " )"
-    sql_tmp = sql_tmp & " SELECT a.Codprd, a.Dscprd, a.QtdEmb, 0, b.ValUntN, 0 , b.ValUntN, 0.00, 0, 0.0, 0.0,a.IdeGrp,a.PesUnt,b.MrgPrd,b.valcusuntqtd, b.valcusadicqtd,b.AlqImpFed  from PRODUTO a, PRECO_PRODUTO b"
-    sql_tmp = sql_tmp & " WHERE a.flgsitu = 'N'"
-    sql_tmp = sql_tmp & " and a.codprd = b.codprd"
-    sql_tmp = sql_tmp & " and b.DatATiv = (SELECT MAX(DatAtiv) FROM PRECO_PRODUTO p WHERE p.CodPrd = a.CodPrd)"
-    sql_tmp = sql_tmp & " and NOT EXISTS (SELECT 1 FROM tmp_produto p WHERE p.CODIGO = a.codprd)"
-    'sql_tmp = sql_tmp & " and (a.DSCPRD LIKE 'TB%' OR a.DSCPRD LIKE 'TU%')"
-    sql_tmp = sql_tmp & " order by a.Dscprd"
+    If bgConsultaPed = False Then
+        
+        'CRIANDO TABELA TEMPORÁRIA DE PRODUTOS
+        sql_tmp = "INSERT INTO tmp_produto ("
+        sql_tmp = sql_tmp & " CODIGO,"
+        sql_tmp = sql_tmp & " PRODUTO,"
+        sql_tmp = sql_tmp & " EMBALAGEM,"
+        sql_tmp = sql_tmp & " QUANTIDADE,"
+        sql_tmp = sql_tmp & " TABELA,"
+        sql_tmp = sql_tmp & " DESCONTO,"
+        sql_tmp = sql_tmp & " PRECO_UNITARIO,"
+        sql_tmp = sql_tmp & " VALOR_TOTAL,"
+        sql_tmp = sql_tmp & " SITUACAO,"
+        sql_tmp = sql_tmp & " CUSTO,"
+        sql_tmp = sql_tmp & " CUSTO_TOTAL,"
+        sql_tmp = sql_tmp & " IdeGrp,"
+        sql_tmp = sql_tmp & " PesUnt,"
+        sql_tmp = sql_tmp & " MrgPrd,"
+        sql_tmp = sql_tmp & " valcusuntqtd,"
+        sql_tmp = sql_tmp & " valcusadicqtd,"
+        sql_tmp = sql_tmp & " AlqImpFed"
+        sql_tmp = sql_tmp & " )"
+        sql_tmp = sql_tmp & " SELECT a.Codprd, a.Dscprd, a.QtdEmb, 0, b.ValUntN, 0 , b.ValUntN, 0.00, 0, 0.0, 0.0,a.IdeGrp,a.PesUnt,b.MrgPrd,b.valcusuntqtd, b.valcusadicqtd,b.AlqImpFed  from PRODUTO a, PRECO_PRODUTO b"
+        sql_tmp = sql_tmp & " WHERE a.flgsitu = 'N'"
+        sql_tmp = sql_tmp & " and a.codprd = b.codprd"
+        sql_tmp = sql_tmp & " and b.DatATiv = (SELECT MAX(DatAtiv) FROM PRECO_PRODUTO p WHERE p.CodPrd = a.CodPrd)"
+        sql_tmp = sql_tmp & " and NOT EXISTS (SELECT 1 FROM tmp_produto p WHERE p.CODIGO = a.codprd)"
+        'sql_tmp = sql_tmp & " and (a.DSCPRD LIKE 'TB%' OR a.DSCPRD LIKE 'TU%')"
+        sql_tmp = sql_tmp & " order by a.Dscprd"
 
+        
+    End If
+    
+    If bgConsultaPed = True Then
+        
+        sgQuery = "Select a.Datped From PEDIDO a, CLIENTE b, CONDICAO c"
+        sgQuery = sgQuery & " Where a.NroPed = '" & Trim(igNroPed) & "' And a.CodCli = b.CodCli and a.codcnd = c.codcnd"
+        
+        Consulta sgQuery
+        
+        If Not Rs.EOF Then
+            
+            Datped = Trim(Rs!Datped)
+
+        End If
+        
+        'CRIANDO TABELA TEMPORÁRIA DE PRODUTOS
+        sql_tmp = "INSERT INTO tmp_produto ("
+        sql_tmp = sql_tmp & " CODIGO,"
+        sql_tmp = sql_tmp & " PRODUTO,"
+        sql_tmp = sql_tmp & " EMBALAGEM,"
+        sql_tmp = sql_tmp & " QUANTIDADE,"
+        sql_tmp = sql_tmp & " TABELA,"
+        sql_tmp = sql_tmp & " DESCONTO,"
+        sql_tmp = sql_tmp & " PRECO_UNITARIO,"
+        sql_tmp = sql_tmp & " VALOR_TOTAL,"
+        sql_tmp = sql_tmp & " SITUACAO,"
+        sql_tmp = sql_tmp & " CUSTO,"
+        sql_tmp = sql_tmp & " CUSTO_TOTAL,"
+        sql_tmp = sql_tmp & " IdeGrp,"
+        sql_tmp = sql_tmp & " PesUnt,"
+        sql_tmp = sql_tmp & " MrgPrd,"
+        sql_tmp = sql_tmp & " valcusuntqtd,"
+        sql_tmp = sql_tmp & " valcusadicqtd,"
+        sql_tmp = sql_tmp & " AlqImpFed"
+        sql_tmp = sql_tmp & " )"
+        sql_tmp = sql_tmp & " SELECT a.Codprd, a.Dscprd, a.QtdEmb, 0, b.ValUntN, 0 , b.ValUntN, 0.00, 0, 0.0, 0.0,a.IdeGrp,a.PesUnt,b.MrgPrd,b.valcusuntqtd, b.valcusadicqtd,b.AlqImpFed  from PRODUTO a, PRECO_PRODUTO b"
+        sql_tmp = sql_tmp & " WHERE a.flgsitu = 'N'"
+        sql_tmp = sql_tmp & " and a.codprd = b.codprd"
+        sql_tmp = sql_tmp & " and b.DatATiv = (SELECT MAX(DatAtiv) FROM PRECO_PRODUTO p WHERE p.CodPrd = a.CodPrd and p.datativ <= convert(datetime,'" & Trim(Datped) & "',103))"
+        sql_tmp = sql_tmp & " and NOT EXISTS (SELECT 1 FROM tmp_produto p WHERE p.CODIGO = a.codprd)"
+        'sql_tmp = sql_tmp & " and (a.DSCPRD LIKE 'TB%' OR a.DSCPRD LIKE 'TU%')"
+        sql_tmp = sql_tmp & " order by a.Dscprd"
+
+        
+    End If
+    
     Conexao.Execute sql_tmp
     
     slUFOri = "MG"
@@ -13282,7 +13359,7 @@ Private Sub BtoGrava_Click()
             
             Else
             
-                If dlMargemGeral <= 7 Then
+                If dlMargemGeral <= 7.99 Then
                     MsgBox "Esse pedido está FORA da política comercial da Unocann. " & vbCrLf & _
                     "Corrija os descontos praticados até que essa mensagem não apareça.", vbCritical, "Atenção!"
                     
@@ -13290,7 +13367,7 @@ Private Sub BtoGrava_Click()
                 
                     Exit Sub
                 
-                ElseIf dlMargemGeral > 7 And dlMargemGeral <= 8.5 Then
+                ElseIf dlMargemGeral > 7.99 And dlMargemGeral <= 8.5 Then
                 
                     MsgBox "Esse pedido está PRÓXIMO da política comercial da Unocann. " & vbCrLf & vbCrLf & _
                     "Reveja os descontos praticados e mix de produtos até que a cor fique VERDE.", vbInformation, "Atenção!"
@@ -13434,7 +13511,7 @@ Private Sub BtoSair_Click()
             Else
                 If iDscForaRegiao > 1 Then
                 
-                    If dlMargemGeral <= 7 Then
+                    If dlMargemGeral <= 7.99 Then
                 
                     MsgBox "Esse pedido está FORA da política comercial da Unocann. " & vbCrLf & _
                                       "Corrija os descontos praticados até que essa mensagem não apareça.", vbCritical, "Atenção!"
@@ -13446,17 +13523,15 @@ Private Sub BtoSair_Click()
                         Exit Sub
                    ' End If
                 
-                ElseIf dlMargemGeral >= 7 And dlMargemGeral <= 9 Then
+                ElseIf dlMargemGeral > 7.99 And dlMargemGeral <= 8.5 Then
                 
                      MsgBox "Esse pedido está PRÓXIMO da política comercial da Unocann. " & vbCrLf & _
                              "Reveja os descontos praticados e mix de produtos para facilitar a liberação." & vbCrLf & vbCrLf & _
                              "Deseja GRAVAR esse Pedido mesmo assim ?", vbInformation, "Atenção!"
                              
                     MsgBox "Reveja os descontos praticados e mix de produtos até que a cor fique VERDE.", vbInformation, "Atenção!"
-                   
-            MsgBox "Reveja os descontos praticados e mix de produtos até que a cor fique VERDE.", vbInformation, "Atenção!"
                              
-                Me.Caption = "UNOCANN Tubos e Conexões - Simulação de Pedidos  [" & Trim(slNomRep) & "]"
+                    Me.Caption = "UNOCANN Tubos e Conexões - Simulação de Pedidos  [" & Trim(slNomRep) & "]"
 '
                  End If
                     
@@ -13528,7 +13603,11 @@ Private Sub BtoSair_Click()
         FrmTMKPrincipal.Enabled = True
         FrmTMKPrincipal.Show
     End If
-
+    
+    sgQuery = "TRUNCATE TABLE tmp_produto"
+    
+    Conexao.Execute sgQuery
+    
 End Sub
 
 Private Sub CboCondPag_Consultar()
