@@ -507,7 +507,7 @@ Private Sub btoGerar_Click()
         Format(Rs!Datlib, "mm/dd/yyyy hh:mm:ss") & "|" & Format(CDate(Trim(Agora)), "mm/dd/yyyy hh:mm:ss") & "|" & dlSeq & "|"
         slString = Replace(slString, ",", ".")
         slString = slString & Trim(Replace(Rs!TexObs, "|", "-")) & "|" & Trim(Replace(Rs!texneg, "|", "-"))
-        slString = slString & "|" & Trim(Rs!FlgAlt)
+        slString = slString & "|" & Trim(Rs!flgalt)
         
         Print #igFileNumber, slString
         
@@ -2719,7 +2719,8 @@ Private Sub Form_Load()
     Me.Top = 0
     MDIProjUNO.Enabled = False
     btoGerar.Enabled = True
-    sFTPServer = "201.65.158.22"
+    'sFTPServer = "201.65.158.22"
+    sFTPServer = "200.146.194.122"
     sFTPUser = "unocann"
     sFTPPwd = "unodataac5621"
     'Senha alterada em 13/09/2010 - Afonso

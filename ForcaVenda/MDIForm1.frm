@@ -2,7 +2,7 @@ VERSION 5.00
 Begin VB.MDIForm MDIProjUNO 
    BackColor       =   &H8000000C&
    Caption         =   "V1.05 -  U N O C A N N   T U B O S   E   C O N E X Õ E S  -  Força de Venda    "
-   ClientHeight    =   7860
+   ClientHeight    =   7845
    ClientLeft      =   165
    ClientTop       =   -690
    ClientWidth     =   13035
