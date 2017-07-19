@@ -1153,7 +1153,7 @@ Begin VB.Form FrmConhecimento
          Height          =   7095
          Left            =   0
          TabIndex        =   145
-         Top             =   3000
+         Top             =   2880
          Visible         =   0   'False
          Width           =   12375
          Begin VB.CommandButton CmdRetorna 
@@ -14156,7 +14156,7 @@ Private Sub Form_Load()
     End If
     
     'TUBOS E CONEXÕES COLETOR ESGOTO OCRE
-    CarregaGrid "463,531,530,532,591,245,246,247,593,403,1093,439,633,1207,508,442,273,444,325,211,335,495,435,516,515,221,513,251,433,324,252,501,509,253,285,511,470,510,499,494", tubo_tubos_conexoes_coletor_esgoto
+    CarregaGrid "531,530,532,591,245,246,247,593,403,1093,439,633,1207,508,442,273,444,325,211,335,495,435,516,515,221,513,251,433,324,252,501,509,253,285,511,470,510,499,494", tubo_tubos_conexoes_coletor_esgoto
     ConfiguraFlexGrid tubo_tubos_conexoes_coletor_esgoto
     DefineClassificacao tubo_tubos_conexoes_coletor_esgoto
     
@@ -14171,7 +14171,7 @@ Private Sub Form_Load()
     DefineClassificacao tubo_conexoes_pba
     
     'TUBOS E CONEXÕES PREDIAL
-    CarregaGrid "11,7,8,9,223,572,217,768,621,3418,62,61,60,59,574,601,45,44,39,38,101,116,108,341,78,77,76,75,107,216,469,80,81,92,82,96,97,98,272,46,47,64,48,63,65,49,66,102,128,127,126,114,129,130,222,255,306,606,443,607,446,445,461,310,368,601,116,608,609,610,611,612,471,3449,3448,334,600,598,599,3310,193,192,194,352,759", tubos_conexoes_predial
+    CarregaGrid "463,11,7,8,9,223,572,217,768,621,3418,62,61,60,59,574,601,45,44,39,38,101,116,108,341,78,77,76,75,107,216,469,80,81,92,82,96,97,98,272,46,47,64,48,63,65,49,66,102,128,127,126,114,129,130,222,255,306,606,443,607,446,445,461,310,368,601,116,608,609,610,611,612,471,3449,3448,334,600,598,599,3310,193,192,194,352,759", tubos_conexoes_predial
     ConfiguraFlexGrid tubos_conexoes_predial
     DefineClassificacao tubos_conexoes_predial
     
