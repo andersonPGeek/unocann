@@ -389,8 +389,8 @@ Private Sub btoGerar_Click()
     Dim slAux    As String
     Dim slNot    As String
         
-    btoSair.Enabled = False
-    btoGerar.Enabled = False
+    BtoSair.Enabled = False
+    BtoGerar.Enabled = False
     blErroInterf = False
     
     Screen.MousePointer = vbHourglass
@@ -2683,8 +2683,8 @@ Erro:
     MsgBox "E R R O  NA INTERFACE!, Se o problema persistir, favor comunicar ao administrador do sistema"
     
     LblProgParcial.Refresh
-    btoGerar.Enabled = False
-    btoSair.Enabled = True
+    BtoGerar.Enabled = False
+    BtoSair.Enabled = True
 
     Exit Sub
    
@@ -2718,9 +2718,10 @@ Private Sub Form_Load()
     Me.Left = 0
     Me.Top = 0
     MDIProjUNO.Enabled = False
-    btoGerar.Enabled = True
+    BtoGerar.Enabled = True
     'sFTPServer = "201.65.158.22"
-    sFTPServer = "200.146.194.122"
+    'sFTPServer = "200.146.194.122"
+    sFTPServer = "201.48.31.34"
     sFTPUser = "unocann"
     sFTPPwd = "unodataac5621"
     'Senha alterada em 13/09/2010 - Afonso

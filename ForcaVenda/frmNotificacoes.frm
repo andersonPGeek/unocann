@@ -432,7 +432,7 @@ Private Sub cmdNotificar_Click()
     
     With intTransfer
     
-        .URL = "ftp://201.45.161.244"
+        .URL = "ftp://201.48.31.34"
         .Protocol = icFTP
         .RequestTimeout = 100
         .RemotePort = 21

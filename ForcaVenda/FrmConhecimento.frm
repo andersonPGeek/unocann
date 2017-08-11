@@ -34,6 +34,47 @@ Begin VB.Form FrmConhecimento
    Moveable        =   0   'False
    ScaleHeight     =   10320
    ScaleWidth      =   15240
+   Begin VB.CommandButton BtoGrava 
+      BackColor       =   &H80000013&
+      Caption         =   "&Gravar Pedido"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   975
+      Left            =   7560
+      Picture         =   "FrmConhecimento.frx":0442
+      Style           =   1  'Graphical
+      TabIndex        =   203
+      Top             =   7560
+      Width           =   1095
+   End
+   Begin VB.CommandButton BtoGravaOrcamento 
+      BackColor       =   &H80000013&
+      Caption         =   "&Gravar Orcamento"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   975
+      Index           =   1
+      Left            =   6240
+      Picture         =   "FrmConhecimento.frx":0884
+      Style           =   1  'Graphical
+      TabIndex        =   202
+      Top             =   7560
+      Width           =   1215
+   End
    Begin Crystal.CrystalReport rptcontprop 
       Left            =   240
       Top             =   9000
@@ -48,14 +89,14 @@ Begin VB.Form FrmConhecimento
       Enabled         =   0   'False
       Height          =   1695
       Left            =   12360
-      TabIndex        =   104
+      TabIndex        =   103
       Top             =   8640
       Visible         =   0   'False
       Width           =   2895
       Begin Project_Masked.Masked T100Rep 
          Height          =   375
          Left            =   360
-         TabIndex        =   105
+         TabIndex        =   104
          TabStop         =   0   'False
          Top             =   600
          Width           =   735
@@ -80,7 +121,7 @@ Begin VB.Form FrmConhecimento
       Begin Project_Masked.Masked T100Cli 
          Height          =   375
          Left            =   1320
-         TabIndex        =   108
+         TabIndex        =   107
          TabStop         =   0   'False
          Top             =   600
          Width           =   735
@@ -105,7 +146,7 @@ Begin VB.Form FrmConhecimento
       Begin Project_Masked.Masked T100Ped 
          Height          =   375
          Left            =   1320
-         TabIndex        =   110
+         TabIndex        =   109
          TabStop         =   0   'False
          Top             =   1200
          Width           =   735
@@ -142,7 +183,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00000080&
          Height          =   375
          Left            =   360
-         TabIndex        =   111
+         TabIndex        =   110
          Top             =   1200
          Width           =   975
       End
@@ -161,7 +202,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   1320
-         TabIndex        =   109
+         TabIndex        =   108
          Top             =   360
          Width           =   975
       End
@@ -180,7 +221,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00000000&
          Height          =   255
          Left            =   0
-         TabIndex        =   107
+         TabIndex        =   106
          Top             =   0
          Width           =   2655
       End
@@ -199,7 +240,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   360
-         TabIndex        =   106
+         TabIndex        =   105
          Top             =   360
          Width           =   975
       End
@@ -218,32 +259,12 @@ Begin VB.Form FrmConhecimento
       EndProperty
       Height          =   975
       Left            =   11160
-      Picture         =   "FrmConhecimento.frx":0442
+      Picture         =   "FrmConhecimento.frx":0CC6
       Style           =   1  'Graphical
-      TabIndex        =   6
+      TabIndex        =   5
       TabStop         =   0   'False
       Top             =   7560
       Width           =   1095
-   End
-   Begin VB.CommandButton BtoGrava 
-      BackColor       =   &H80000013&
-      Caption         =   "&Gravar Pedido"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   975
-      Left            =   6600
-      Picture         =   "FrmConhecimento.frx":0884
-      Style           =   1  'Graphical
-      TabIndex        =   3
-      Top             =   7560
-      Width           =   1695
    End
    Begin VB.CommandButton BtoLimpaCTRC 
       BackColor       =   &H00C0FFFF&
@@ -258,10 +279,10 @@ Begin VB.Form FrmConhecimento
          Strikethrough   =   0   'False
       EndProperty
       Height          =   975
-      Left            =   8520
-      Picture         =   "FrmConhecimento.frx":0CC6
+      Left            =   8760
+      Picture         =   "FrmConhecimento.frx":1108
       Style           =   1  'Graphical
-      TabIndex        =   4
+      TabIndex        =   3
       TabStop         =   0   'False
       Top             =   7560
       Width           =   1095
@@ -282,7 +303,7 @@ Begin VB.Form FrmConhecimento
       ForeColor       =   &H8000000E&
       Height          =   6375
       Left            =   12360
-      TabIndex        =   47
+      TabIndex        =   46
       Top             =   3960
       Width           =   2895
       Begin VB.Frame Frame7 
@@ -291,13 +312,13 @@ Begin VB.Form FrmConhecimento
          Enabled         =   0   'False
          Height          =   1335
          Left            =   0
-         TabIndex        =   65
+         TabIndex        =   64
          Top             =   3120
          Width           =   2895
          Begin Project_Masked.Masked MskMargem 
             Height          =   495
             Left            =   960
-            TabIndex        =   66
+            TabIndex        =   65
             TabStop         =   0   'False
             Top             =   360
             Width           =   975
@@ -336,7 +357,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00000080&
             Height          =   375
             Left            =   1680
-            TabIndex        =   67
+            TabIndex        =   66
             Top             =   600
             Width           =   375
          End
@@ -344,7 +365,7 @@ Begin VB.Form FrmConhecimento
       Begin Project_Masked.Masked vl1 
          Height          =   375
          Left            =   120
-         TabIndex        =   48
+         TabIndex        =   47
          TabStop         =   0   'False
          Top             =   360
          Width           =   1095
@@ -369,7 +390,7 @@ Begin VB.Form FrmConhecimento
       Begin Project_Masked.Masked vl2 
          Height          =   375
          Left            =   120
-         TabIndex        =   49
+         TabIndex        =   48
          TabStop         =   0   'False
          Top             =   2040
          Width           =   1095
@@ -394,7 +415,7 @@ Begin VB.Form FrmConhecimento
       Begin Project_Masked.Masked vl3 
          Height          =   375
          Left            =   120
-         TabIndex        =   56
+         TabIndex        =   55
          TabStop         =   0   'False
          Top             =   1200
          Width           =   1095
@@ -430,7 +451,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00C00000&
          Height          =   375
          Left            =   1320
-         TabIndex        =   61
+         TabIndex        =   60
          Top             =   2520
          Width           =   855
       End
@@ -439,7 +460,7 @@ Begin VB.Form FrmConhecimento
          Caption         =   " %"
          Height          =   375
          Left            =   2160
-         TabIndex        =   60
+         TabIndex        =   59
          Top             =   2520
          Width           =   375
       End
@@ -458,7 +479,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00FFFF00&
          Height          =   255
          Left            =   120
-         TabIndex        =   59
+         TabIndex        =   58
          Top             =   960
          Width           =   2055
       End
@@ -476,7 +497,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00C00000&
          Height          =   375
          Left            =   1320
-         TabIndex        =   58
+         TabIndex        =   57
          Top             =   1200
          Width           =   855
       End
@@ -485,7 +506,7 @@ Begin VB.Form FrmConhecimento
          Caption         =   " %"
          Height          =   375
          Left            =   2160
-         TabIndex        =   57
+         TabIndex        =   56
          Top             =   1200
          Visible         =   0   'False
          Width           =   375
@@ -495,7 +516,7 @@ Begin VB.Form FrmConhecimento
          Caption         =   " %"
          Height          =   375
          Left            =   2160
-         TabIndex        =   55
+         TabIndex        =   54
          Top             =   2040
          Visible         =   0   'False
          Width           =   375
@@ -514,7 +535,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00008000&
          Height          =   375
          Left            =   1320
-         TabIndex        =   54
+         TabIndex        =   53
          Top             =   2040
          Width           =   855
       End
@@ -533,7 +554,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00FFFFFF&
          Height          =   255
          Left            =   120
-         TabIndex        =   51
+         TabIndex        =   50
          Top             =   1800
          Width           =   2295
       End
@@ -552,7 +573,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H0000FF00&
          Height          =   255
          Left            =   120
-         TabIndex        =   50
+         TabIndex        =   49
          Top             =   120
          Width           =   1695
       End
@@ -574,7 +595,7 @@ Begin VB.Form FrmConhecimento
       ForeColor       =   &H00FFFFFF&
       Height          =   3975
       Left            =   13800
-      TabIndex        =   30
+      TabIndex        =   29
       Top             =   0
       Width           =   1455
       Begin VB.TextBox d9 
@@ -590,7 +611,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00FF0000&
          Height          =   330
          Left            =   120
-         TabIndex        =   113
+         TabIndex        =   112
          Text            =   "SimBahia"
          Top             =   2640
          Visible         =   0   'False
@@ -599,7 +620,7 @@ Begin VB.Form FrmConhecimento
       Begin Project_Masked.Masked d6 
          Height          =   375
          Left            =   120
-         TabIndex        =   31
+         TabIndex        =   30
          TabStop         =   0   'False
          Top             =   600
          Width           =   375
@@ -620,7 +641,7 @@ Begin VB.Form FrmConhecimento
       Begin Project_Masked.Masked d7 
          Height          =   375
          Left            =   120
-         TabIndex        =   32
+         TabIndex        =   31
          TabStop         =   0   'False
          Top             =   1320
          Width           =   615
@@ -641,7 +662,7 @@ Begin VB.Form FrmConhecimento
       Begin Project_Masked.Masked d8 
          Height          =   375
          Left            =   120
-         TabIndex        =   33
+         TabIndex        =   32
          TabStop         =   0   'False
          Top             =   2040
          Width           =   855
@@ -677,7 +698,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00C00000&
          Height          =   255
          Left            =   0
-         TabIndex        =   64
+         TabIndex        =   63
          Top             =   0
          Width           =   975
       End
@@ -696,7 +717,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H8000000E&
          Height          =   255
          Left            =   120
-         TabIndex        =   36
+         TabIndex        =   35
          Top             =   360
          Width           =   855
       End
@@ -715,7 +736,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H8000000E&
          Height          =   255
          Left            =   120
-         TabIndex        =   35
+         TabIndex        =   34
          Top             =   1080
          Width           =   975
       End
@@ -734,7 +755,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H8000000E&
          Height          =   255
          Left            =   120
-         TabIndex        =   34
+         TabIndex        =   33
          Top             =   1800
          Width           =   975
       End
@@ -756,13 +777,13 @@ Begin VB.Form FrmConhecimento
       ForeColor       =   &H8000000E&
       Height          =   3975
       Left            =   12360
-      TabIndex        =   19
+      TabIndex        =   18
       Top             =   0
       Width           =   1455
       Begin Project_Masked.Masked d1 
          Height          =   375
          Left            =   120
-         TabIndex        =   20
+         TabIndex        =   19
          TabStop         =   0   'False
          Top             =   600
          Width           =   735
@@ -786,7 +807,7 @@ Begin VB.Form FrmConhecimento
       Begin Project_Masked.Masked d2 
          Height          =   375
          Left            =   120
-         TabIndex        =   21
+         TabIndex        =   20
          TabStop         =   0   'False
          Top             =   1320
          Width           =   735
@@ -810,7 +831,7 @@ Begin VB.Form FrmConhecimento
       Begin Project_Masked.Masked d3 
          Height          =   375
          Left            =   120
-         TabIndex        =   22
+         TabIndex        =   21
          TabStop         =   0   'False
          Top             =   2040
          Width           =   735
@@ -834,7 +855,7 @@ Begin VB.Form FrmConhecimento
       Begin Project_Masked.Masked d4 
          Height          =   375
          Left            =   120
-         TabIndex        =   23
+         TabIndex        =   22
          TabStop         =   0   'False
          Top             =   2760
          Width           =   735
@@ -858,7 +879,7 @@ Begin VB.Form FrmConhecimento
       Begin Project_Masked.Masked d5 
          Height          =   375
          Left            =   120
-         TabIndex        =   28
+         TabIndex        =   27
          TabStop         =   0   'False
          Top             =   3480
          Width           =   735
@@ -895,7 +916,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H0000FFFF&
          Height          =   375
          Left            =   840
-         TabIndex        =   116
+         TabIndex        =   115
          Top             =   3480
          Visible         =   0   'False
          Width           =   615
@@ -915,7 +936,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H000000C0&
          Height          =   255
          Left            =   0
-         TabIndex        =   63
+         TabIndex        =   62
          Top             =   0
          Width           =   975
       End
@@ -934,7 +955,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H8000000E&
          Height          =   255
          Left            =   120
-         TabIndex        =   29
+         TabIndex        =   28
          Top             =   3240
          Width           =   855
       End
@@ -953,7 +974,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H8000000E&
          Height          =   255
          Left            =   120
-         TabIndex        =   27
+         TabIndex        =   26
          Top             =   2520
          Width           =   855
       End
@@ -972,7 +993,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H8000000E&
          Height          =   255
          Left            =   120
-         TabIndex        =   26
+         TabIndex        =   25
          Top             =   1800
          Width           =   975
       End
@@ -991,7 +1012,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H8000000E&
          Height          =   255
          Left            =   120
-         TabIndex        =   25
+         TabIndex        =   24
          Top             =   1080
          Width           =   975
       End
@@ -1010,16 +1031,16 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H8000000E&
          Height          =   255
          Left            =   120
-         TabIndex        =   24
+         TabIndex        =   23
          Top             =   360
          Width           =   855
       End
    End
    Begin TabDlg.SSTab SSTConhec 
-      DragIcon        =   "FrmConhecimento.frx":1108
+      DragIcon        =   "FrmConhecimento.frx":154A
       Height          =   8655
       Left            =   0
-      TabIndex        =   5
+      TabIndex        =   4
       Top             =   0
       Width           =   12375
       _ExtentX        =   21828
@@ -1041,7 +1062,7 @@ Begin VB.Form FrmConhecimento
          Strikethrough   =   0   'False
       EndProperty
       TabCaption(0)   =   "Pedido"
-      TabPicture(0)   =   "FrmConhecimento.frx":1252
+      TabPicture(0)   =   "FrmConhecimento.frx":1694
       Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "Label28"
       Tab(0).Control(0).Enabled=   0   'False
@@ -1097,7 +1118,7 @@ Begin VB.Form FrmConhecimento
       Tab(0).Control(25).Enabled=   0   'False
       Tab(0).ControlCount=   26
       TabCaption(1)   =   "Comunicação"
-      TabPicture(1)   =   "FrmConhecimento.frx":126E
+      TabPicture(1)   =   "FrmConhecimento.frx":16B0
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "cmdUP"
       Tab(1).Control(0).Enabled=   0   'False
@@ -1113,7 +1134,7 @@ Begin VB.Form FrmConhecimento
       Tab(1).Control(8)=   "LblResultNegocio"
       Tab(1).ControlCount=   9
       TabCaption(2)   =   "Posição do Cliente"
-      TabPicture(2)   =   "FrmConhecimento.frx":128A
+      TabPicture(2)   =   "FrmConhecimento.frx":16CC
       Tab(2).ControlEnabled=   0   'False
       Tab(2).Control(0)=   "Frame8"
       Tab(2).Control(1)=   "LblFone"
@@ -1142,7 +1163,7 @@ Begin VB.Form FrmConhecimento
       Tab(2).Control(24)=   "LblCliNome"
       Tab(2).ControlCount=   25
       TabCaption(3)   =   "Entregas"
-      TabPicture(3)   =   "FrmConhecimento.frx":12A6
+      TabPicture(3)   =   "FrmConhecimento.frx":16E8
       Tab(3).ControlEnabled=   0   'False
       Tab(3).Control(0)=   "Text1"
       Tab(3).Control(1)=   "GrdEntrega"
@@ -1152,7 +1173,7 @@ Begin VB.Form FrmConhecimento
          BorderStyle     =   0  'None
          Height          =   7095
          Left            =   0
-         TabIndex        =   145
+         TabIndex        =   144
          Top             =   2880
          Visible         =   0   'False
          Width           =   12375
@@ -1170,16 +1191,16 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   855
             Left            =   11040
-            Picture         =   "FrmConhecimento.frx":12C2
+            Picture         =   "FrmConhecimento.frx":1704
             Style           =   1  'Graphical
-            TabIndex        =   146
+            TabIndex        =   145
             Top             =   5880
             Width           =   1215
          End
          Begin MSFlexGridLib.MSFlexGrid GrdGrupo 
             Height          =   6855
             Left            =   480
-            TabIndex        =   147
+            TabIndex        =   146
             Top             =   4800
             Width           =   4335
             _ExtentX        =   7646
@@ -1212,7 +1233,7 @@ Begin VB.Form FrmConhecimento
          Begin MSFlexGridLib.MSFlexGrid GrdProduto 
             Height          =   5535
             Left            =   4320
-            TabIndex        =   148
+            TabIndex        =   147
             Top             =   4200
             Width           =   7935
             _ExtentX        =   13996
@@ -1257,7 +1278,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00C00000&
          Height          =   975
          Left            =   3360
-         TabIndex        =   138
+         TabIndex        =   137
          Top             =   0
          Visible         =   0   'False
          Width           =   8895
@@ -1274,10 +1295,10 @@ Begin VB.Form FrmConhecimento
             EndProperty
             ForeColor       =   &H00000080&
             Height          =   345
-            ItemData        =   "FrmConhecimento.frx":1704
+            ItemData        =   "FrmConhecimento.frx":1B46
             Left            =   7200
-            List            =   "FrmConhecimento.frx":1711
-            TabIndex        =   143
+            List            =   "FrmConhecimento.frx":1B53
+            TabIndex        =   142
             Top             =   360
             Width           =   1215
          End
@@ -1294,10 +1315,10 @@ Begin VB.Form FrmConhecimento
             EndProperty
             ForeColor       =   &H00000080&
             Height          =   345
-            ItemData        =   "FrmConhecimento.frx":1726
+            ItemData        =   "FrmConhecimento.frx":1B68
             Left            =   3840
-            List            =   "FrmConhecimento.frx":1733
-            TabIndex        =   140
+            List            =   "FrmConhecimento.frx":1B75
+            TabIndex        =   139
             Top             =   360
             Width           =   1215
          End
@@ -1314,10 +1335,10 @@ Begin VB.Form FrmConhecimento
             EndProperty
             ForeColor       =   &H00000080&
             Height          =   345
-            ItemData        =   "FrmConhecimento.frx":1748
+            ItemData        =   "FrmConhecimento.frx":1B8A
             Left            =   720
-            List            =   "FrmConhecimento.frx":175B
-            TabIndex        =   139
+            List            =   "FrmConhecimento.frx":1B9D
+            TabIndex        =   138
             Top             =   360
             Width           =   1095
          End
@@ -1336,7 +1357,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00000080&
             Height          =   255
             Left            =   5760
-            TabIndex        =   144
+            TabIndex        =   143
             Top             =   360
             Width           =   1290
          End
@@ -1356,7 +1377,7 @@ Begin VB.Form FrmConhecimento
             Height          =   255
             Index           =   3
             Left            =   2520
-            TabIndex        =   142
+            TabIndex        =   141
             Top             =   360
             Width           =   1290
          End
@@ -1376,7 +1397,7 @@ Begin VB.Form FrmConhecimento
             Height          =   255
             Index           =   2
             Left            =   360
-            TabIndex        =   141
+            TabIndex        =   140
             Top             =   360
             Width           =   450
          End
@@ -1396,7 +1417,7 @@ Begin VB.Form FrmConhecimento
          EndProperty
          Height          =   6015
          Left            =   -67080
-         TabIndex        =   137
+         TabIndex        =   136
          Top             =   360
          Width           =   255
       End
@@ -1404,9 +1425,9 @@ Begin VB.Form FrmConhecimento
          BackColor       =   &H000000FF&
          Height          =   720
          Left            =   -63240
-         Picture         =   "FrmConhecimento.frx":1773
+         Picture         =   "FrmConhecimento.frx":1BB5
          Style           =   1  'Graphical
-         TabIndex        =   135
+         TabIndex        =   134
          TabStop         =   0   'False
          Top             =   1560
          Width           =   495
@@ -1415,9 +1436,9 @@ Begin VB.Form FrmConhecimento
          BackColor       =   &H000000FF&
          Height          =   720
          Left            =   -63240
-         Picture         =   "FrmConhecimento.frx":1BB5
+         Picture         =   "FrmConhecimento.frx":1FF7
          Style           =   1  'Graphical
-         TabIndex        =   134
+         TabIndex        =   133
          TabStop         =   0   'False
          Top             =   3600
          Width           =   495
@@ -1425,7 +1446,7 @@ Begin VB.Form FrmConhecimento
       Begin RichTextLib.RichTextBox TxtNegocio 
          Height          =   3975
          Left            =   -74880
-         TabIndex        =   132
+         TabIndex        =   131
          TabStop         =   0   'False
          Top             =   840
          Width           =   11535
@@ -1435,7 +1456,7 @@ Begin VB.Form FrmConhecimento
          BackColor       =   8454143
          Enabled         =   0   'False
          Appearance      =   0
-         TextRTF         =   $"FrmConhecimento.frx":1FF7
+         TextRTF         =   $"FrmConhecimento.frx":2439
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
             Size            =   9.75
@@ -1471,9 +1492,9 @@ Begin VB.Form FrmConhecimento
          EndProperty
          Height          =   975
          Left            =   9960
-         Picture         =   "FrmConhecimento.frx":2070
+         Picture         =   "FrmConhecimento.frx":24B2
          Style           =   1  'Graphical
-         TabIndex        =   124
+         TabIndex        =   123
          TabStop         =   0   'False
          Top             =   7560
          Visible         =   0   'False
@@ -1494,9 +1515,9 @@ Begin VB.Form FrmConhecimento
          EndProperty
          Height          =   975
          Left            =   -65160
-         Picture         =   "FrmConhecimento.frx":24B2
+         Picture         =   "FrmConhecimento.frx":28F4
          Style           =   1  'Graphical
-         TabIndex        =   123
+         TabIndex        =   122
          TabStop         =   0   'False
          Top             =   7560
          Width           =   1215
@@ -1516,9 +1537,9 @@ Begin VB.Form FrmConhecimento
          EndProperty
          Height          =   975
          Left            =   9960
-         Picture         =   "FrmConhecimento.frx":28F4
+         Picture         =   "FrmConhecimento.frx":2D36
          Style           =   1  'Graphical
-         TabIndex        =   122
+         TabIndex        =   121
          TabStop         =   0   'False
          Top             =   7560
          Width           =   1095
@@ -1528,7 +1549,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00008000&
          Height          =   1575
          Left            =   6240
-         TabIndex        =   117
+         TabIndex        =   116
          Top             =   4200
          Visible         =   0   'False
          Width           =   2895
@@ -1547,7 +1568,7 @@ Begin VB.Form FrmConhecimento
             Left            =   240
             MaxLength       =   8
             PasswordChar    =   "*"
-            TabIndex        =   118
+            TabIndex        =   117
             Top             =   435
             Width           =   2220
          End
@@ -1566,7 +1587,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H0000FFFF&
             Height          =   375
             Left            =   240
-            TabIndex        =   119
+            TabIndex        =   118
             Top             =   1080
             Visible         =   0   'False
             Width           =   2250
@@ -1587,7 +1608,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H000000C0&
          Height          =   1215
          Left            =   -67320
-         TabIndex        =   115
+         TabIndex        =   114
          Top             =   5760
          Width           =   4335
          Begin VB.TextBox TxtChave 
@@ -1606,7 +1627,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H0000FFFF&
             Height          =   615
             Left            =   240
-            TabIndex        =   53
+            TabIndex        =   52
             Top             =   360
             Width           =   3855
          End
@@ -1616,13 +1637,13 @@ Begin VB.Form FrmConhecimento
          BorderStyle     =   0  'None
          Height          =   5295
          Left            =   -75000
-         TabIndex        =   87
+         TabIndex        =   86
          Top             =   2400
          Width           =   12375
          Begin MSFlexGridLib.MSFlexGrid GrdCliVencer 
             Height          =   1575
             Left            =   6600
-            TabIndex        =   88
+            TabIndex        =   87
             Top             =   1080
             Width           =   4935
             _ExtentX        =   8705
@@ -1655,7 +1676,7 @@ Begin VB.Form FrmConhecimento
          Begin MSFlexGridLib.MSFlexGrid GrdCliVencidos 
             Height          =   1575
             Left            =   240
-            TabIndex        =   89
+            TabIndex        =   88
             Top             =   1080
             Width           =   5535
             _ExtentX        =   9763
@@ -1689,7 +1710,7 @@ Begin VB.Form FrmConhecimento
          Begin MSFlexGridLib.MSFlexGrid GrdCliJuros 
             Height          =   1575
             Left            =   240
-            TabIndex        =   90
+            TabIndex        =   89
             Top             =   3480
             Width           =   4935
             _ExtentX        =   8705
@@ -1734,7 +1755,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00004000&
             Height          =   375
             Left            =   240
-            TabIndex        =   99
+            TabIndex        =   98
             Top             =   600
             Width           =   2415
          End
@@ -1753,7 +1774,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00004000&
             Height          =   375
             Left            =   6600
-            TabIndex        =   98
+            TabIndex        =   97
             Top             =   600
             Width           =   2295
          End
@@ -1772,7 +1793,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00004000&
             Height          =   375
             Left            =   240
-            TabIndex        =   97
+            TabIndex        =   96
             Top             =   3000
             Width           =   2295
          End
@@ -1791,7 +1812,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00800000&
             Height          =   255
             Left            =   3000
-            TabIndex        =   96
+            TabIndex        =   95
             Top             =   600
             Width           =   495
          End
@@ -1810,7 +1831,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00800000&
             Height          =   255
             Left            =   3600
-            TabIndex        =   95
+            TabIndex        =   94
             Top             =   600
             Width           =   1335
          End
@@ -1829,7 +1850,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00800000&
             Height          =   255
             Left            =   9240
-            TabIndex        =   94
+            TabIndex        =   93
             Top             =   600
             Width           =   495
          End
@@ -1848,7 +1869,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00800000&
             Height          =   255
             Left            =   9840
-            TabIndex        =   93
+            TabIndex        =   92
             Top             =   600
             Width           =   1335
          End
@@ -1867,7 +1888,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00800000&
             Height          =   255
             Left            =   2880
-            TabIndex        =   92
+            TabIndex        =   91
             Top             =   3000
             Width           =   495
          End
@@ -1886,7 +1907,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00800000&
             Height          =   255
             Left            =   3480
-            TabIndex        =   91
+            TabIndex        =   90
             Top             =   3000
             Width           =   1335
          End
@@ -1905,7 +1926,7 @@ Begin VB.Form FrmConhecimento
          Height          =   1575
          Left            =   -74880
          MultiLine       =   -1  'True
-         TabIndex        =   52
+         TabIndex        =   51
          Top             =   5280
          Width           =   6855
       End
@@ -1935,7 +1956,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00404040&
          Height          =   1035
          Left            =   8640
-         TabIndex        =   14
+         TabIndex        =   13
          Top             =   1080
          Width           =   3615
          Begin VB.TextBox TxtTransp 
@@ -1950,7 +1971,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   360
             Left            =   120
-            TabIndex        =   114
+            TabIndex        =   113
             TabStop         =   0   'False
             Top             =   600
             Width           =   3375
@@ -1968,7 +1989,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   255
             Left            =   120
-            TabIndex        =   16
+            TabIndex        =   15
             Top             =   240
             Value           =   -1  'True
             Width           =   615
@@ -1986,7 +2007,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   255
             Left            =   960
-            TabIndex        =   15
+            TabIndex        =   14
             Top             =   240
             Width           =   735
          End
@@ -2005,7 +2026,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00404040&
          Height          =   1335
          Left            =   120
-         TabIndex        =   13
+         TabIndex        =   12
          Top             =   420
          Width           =   2775
          Begin MSMask.MaskEdBox MskNroPedido 
@@ -2045,7 +2066,7 @@ Begin VB.Form FrmConhecimento
          Height          =   195
          Left            =   120
          Style           =   1  'Graphical
-         TabIndex        =   12
+         TabIndex        =   11
          Top             =   1800
          Visible         =   0   'False
          Width           =   2775
@@ -2063,7 +2084,7 @@ Begin VB.Form FrmConhecimento
          EndProperty
          Height          =   375
          Left            =   3360
-         TabIndex        =   121
+         TabIndex        =   120
          TabStop         =   0   'False
          Top             =   1680
          Width           =   1575
@@ -2071,7 +2092,7 @@ Begin VB.Form FrmConhecimento
       Begin MSFlexGridLib.MSFlexGrid GrdEntrega 
          Height          =   6855
          Left            =   -75000
-         TabIndex        =   136
+         TabIndex        =   135
          Top             =   360
          Width           =   12315
          _ExtentX        =   21722
@@ -2116,14 +2137,14 @@ Begin VB.Form FrmConhecimento
          Height          =   195
          Left            =   120
          Style           =   1  'Graphical
-         TabIndex        =   149
+         TabIndex        =   148
          Top             =   1800
          Width           =   2775
       End
       Begin TabDlg.SSTab tab_simulacao_pedido 
          Height          =   5295
          Left            =   120
-         TabIndex        =   150
+         TabIndex        =   149
          Top             =   2160
          Width           =   12135
          _ExtentX        =   21405
@@ -2143,7 +2164,7 @@ Begin VB.Form FrmConhecimento
             Strikethrough   =   0   'False
          EndProperty
          TabCaption(0)   =   "PREDIAL ESGOTO BRANCO"
-         TabPicture(0)   =   "FrmConhecimento.frx":2A3E
+         TabPicture(0)   =   "FrmConhecimento.frx":2E80
          Tab(0).ControlEnabled=   -1  'True
          Tab(0).Control(0)=   "Label39"
          Tab(0).Control(0).Enabled=   0   'False
@@ -2157,7 +2178,7 @@ Begin VB.Form FrmConhecimento
          Tab(0).Control(4).Enabled=   0   'False
          Tab(0).ControlCount=   5
          TabCaption(1)   =   "PREDIAL SOLDÁVEL MARROM"
-         TabPicture(1)   =   "FrmConhecimento.frx":2A5A
+         TabPicture(1)   =   "FrmConhecimento.frx":2E9C
          Tab(1).ControlEnabled=   0   'False
          Tab(1).Control(0)=   "Label8"
          Tab(1).Control(1)=   "Label2"
@@ -2167,7 +2188,7 @@ Begin VB.Form FrmConhecimento
          Tab(1).Control(4)=   "desconto_tubos_conexoes_agua"
          Tab(1).ControlCount=   5
          TabCaption(2)   =   "PREDIAL ROSCÁVEL BRANCO"
-         TabPicture(2)   =   "FrmConhecimento.frx":2A76
+         TabPicture(2)   =   "FrmConhecimento.frx":2EB8
          Tab(2).ControlEnabled=   0   'False
          Tab(2).Control(0)=   "Label48"
          Tab(2).Control(1)=   "Label47"
@@ -2177,7 +2198,7 @@ Begin VB.Form FrmConhecimento
          Tab(2).Control(4)=   "desconto_tubos_conexoes_roscaveis"
          Tab(2).ControlCount=   5
          TabCaption(3)   =   "IRRIGA AGROPECUÁRIO AZUL"
-         TabPicture(3)   =   "FrmConhecimento.frx":2A92
+         TabPicture(3)   =   "FrmConhecimento.frx":2ED4
          Tab(3).ControlEnabled=   0   'False
          Tab(3).Control(0)=   "Label68"
          Tab(3).Control(1)=   "Label69"
@@ -2187,7 +2208,7 @@ Begin VB.Form FrmConhecimento
          Tab(3).Control(4).Enabled=   0   'False
          Tab(3).ControlCount=   5
          TabCaption(4)   =   "INFRA ESGOTO OCRE"
-         TabPicture(4)   =   "FrmConhecimento.frx":2AAE
+         TabPicture(4)   =   "FrmConhecimento.frx":2EF0
          Tab(4).ControlEnabled=   0   'False
          Tab(4).Control(0)=   "desconto_tubos_conexoes_coletor_esgoto_ocre"
          Tab(4).Control(1)=   "Bto_aplica_tubos_conexoes_coletor_esgoto_ocre"
@@ -2197,7 +2218,7 @@ Begin VB.Form FrmConhecimento
          Tab(4).Control(4)=   "Label65"
          Tab(4).ControlCount=   5
          TabCaption(5)   =   "INFRA PBA JUNTA ELÁSTICA MARROM"
-         TabPicture(5)   =   "FrmConhecimento.frx":2ACA
+         TabPicture(5)   =   "FrmConhecimento.frx":2F0C
          Tab(5).ControlEnabled=   0   'False
          Tab(5).Control(0)=   "Label63"
          Tab(5).Control(1)=   "Label62"
@@ -2207,7 +2228,7 @@ Begin VB.Form FrmConhecimento
          Tab(5).Control(4)=   "desconto_tubos_conexoes_pba"
          Tab(5).ControlCount=   5
          TabCaption(6)   =   "INFRA DEFOFO AZUL"
-         TabPicture(6)   =   "FrmConhecimento.frx":2AE6
+         TabPicture(6)   =   "FrmConhecimento.frx":2F28
          Tab(6).ControlEnabled=   0   'False
          Tab(6).Control(0)=   "Label61"
          Tab(6).Control(1)=   "Label60"
@@ -2217,7 +2238,7 @@ Begin VB.Form FrmConhecimento
          Tab(6).Control(4).Enabled=   0   'False
          Tab(6).ControlCount=   5
          TabCaption(7)   =   "RESUMO"
-         TabPicture(7)   =   "FrmConhecimento.frx":2B02
+         TabPicture(7)   =   "FrmConhecimento.frx":2F44
          Tab(7).ControlEnabled=   0   'False
          Tab(7).Control(0)=   "Label66"
          Tab(7).Control(1)=   "Label67"
@@ -2230,9 +2251,9 @@ Begin VB.Form FrmConhecimento
             BackColor       =   &H00FF0000&
             Height          =   480
             Left            =   -73560
-            Picture         =   "FrmConhecimento.frx":2B1E
+            Picture         =   "FrmConhecimento.frx":2F60
             Style           =   1  'Graphical
-            TabIndex        =   199
+            TabIndex        =   198
             TabStop         =   0   'False
             Top             =   1200
             Width           =   375
@@ -2249,7 +2270,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   555
             Left            =   -74760
-            TabIndex        =   198
+            TabIndex        =   197
             Top             =   1200
             Width           =   1095
          End
@@ -2265,7 +2286,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   555
             Left            =   -74760
-            TabIndex        =   164
+            TabIndex        =   163
             Top             =   1200
             Width           =   1095
          End
@@ -2273,9 +2294,9 @@ Begin VB.Form FrmConhecimento
             BackColor       =   &H00FF0000&
             Height          =   480
             Left            =   -73560
-            Picture         =   "FrmConhecimento.frx":2F60
+            Picture         =   "FrmConhecimento.frx":33A2
             Style           =   1  'Graphical
-            TabIndex        =   163
+            TabIndex        =   162
             TabStop         =   0   'False
             Top             =   1200
             Width           =   375
@@ -2292,7 +2313,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   555
             Left            =   -74760
-            TabIndex        =   162
+            TabIndex        =   161
             Top             =   1080
             Width           =   1095
          End
@@ -2300,9 +2321,9 @@ Begin VB.Form FrmConhecimento
             BackColor       =   &H00FF0000&
             Height          =   480
             Left            =   -73560
-            Picture         =   "FrmConhecimento.frx":33A2
+            Picture         =   "FrmConhecimento.frx":37E4
             Style           =   1  'Graphical
-            TabIndex        =   161
+            TabIndex        =   160
             TabStop         =   0   'False
             Top             =   1080
             Width           =   375
@@ -2319,7 +2340,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   555
             Left            =   240
-            TabIndex        =   160
+            TabIndex        =   159
             Top             =   1080
             Width           =   1095
          End
@@ -2327,9 +2348,9 @@ Begin VB.Form FrmConhecimento
             BackColor       =   &H00FF0000&
             Height          =   480
             Left            =   1440
-            Picture         =   "FrmConhecimento.frx":37E4
+            Picture         =   "FrmConhecimento.frx":3C26
             Style           =   1  'Graphical
-            TabIndex        =   159
+            TabIndex        =   158
             TabStop         =   0   'False
             Top             =   1080
             Width           =   375
@@ -2346,7 +2367,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   555
             Left            =   -74760
-            TabIndex        =   158
+            TabIndex        =   157
             Top             =   1080
             Width           =   1095
          End
@@ -2354,9 +2375,9 @@ Begin VB.Form FrmConhecimento
             BackColor       =   &H00FF0000&
             Height          =   480
             Left            =   -73560
-            Picture         =   "FrmConhecimento.frx":3C26
+            Picture         =   "FrmConhecimento.frx":4068
             Style           =   1  'Graphical
-            TabIndex        =   157
+            TabIndex        =   156
             TabStop         =   0   'False
             Top             =   1080
             Width           =   375
@@ -2373,7 +2394,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   555
             Left            =   -74760
-            TabIndex        =   156
+            TabIndex        =   155
             Top             =   1080
             Width           =   1095
          End
@@ -2381,9 +2402,9 @@ Begin VB.Form FrmConhecimento
             BackColor       =   &H00FF0000&
             Height          =   480
             Left            =   -73560
-            Picture         =   "FrmConhecimento.frx":4068
+            Picture         =   "FrmConhecimento.frx":44AA
             Style           =   1  'Graphical
-            TabIndex        =   155
+            TabIndex        =   154
             TabStop         =   0   'False
             Top             =   1080
             Width           =   375
@@ -2392,9 +2413,9 @@ Begin VB.Form FrmConhecimento
             BackColor       =   &H00FF0000&
             Height          =   480
             Left            =   -73560
-            Picture         =   "FrmConhecimento.frx":44AA
+            Picture         =   "FrmConhecimento.frx":48EC
             Style           =   1  'Graphical
-            TabIndex        =   154
+            TabIndex        =   153
             TabStop         =   0   'False
             Top             =   1080
             Width           =   375
@@ -2411,7 +2432,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   555
             Left            =   -74760
-            TabIndex        =   153
+            TabIndex        =   152
             Top             =   1080
             Width           =   1095
          End
@@ -2427,7 +2448,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   555
             Left            =   -74760
-            TabIndex        =   152
+            TabIndex        =   151
             Top             =   1080
             Width           =   1095
          End
@@ -2435,9 +2456,9 @@ Begin VB.Form FrmConhecimento
             BackColor       =   &H00FF0000&
             Height          =   480
             Left            =   -73560
-            Picture         =   "FrmConhecimento.frx":48EC
+            Picture         =   "FrmConhecimento.frx":4D2E
             Style           =   1  'Graphical
-            TabIndex        =   151
+            TabIndex        =   150
             TabStop         =   0   'False
             Top             =   1080
             Width           =   375
@@ -2445,7 +2466,7 @@ Begin VB.Form FrmConhecimento
          Begin MSFlexGridLib.MSFlexGrid tubos_conexoes_agua 
             Height          =   3495
             Left            =   -74880
-            TabIndex        =   165
+            TabIndex        =   164
             Top             =   1680
             Width           =   11775
             _ExtentX        =   20770
@@ -2466,7 +2487,7 @@ Begin VB.Form FrmConhecimento
          Begin MSFlexGridLib.MSFlexGrid tubos_conexoes_predial 
             Height          =   3495
             Left            =   120
-            TabIndex        =   166
+            TabIndex        =   165
             Top             =   1680
             Width           =   11775
             _ExtentX        =   20770
@@ -2487,7 +2508,7 @@ Begin VB.Form FrmConhecimento
          Begin MSFlexGridLib.MSFlexGrid tubos_conexoes_roscaveis 
             Height          =   3375
             Left            =   -74880
-            TabIndex        =   167
+            TabIndex        =   166
             Top             =   1800
             Width           =   11775
             _ExtentX        =   20770
@@ -2509,7 +2530,7 @@ Begin VB.Form FrmConhecimento
          Begin MSFlexGridLib.MSFlexGrid tubo_tubos_conexoes_coletor_esgoto 
             Height          =   3495
             Left            =   -74880
-            TabIndex        =   168
+            TabIndex        =   167
             Top             =   1680
             Width           =   11775
             _ExtentX        =   20770
@@ -2530,7 +2551,7 @@ Begin VB.Form FrmConhecimento
          Begin MSFlexGridLib.MSFlexGrid tubo_conexoes_pba 
             Height          =   3495
             Left            =   -74880
-            TabIndex        =   169
+            TabIndex        =   168
             Top             =   1680
             Width           =   11775
             _ExtentX        =   20770
@@ -2551,7 +2572,7 @@ Begin VB.Form FrmConhecimento
          Begin MSFlexGridLib.MSFlexGrid tubo_conexoes_defofo 
             Height          =   3495
             Left            =   -74880
-            TabIndex        =   170
+            TabIndex        =   169
             Top             =   1680
             Width           =   11775
             _ExtentX        =   20770
@@ -2572,7 +2593,7 @@ Begin VB.Form FrmConhecimento
          Begin MSFlexGridLib.MSFlexGrid GrdNotaCliente 
             Height          =   3375
             Left            =   -74880
-            TabIndex        =   171
+            TabIndex        =   170
             Top             =   1680
             Width           =   11715
             _ExtentX        =   20664
@@ -2604,7 +2625,7 @@ Begin VB.Form FrmConhecimento
          Begin MSFlexGridLib.MSFlexGrid tubos_conexoes_irri_azuis 
             Height          =   3375
             Left            =   -74880
-            TabIndex        =   200
+            TabIndex        =   199
             Top             =   1800
             Width           =   11775
             _ExtentX        =   20770
@@ -2636,7 +2657,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   375
             Left            =   -74760
-            TabIndex        =   202
+            TabIndex        =   201
             Top             =   840
             Width           =   255
          End
@@ -2654,7 +2675,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00404040&
             Height          =   285
             Left            =   -74520
-            TabIndex        =   201
+            TabIndex        =   200
             Top             =   900
             Width           =   825
          End
@@ -2671,7 +2692,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   375
             Left            =   -74760
-            TabIndex        =   197
+            TabIndex        =   196
             Top             =   720
             Width           =   255
          End
@@ -2689,7 +2710,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00404040&
             Height          =   285
             Left            =   -74520
-            TabIndex        =   196
+            TabIndex        =   195
             Top             =   780
             Width           =   825
          End
@@ -2707,7 +2728,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00404040&
             Height          =   285
             Left            =   -74520
-            TabIndex        =   195
+            TabIndex        =   194
             Top             =   900
             Width           =   825
          End
@@ -2724,7 +2745,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   375
             Left            =   -74760
-            TabIndex        =   194
+            TabIndex        =   193
             Top             =   840
             Width           =   255
          End
@@ -2742,7 +2763,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00404040&
             Height          =   285
             Left            =   -74520
-            TabIndex        =   193
+            TabIndex        =   192
             Top             =   780
             Width           =   825
          End
@@ -2759,7 +2780,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   375
             Left            =   -74760
-            TabIndex        =   192
+            TabIndex        =   191
             Top             =   720
             Width           =   255
          End
@@ -2777,7 +2798,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00404040&
             Height          =   285
             Left            =   -74520
-            TabIndex        =   191
+            TabIndex        =   190
             Top             =   780
             Width           =   825
          End
@@ -2794,7 +2815,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   375
             Left            =   -74760
-            TabIndex        =   190
+            TabIndex        =   189
             Top             =   720
             Width           =   255
          End
@@ -2812,7 +2833,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00404040&
             Height          =   285
             Left            =   -74520
-            TabIndex        =   189
+            TabIndex        =   188
             Top             =   780
             Width           =   825
          End
@@ -2829,7 +2850,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   375
             Left            =   -74760
-            TabIndex        =   188
+            TabIndex        =   187
             Top             =   720
             Width           =   255
          End
@@ -2847,7 +2868,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00404040&
             Height          =   285
             Left            =   -74520
-            TabIndex        =   187
+            TabIndex        =   186
             Top             =   780
             Width           =   825
          End
@@ -2864,7 +2885,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   375
             Left            =   -74760
-            TabIndex        =   186
+            TabIndex        =   185
             Top             =   720
             Width           =   255
          End
@@ -2881,7 +2902,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   375
             Left            =   -74760
-            TabIndex        =   185
+            TabIndex        =   184
             Top             =   720
             Width           =   255
          End
@@ -2900,7 +2921,7 @@ Begin VB.Form FrmConhecimento
             Height          =   285
             Index           =   4
             Left            =   -74520
-            TabIndex        =   184
+            TabIndex        =   183
             Top             =   780
             Width           =   825
          End
@@ -2918,7 +2939,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00404040&
             Height          =   285
             Left            =   -74520
-            TabIndex        =   183
+            TabIndex        =   182
             Top             =   780
             Width           =   825
          End
@@ -2935,7 +2956,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   375
             Left            =   -74760
-            TabIndex        =   182
+            TabIndex        =   181
             Top             =   720
             Width           =   255
          End
@@ -2952,7 +2973,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   375
             Left            =   -74760
-            TabIndex        =   181
+            TabIndex        =   180
             Top             =   720
             Width           =   255
          End
@@ -2970,7 +2991,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00404040&
             Height          =   285
             Left            =   -74520
-            TabIndex        =   180
+            TabIndex        =   179
             Top             =   780
             Width           =   825
          End
@@ -2987,7 +3008,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   375
             Left            =   240
-            TabIndex        =   179
+            TabIndex        =   178
             Top             =   720
             Width           =   255
          End
@@ -3005,7 +3026,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00404040&
             Height          =   285
             Left            =   480
-            TabIndex        =   178
+            TabIndex        =   177
             Top             =   780
             Width           =   825
          End
@@ -3022,7 +3043,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   375
             Left            =   -74760
-            TabIndex        =   177
+            TabIndex        =   176
             Top             =   720
             Width           =   255
          End
@@ -3040,7 +3061,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00404040&
             Height          =   285
             Left            =   -74520
-            TabIndex        =   176
+            TabIndex        =   175
             Top             =   780
             Width           =   825
          End
@@ -3057,7 +3078,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   375
             Left            =   -74760
-            TabIndex        =   175
+            TabIndex        =   174
             Top             =   720
             Width           =   255
          End
@@ -3075,7 +3096,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00404040&
             Height          =   285
             Left            =   -74520
-            TabIndex        =   174
+            TabIndex        =   173
             Top             =   780
             Width           =   825
          End
@@ -3092,7 +3113,7 @@ Begin VB.Form FrmConhecimento
             EndProperty
             Height          =   375
             Left            =   -74760
-            TabIndex        =   173
+            TabIndex        =   172
             Top             =   720
             Width           =   255
          End
@@ -3110,7 +3131,7 @@ Begin VB.Form FrmConhecimento
             ForeColor       =   &H00404040&
             Height          =   285
             Left            =   -74520
-            TabIndex        =   172
+            TabIndex        =   171
             Top             =   780
             Width           =   825
          End
@@ -3123,7 +3144,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H0000FFFF&
          Height          =   375
          Left            =   -74880
-         TabIndex        =   133
+         TabIndex        =   132
          Top             =   480
          Width           =   1695
       End
@@ -3142,7 +3163,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H000000C0&
          Height          =   255
          Left            =   -65280
-         TabIndex        =   131
+         TabIndex        =   130
          Top             =   1920
          Width           =   2055
       End
@@ -3160,7 +3181,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00000080&
          Height          =   135
          Left            =   -65280
-         TabIndex        =   130
+         TabIndex        =   129
          Top             =   1680
          Width           =   1095
       End
@@ -3178,7 +3199,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00000040&
          Height          =   375
          Left            =   3000
-         TabIndex        =   129
+         TabIndex        =   128
          Top             =   8040
          Visible         =   0   'False
          Width           =   1215
@@ -3197,7 +3218,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00000040&
          Height          =   375
          Left            =   120
-         TabIndex        =   128
+         TabIndex        =   127
          Top             =   8040
          Width           =   1455
       End
@@ -3215,7 +3236,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00000040&
          Height          =   375
          Left            =   1680
-         TabIndex        =   127
+         TabIndex        =   126
          Top             =   8040
          Width           =   1215
       End
@@ -3233,7 +3254,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00800000&
          Height          =   375
          Left            =   4680
-         TabIndex        =   126
+         TabIndex        =   125
          Top             =   8040
          Width           =   1455
       End
@@ -3251,7 +3272,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00404040&
          Height          =   240
          Left            =   3000
-         TabIndex        =   125
+         TabIndex        =   124
          Top             =   7800
          Visible         =   0   'False
          Width           =   1185
@@ -3271,7 +3292,7 @@ Begin VB.Form FrmConhecimento
          Height          =   255
          Index           =   0
          Left            =   3360
-         TabIndex        =   18
+         TabIndex        =   17
          Top             =   600
          Width           =   930
       End
@@ -3280,7 +3301,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H000000FF&
          Height          =   495
          Left            =   4920
-         TabIndex        =   120
+         TabIndex        =   119
          Top             =   3120
          Visible         =   0   'False
          Width           =   6255
@@ -3301,7 +3322,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00FFFFFF&
          Height          =   255
          Left            =   -63840
-         TabIndex        =   112
+         TabIndex        =   111
          Top             =   1320
          Visible         =   0   'False
          Width           =   975
@@ -3323,7 +3344,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H000000FF&
          Height          =   255
          Left            =   -64200
-         TabIndex        =   103
+         TabIndex        =   102
          Top             =   720
          Width           =   1335
       End
@@ -3341,7 +3362,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00000080&
          Height          =   255
          Left            =   -64200
-         TabIndex        =   102
+         TabIndex        =   101
          Top             =   480
          Width           =   1335
       End
@@ -3361,7 +3382,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H000000C0&
          Height          =   255
          Left            =   -65640
-         TabIndex        =   101
+         TabIndex        =   100
          Top             =   720
          Width           =   1335
       End
@@ -3379,7 +3400,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00000080&
          Height          =   255
          Left            =   -65640
-         TabIndex        =   100
+         TabIndex        =   99
          Top             =   480
          Width           =   1215
       End
@@ -3397,7 +3418,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00000080&
          Height          =   135
          Left            =   -66000
-         TabIndex        =   86
+         TabIndex        =   85
          Top             =   1680
          Width           =   615
       End
@@ -3415,7 +3436,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00000080&
          Height          =   135
          Left            =   -67920
-         TabIndex        =   85
+         TabIndex        =   84
          Top             =   1080
          Width           =   1815
       End
@@ -3433,7 +3454,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00000080&
          Height          =   255
          Left            =   -67920
-         TabIndex        =   84
+         TabIndex        =   83
          Top             =   480
          Width           =   1815
       End
@@ -3451,7 +3472,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00000080&
          Height          =   135
          Left            =   -67440
-         TabIndex        =   83
+         TabIndex        =   82
          Top             =   1680
          Width           =   615
       End
@@ -3469,7 +3490,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00000080&
          Height          =   135
          Left            =   -70920
-         TabIndex        =   82
+         TabIndex        =   81
          Top             =   1680
          Width           =   1815
       End
@@ -3487,7 +3508,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00000080&
          Height          =   135
          Left            =   -74880
-         TabIndex        =   81
+         TabIndex        =   80
          Top             =   1680
          Width           =   855
       End
@@ -3505,7 +3526,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00000080&
          Height          =   135
          Left            =   -74880
-         TabIndex        =   80
+         TabIndex        =   79
          Top             =   480
          Width           =   1815
       End
@@ -3523,7 +3544,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00000080&
          Height          =   135
          Left            =   -74880
-         TabIndex        =   79
+         TabIndex        =   78
          Top             =   1080
          Width           =   1815
       End
@@ -3543,7 +3564,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H000000C0&
          Height          =   255
          Left            =   -67440
-         TabIndex        =   78
+         TabIndex        =   77
          Top             =   1920
          Width           =   1215
       End
@@ -3563,7 +3584,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H000000C0&
          Height          =   255
          Left            =   -67920
-         TabIndex        =   77
+         TabIndex        =   76
          Top             =   1320
          Width           =   2175
       End
@@ -3583,7 +3604,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H000000C0&
          Height          =   255
          Left            =   -70920
-         TabIndex        =   76
+         TabIndex        =   75
          Top             =   1920
          Width           =   3375
       End
@@ -3603,7 +3624,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H000000C0&
          Height          =   255
          Left            =   -65520
-         TabIndex        =   75
+         TabIndex        =   74
          Top             =   1320
          Width           =   1575
       End
@@ -3623,7 +3644,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H000000C0&
          Height          =   255
          Left            =   -66000
-         TabIndex        =   74
+         TabIndex        =   73
          Top             =   1920
          Width           =   495
       End
@@ -3641,7 +3662,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00800000&
          Height          =   375
          Left            =   3120
-         TabIndex        =   73
+         TabIndex        =   72
          Top             =   -3480
          Width           =   4095
       End
@@ -3661,7 +3682,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H000000C0&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   72
+         TabIndex        =   71
          Top             =   1920
          Width           =   3855
       End
@@ -3681,7 +3702,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H000000C0&
          Height          =   255
          Left            =   -67920
-         TabIndex        =   71
+         TabIndex        =   70
          Top             =   720
          Width           =   1935
       End
@@ -3701,7 +3722,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H000000C0&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   70
+         TabIndex        =   69
          Top             =   1320
          Width           =   6855
       End
@@ -3721,7 +3742,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H000000C0&
          Height          =   255
          Left            =   -74880
-         TabIndex        =   69
+         TabIndex        =   68
          Top             =   720
          Width           =   6855
       End
@@ -3738,14 +3759,14 @@ Begin VB.Form FrmConhecimento
          EndProperty
          Height          =   375
          Left            =   -74880
-         TabIndex        =   68
+         TabIndex        =   67
          Top             =   4920
          Width           =   1815
       End
       Begin VB.Label LblResultNegocio 
          Height          =   495
          Left            =   -74880
-         TabIndex        =   62
+         TabIndex        =   61
          Top             =   6960
          Width           =   8175
       End
@@ -3764,7 +3785,7 @@ Begin VB.Form FrmConhecimento
          Height          =   375
          Index           =   1
          Left            =   3360
-         TabIndex        =   17
+         TabIndex        =   16
          Top             =   1200
          Width           =   1170
       End
@@ -3782,7 +3803,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00404040&
          Height          =   240
          Left            =   120
-         TabIndex        =   11
+         TabIndex        =   10
          Top             =   7800
          Width           =   1005
       End
@@ -3800,7 +3821,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00404040&
          Height          =   240
          Left            =   1680
-         TabIndex        =   10
+         TabIndex        =   9
          Top             =   7800
          Width           =   1005
       End
@@ -3817,7 +3838,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00800000&
          Height          =   195
          Left            =   5655
-         TabIndex        =   9
+         TabIndex        =   8
          Top             =   4035
          Width           =   5895
       End
@@ -3834,7 +3855,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H000000C0&
          Height          =   375
          Left            =   5640
-         TabIndex        =   8
+         TabIndex        =   7
          Top             =   2640
          Width           =   6615
       End
@@ -3852,7 +3873,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H00404040&
          Height          =   240
          Left            =   4680
-         TabIndex        =   7
+         TabIndex        =   6
          Top             =   7800
          Width           =   1305
       End
@@ -3860,7 +3881,7 @@ Begin VB.Form FrmConhecimento
    Begin MSFlexGridLib.MSFlexGrid GrdIndice 
       Height          =   1575
       Left            =   0
-      TabIndex        =   37
+      TabIndex        =   36
       Top             =   8640
       Width           =   12375
       _ExtentX        =   21828
@@ -3905,14 +3926,14 @@ Begin VB.Form FrmConhecimento
       ForeColor       =   &H8000000E&
       Height          =   1815
       Left            =   8880
-      TabIndex        =   38
+      TabIndex        =   37
       Top             =   5520
       Visible         =   0   'False
       Width           =   2415
       Begin Project_Masked.Masked idx1 
          Height          =   375
          Left            =   1200
-         TabIndex        =   39
+         TabIndex        =   38
          TabStop         =   0   'False
          Top             =   360
          Width           =   855
@@ -3937,7 +3958,7 @@ Begin VB.Form FrmConhecimento
       Begin Project_Masked.Masked idx2 
          Height          =   375
          Left            =   240
-         TabIndex        =   40
+         TabIndex        =   39
          TabStop         =   0   'False
          Top             =   360
          Width           =   855
@@ -3961,7 +3982,7 @@ Begin VB.Form FrmConhecimento
       Begin Project_Masked.Masked idx3 
          Height          =   375
          Left            =   240
-         TabIndex        =   41
+         TabIndex        =   40
          TabStop         =   0   'False
          Top             =   1200
          Width           =   855
@@ -3985,7 +4006,7 @@ Begin VB.Form FrmConhecimento
       Begin Project_Masked.Masked idx4 
          Height          =   375
          Left            =   1200
-         TabIndex        =   42
+         TabIndex        =   41
          TabStop         =   0   'False
          Top             =   1200
          Width           =   855
@@ -4022,7 +4043,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H0000FF00&
          Height          =   255
          Left            =   1200
-         TabIndex        =   46
+         TabIndex        =   45
          Top             =   120
          Width           =   855
       End
@@ -4041,7 +4062,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H8000000E&
          Height          =   255
          Left            =   240
-         TabIndex        =   45
+         TabIndex        =   44
          Top             =   120
          Width           =   735
       End
@@ -4060,7 +4081,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H8000000E&
          Height          =   255
          Left            =   240
-         TabIndex        =   44
+         TabIndex        =   43
          Top             =   960
          Width           =   975
       End
@@ -4079,7 +4100,7 @@ Begin VB.Form FrmConhecimento
          ForeColor       =   &H0000FFFF&
          Height          =   255
          Left            =   1200
-         TabIndex        =   43
+         TabIndex        =   42
          Top             =   960
          Width           =   855
       End
@@ -4305,6 +4326,251 @@ Dim MskNumNf As String      'Código do produto
 Dim ControleLostFocus As Boolean
 Dim ControleAtualizaGrid As Boolean
 Dim ControleDeleteItemAbaResumo As Boolean
+
+
+Private Sub BtoGravaOrcamento_Click(Index As Integer)
+
+    DoEvents
+    
+    '*********************************************
+    'Pedido com apenas tubo de 100 não pode ser gravado
+    'A não ser que sua margem supere os 9%
+    '***********************************************
+    
+    If dlMargemGeral < 9 Then
+        If bSo100 = True Then
+            MsgBox "Orçamento com item apenas TUBO DE 100MM," & vbCr & _
+            "não pode ser gravado," & vbCr & _
+            "inclua novos itens ou feche o Pedido!", vbExclamation + vbOKOnly, "Atenção!"
+         '   MskNroPedido
+            Exit Sub
+        End If
+        
+        If (dlTotLiq * 0.7) < dTotb100 Then
+            MsgBox "Esse Orçamento está com item TUBO DE 100MM," & vbCr & _
+            "maior que 70% do total permitido para venda!", vbExclamation + vbOKOnly, "Atenção!"
+         '   MskNroPedido
+            Exit Sub
+        End If
+    End If
+    
+    
+    '*****************************************************************************************
+    'Verifica se a condição de pagamento foi informada.
+    '*****************************************************************************************
+    
+    If Trim(ilCodCnd) = "" Or Trim(ilCodCnd) = 0 Or Trim(CboCondPag.Criterio) = "" Then
+        
+        MsgBox "Informe a Condição de pagamento", vbExclamation + vbOKOnly, "Atenção!"
+        
+        CboCondPag.SetFocus
+        
+        Exit Sub
+        
+   End If
+   
+    If bgBloqPed = True Then
+        Exit Sub
+    End If
+            
+    cboCli_Consultar
+    
+    '*****************************************************************************************
+    'Verifica se o cliente foi informado.
+    '*****************************************************************************************
+    
+    If Trim(slremet) = "" Or ilCodCli = 0 Or Trim(ilCodCli) = "" Then
+        
+        MsgBox "Informe o Cliente.", vbExclamation + vbOKOnly, "Atenção!"
+        
+        slremet = ""
+        ilCodCli = 0
+        
+        cboCli.Habilitado = True
+        cboCli.SetFocus
+        
+        Exit Sub
+        
+    End If
+      
+    cboCli_LostFocus
+   
+    blleitura = False
+    
+    '*****************************************************************************************
+    'Faz a leitura dos dados do cliente e exibe na guia correspondente. Apura também dados
+    'sobre descontos, tributos e calcula os índices do pedido.
+    '*****************************************************************************************
+    
+    If LeituraCliente = False Then
+        LimpaGeral
+    End If
+   
+    If blDescZero = True And d5.Texto > 0 Then
+    
+        sgQuery = MsgBox("Existe item sem Desconto, Deseja voltar no pedido?", vbQuestion + vbYesNo + vbDefaultButton1, "Atenção!")
+        
+        If sgQuery = vbYes Then
+            Exit Sub
+        End If
+        
+    End If
+
+    slAceita = False
+    dlComiSug = 0
+    
+    If slFlgSugComi = "S" And bgPedMKT = False Then
+    
+        If EquilibraComissao = False Then
+            Exit Sub
+        End If
+        
+    End If
+    
+    If ConferePrazo = False Then
+        Exit Sub
+    End If
+    
+    If ChkKit.Value = 1 Then
+    
+        If ValidaKit = False Then
+            Exit Sub
+        End If
+        
+    End If
+    
+    If slAceita = True Then
+    
+        sgQuery = MsgBox("Confirma Pedido?", vbQuestion + vbYesNo + vbDefaultButton1, "Atenção!")
+        
+        If sgQuery = vbNo Then
+            Exit Sub
+        End If
+        
+    End If
+    
+    If Trim(TxtTransp.Text) = "" Then
+        
+        MsgBox "Informe a Transportadora !", vbExclamation + vbOKOnly, "Atenção!"
+        
+        TxtTransp.SetFocus
+        
+        Exit Sub
+        
+    End If
+   
+'----------------------------------------------
+    'If iDscForaRegiao < 1 Then
+    
+        'BtoGrava.Enabled = False
+        
+        'Exit Sub
+        
+    'Else
+        
+        'If iDscForaRegiao >= 1 Then
+            
+            If Date >= CDate("04/02/2017") Then
+                
+                If dlMargemGeral <= 7.99 Then
+                    MsgBox "Esse orçamento está FORA da política comercial da Unocann. " & vbCrLf & _
+                    "Corrija os descontos praticados até que essa mensagem não apareça.", vbCritical, "Atenção!"
+                    
+                    Me.Caption = "UNOCANN Tubos e Conexões - Simulação de Pedidos  [" & Trim(slNomRep) & "]"
+                
+                    Exit Sub
+                
+                ElseIf dlMargemGeral > 8 And dlMargemGeral <= 8.5 Then
+                
+                    MsgBox "Esse orçamento está PRÓXIMO da política comercial da Unocann. " & vbCrLf & vbCrLf & _
+                    "Reveja os descontos praticados e mix de produtos até que a cor fique VERDE.", vbInformation, "Atenção!"
+            
+           '     MsgBox "Reveja os descontos praticados e mix de produtos até que a cor fique VERDE.", vbInformation, "Atenção!"
+                       
+           '     MsgBox "Reveja os descontos praticados e mix de produtos até que a cor fique VERDE.", vbInformation, "Atenção!"
+                       
+                       
+                Me.Caption = "UNOCANN Tubos e Conexões - Simulação de Pedidos  [" & Trim(slNomRep) & "]"
+        
+                
+                End If
+            
+            Else
+            
+                If dlMargemGeral <= 7.99 Then
+                    MsgBox "Esse orçamento está FORA da política comercial da Unocann. " & vbCrLf & _
+                    "Corrija os descontos praticados até que essa mensagem não apareça.", vbCritical, "Atenção!"
+                    
+                    Me.Caption = "UNOCANN Tubos e Conexões - Simulação de Pedidos  [" & Trim(slNomRep) & "]"
+                
+                    Exit Sub
+                
+                ElseIf dlMargemGeral > 7.99 And dlMargemGeral <= 8.5 Then
+                
+                    MsgBox "Esse orçamento está PRÓXIMO da política comercial da Unocann. " & vbCrLf & vbCrLf & _
+                    "Reveja os descontos praticados e mix de produtos até que a cor fique VERDE.", vbInformation, "Atenção!"
+            
+           '     MsgBox "Reveja os descontos praticados e mix de produtos até que a cor fique VERDE.", vbInformation, "Atenção!"
+                       
+           '     MsgBox "Reveja os descontos praticados e mix de produtos até que a cor fique VERDE.", vbInformation, "Atenção!"
+                       
+                       
+                Me.Caption = "UNOCANN Tubos e Conexões - Simulação de Pedidos  [" & Trim(slNomRep) & "]"
+        
+                
+                End If
+           End If
+      'Else
+            
+            'Me.Caption = "UNOCANN Tubos e Conexões - Manutenção de Pedidos  [" & Trim(slNomRep) & "]"
+        
+      'End If
+
+    'End If
+
+    
+
+    
+'----------------------------------------------
+   
+    If bgPedMKT = True Then
+        
+        GravaCTRCTMK
+        
+        Me.Refresh
+        
+        MsgBox "Pedido " & MskNroPedido.Text & " incluido com sucesso!", vbExclamation + vbOKOnly, "Atenção!"
+        
+        BtoSair_Click
+        
+        Exit Sub
+        
+    Else
+        
+        GravaCTRCOrcamento
+    End If
+       
+    If bgConsultaPed = True Then
+    
+        Unload Me
+        
+        Set FrmConhecimento = Nothing
+        
+        bgBloqPed = False
+        bgConsultaPed = False
+        
+        FrmPosiPed.Enabled = True
+        FrmPosiPed.Show
+        
+        Exit Sub
+        
+    End If
+   
+    LimpaGeral
+    
+    Me.Refresh
+    
+End Sub
 
 Private Sub CboCondPag_KeyPress(KeyAscii As Integer)
 
@@ -6990,7 +7256,7 @@ Private Sub carregaResumo(row As Integer, grid As MSFlexGrid)
     
     If rowsResumo > 1 Then
         For i = 1 To GrdNotaCliente.rows - 1
-            If GrdNotaCliente.TextMatrix(i, 0) = Format(grid.TextMatrix(row, 1), "0000") And GrdNotaCliente.TextMatrix(i, 6) = Format(grid.TextMatrix(row, 6), "##0.00") And GrdNotaCliente.TextMatrix(i, 3) = grid.TextMatrix(row, 4) And ControleAtualizaGrid = False Then
+            If GrdNotaCliente.TextMatrix(i, 0) = Format(grid.TextMatrix(row, 1), "0000") And GrdNotaCliente.TextMatrix(i, 6) = Format(grid.TextMatrix(row, 6), "##0.00") And GrdNotaCliente.TextMatrix(i, 3) = grid.TextMatrix(row, 4) Then
                 Exit Sub
             End If
             
@@ -7017,7 +7283,7 @@ Private Sub carregaResumo(row As Integer, grid As MSFlexGrid)
                 Exit Sub
             End If
             
-            If GrdNotaCliente.TextMatrix(i, 0) = Format(grid.TextMatrix(row, 1), "0000") And GrdNotaCliente.TextMatrix(i, 6) = Format(grid.TextMatrix(row, 6), "##0.00") Then
+            If GrdNotaCliente.TextMatrix(i, 0) = Format(grid.TextMatrix(row, 1), "0000") Then
                 If GrdNotaCliente.rows = 2 Then
                     GrdNotaCliente.rows = GrdNotaCliente.rows - 1
                 Else
@@ -7028,19 +7294,6 @@ Private Sub carregaResumo(row As Integer, grid As MSFlexGrid)
                 ControleDeleteItemAbaResumo = True
                 Exit For
             End If
-            
-            If GrdNotaCliente.TextMatrix(i, 0) = Format(grid.TextMatrix(row, 1), "0000") And GrdNotaCliente.TextMatrix(i, 6) <> Format(grid.TextMatrix(row, 6), "##0.00") Then
-                If GrdNotaCliente.rows = 2 Then
-                    GrdNotaCliente.rows = GrdNotaCliente.rows - 1
-                Else
-                    GrdNotaCliente.RemoveItem (i)
-                    GrdNotaCliente.Refresh
-                End If
-                'Variável define que houve retirada de item da aba resumo
-                ControleDeleteItemAbaResumo = True
-                Exit For
-            End If
-            
         Next
     End If
     
@@ -7338,6 +7591,7 @@ Private Sub carregaResumo(row As Integer, grid As MSFlexGrid)
     
     If bgSimula = False Then
         BtoGrava.Enabled = True
+        BtoGravaOrcamento(1).Enabled = True
     End If
     
     GrdNotaCliente.Enabled = True
@@ -8397,29 +8651,80 @@ Function Numero_Ped() As Boolean
     'Voltei a usar a consulta normal no memso dia e nenhum outro representante
     'teve acesso a ela. (André Corrêa)
     '****************************************************************************
-    
-    'sgQuery = "select max(nroped) as pedido from PEDIDO where CodRep = " & Trim(ilCodRep) & "And NroPed < 897000"
-    sgQuery = "select max(nroped) as pedido from PEDIDO where CodRep = " & Trim(ilCodRep)
-    
-    Call Consulta(sgQuery)
-    
-    If IsNull(Rs("pedido")) = True Then
-    
-        Dim x As Double
-        x = Val(Mid(Rs("pedido"), 2, 5))
-        MskNroPedido.Text = Mid(Rs("pedido"), 1, 1) + (Format(x + 1, "00000"))
-    
-       ' MskNroPedido.Text = SeqIni
+    Dim pedido As Double
+    Dim pedidoCompleto As String
+    Dim x As Double
         
-        Exit Function
+    If APLICA = 2 Then
+    
+        'sgQuery = "select max(nroped) as pedido from PEDIDO where CodRep = " & Trim(ilCodRep) & "And NroPed < 897000"
+        sgQuery = "select max(nroped) as pedido from PEDIDO where CodRep = " & Trim(ilCodRep)
         
-    Else
+        Call Consulta(sgQuery)
+        pedido = Val(Mid(Rs("pedido"), 2, 5))
+        pedido = pedido + 1
+        pedidoCompleto = Val(Mid(Rs("pedido"), 1, 1)) & pedido
+        
+        sgQuery = "select nroped as pedido from ORCAMENTO where CodRep = " & Trim(ilCodRep) & " and nroped = " & pedidoCompleto
+        
+        Call Consulta(sgQuery)
+        
+        If Rs.EOF = False Then
+            If pedido = Val(Mid(Rs("pedido"), 2, 5)) Then
+                pedido = pedido
+                pedidoCompleto = Val(Mid(Rs("pedido"), 1, 1)) & pedido
+            Else
+                pedidoCompleto = Val(Mid(Rs("pedido"), 1, 1)) & pedido - 1
+            End If
+        Else
+            pedidoCompleto = Val(Mid(Rs("pedido"), 1, 1)) & pedido - 1
+        End If
+        
+        If IsNull(pedidoCompleto) = True Then
+        
+            x = Val(Mid(pedidoCompleto, 2, 5))
+            MskNroPedido.Text = Mid(pedidoCompleto, 1, 1) + (Format(x + 1, "00000"))
+        
+           ' MskNroPedido.Text = SeqIni
+            
+            Exit Function
+            
+        Else
+        
+            ' Dim x As Double
+            x = Val(Mid(pedidoCompleto, 2, 5))
+            MskNroPedido.Text = Mid(pedidoCompleto, 1, 1) + (Format(x + 1, "00000"))
+        
+           ' MskNroPedido.Text = Rs("Pedido") + 1
+            
+        End If
+        
+    End If
     
-        ' Dim x As Double
-        x = Val(Mid(Rs("Pedido"), 2, 5))
-        MskNroPedido.Text = Mid(Rs("Pedido"), 1, 1) + (Format(x + 1, "00000"))
+    If APLICA = 1 Then
     
-       ' MskNroPedido.Text = Rs("Pedido") + 1
+        sgQuery = "select max(nroped) as pedido from PEDIDO where CodRep = " & Trim(ilCodRep)
+    
+        Call Consulta(sgQuery)
+        
+        If IsNull(Rs("Pedido")) = True Then
+        
+            x = Val(Mid(Rs("Pedido"), 2, 5))
+            MskNroPedido.Text = Mid(Rs("Pedido"), 1, 1) + (Format(x + 1, "00000"))
+        
+           ' MskNroPedido.Text = SeqIni
+            
+            Exit Function
+            
+        Else
+        
+            ' Dim x As Double
+            x = Val(Mid(Rs("Pedido"), 2, 5))
+            MskNroPedido.Text = Mid(Rs("Pedido"), 1, 1) + (Format(x + 1, "00000"))
+        
+           ' MskNroPedido.Text = Rs("Pedido") + 1
+            
+        End If
         
     End If
     
@@ -8813,32 +9118,69 @@ Function CarregaTela() As Boolean
     'Avalia se o pedido informado realmente existe.
     '*************************************************************************************
     
-    sgQuery = "Select nroped From PEDIDO Where NroPed = '" & Trim(MskNroPedido.Text) & "'"
-    
-    Consulta sgQuery
-    
-    If Rs.EOF Then
-        blI = 0
-    Else
-        NroPed = IIf(IsNull(Rs!NroPed), "", Trim(Rs!NroPed))
+    If APLICA = 2 Then
+        If ConsultaPedido = False And ConsultaOrcamento = False Then
+            blI = 0
+        Else
+            NroPed = IIf(IsNull(Trim(MskNroPedido.Text)), "", Trim(MskNroPedido.Text))
+        End If
+        
+        If blI = 0 Or NroPed = "" Then
+        
+            MsgBox "Pedido não cadastrado !", vbExclamation + vbOKOnly, "Atenção!"
+            
+            CarregaTela = False
+            
+            Exit Function
+            
+        End If
+        
+        '*************************************************************************************
+        'Levanta e exibe os dados do cabeçalho do pedido. Preenche também a guia COMUNICAÇÃO.
+        '*************************************************************************************
+        
+        If ConsultaPedido = True Then
+            sgQuery = "Select a.*, b.NomCli, c.DscCnd From PEDIDO a, CLIENTE b, CONDICAO c"
+            sgQuery = sgQuery & " Where a.NroPed = '" & Trim(MskNroPedido.Text) & "' And a.CodCli = b.CodCli and a.codcnd = c.codcnd"
+            BtoGravaOrcamento(1).Enabled = False
+        End If
+        
+        If ConsultaOrcamento = True Then
+            sgQuery = "Select a.*, b.NomCli, c.DscCnd From ORCAMENTO a, CLIENTE b, CONDICAO c"
+            sgQuery = sgQuery & " Where a.NroPed = '" & Trim(MskNroPedido.Text) & "' And a.CodCli = b.CodCli and a.codcnd = c.codcnd"
+        End If
     End If
     
-    If blI = 0 Or NroPed = "" Then
+    If APLICA = 1 Then
+        
+        sgQuery = "Select nroped From PEDIDO Where NroPed = '" & Trim(MskNroPedido.Text) & "'"
     
-        MsgBox "Pedido não cadastrado !", vbExclamation + vbOKOnly, "Atenção!"
+        Consulta sgQuery
         
-        CarregaTela = False
+        If Rs.EOF Then
+            blI = 0
+        Else
+            NroPed = IIf(IsNull(Rs!NroPed), "", Trim(Rs!NroPed))
+        End If
         
-        Exit Function
+        If blI = 0 Or NroPed = "" Then
+        
+            MsgBox "Pedido não cadastrado !", vbExclamation + vbOKOnly, "Atenção!"
+            
+            CarregaTela = False
+            
+            Exit Function
+            
+        End If
+        
+        '*************************************************************************************
+        'Levanta e exibe os dados do cabeçalho do pedido. Preenche também a guia COMUNICAÇÃO.
+        '*************************************************************************************
+        
+        sgQuery = "Select a.*, b.NomCli, c.DscCnd From PEDIDO a, CLIENTE b, CONDICAO c"
+        sgQuery = sgQuery & " Where a.NroPed = '" & Trim(MskNroPedido.Text) & "' And a.CodCli = b.CodCli and a.codcnd = c.codcnd"
         
     End If
-    
-    '*************************************************************************************
-    'Levanta e exibe os dados do cabeçalho do pedido. Preenche também a guia COMUNICAÇÃO.
-    '*************************************************************************************
-    
-    sgQuery = "Select a.*, b.NomCli, c.DscCnd From PEDIDO a, CLIENTE b, CONDICAO c"
-    sgQuery = sgQuery & " Where a.NroPed = '" & Trim(MskNroPedido.Text) & "' And a.CodCli = b.CodCli and a.codcnd = c.codcnd"
     
     Consulta sgQuery
     
@@ -9439,6 +9781,215 @@ TrataErro:
     
 End Function
 
+Function GravaCTRCOrcamento()
+
+    On Error GoTo TrataErro
+
+    Set Cmd = Nothing
+   
+    Conexao.BeginTrans
+   
+    Set Cmd = New Command
+
+    With Cmd
+    
+        .CommandText = "{call MNORCAMENTO (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}"
+        .CommandType = adCmdText
+        
+        .ActiveConnection = Conexao
+        
+        .Parameters.Refresh
+        
+        '@NroPed varchar ,
+        .Parameters(0).Value = Trim(MskNroPedido.Text)
+        '@Codcli int ,
+        .Parameters(1).Value = ilCodCli
+        '@CodRep int ,
+        .Parameters(2).Value = ilCodRep
+        '@CodCnd int ,
+        .Parameters(3).Value = ilCodCnd
+        '@CIFOB char(1) ,
+        
+        If Opt_CIF.Value = True Then
+            .Parameters(4).Value = "C"
+        Else
+            .Parameters(4).Value = "F"
+        End If
+        
+        '@DscPdr decimal(6, 3) ,
+        .Parameters(5).Value = IIf(Trim(d1.Texto) = "", 0, Trim(d1.Texto))
+        '@DscPro decimal(6, 3) ,
+        .Parameters(6).Value = IIf(Trim(d2.Texto) = "", 0, Trim(d2.Texto))
+        '@DscCnd decimal(6, 3) ,
+        .Parameters(7).Value = IIf(Trim(d3.Texto) = "", 0, Trim(d3.Texto))
+        '@DscFOB decimal(6, 3) ,
+        .Parameters(8).Value = IIf(Trim(d4.Texto) = "", 0, Trim(d4.Texto))
+        '@DscTot decimal(6, 3) ,
+        .Parameters(9).Value = IIf(Trim(d5.Texto) = "", 0, Trim(d5.Texto))
+        '@FlgContr char(1) ,
+        .Parameters(10).Value = Trim(d6.Texto)
+        
+        'If slPedSimples = "S" Then
+            '.Parameters(10).Value = "B"
+        'End If
+        
+        '@UFCli char(2) ,
+        .Parameters(11).Value = Trim(d7.Texto)
+        '@AlqICM decimal(6, 3) ,
+        .Parameters(12).Value = IIf(Trim(d8.Texto) = "", 0, Trim(d8.Texto))
+        '@MgrMin decimal(6, 3) ,
+        .Parameters(13).Value = 0 'Format(Trim(LblI.Caption), "########.###")
+        '@MgrTot decimal(6, 3) ,
+        .Parameters(14).Value = Format(Trim(dlMargemGeral), "####.##")
+        '@IdxFin decimal(6, 3) ,
+        .Parameters(15).Value = dlPerCusFin
+        '@IdxFrt decimal(6, 3) ,
+        .Parameters(16).Value = dlPerCusFrt
+        '@ComiNeg decimal(6, 3) ,
+        .Parameters(17).Value = dlPerComiNeg
+        '@ComiOri decimal(6, 3) ,
+        .Parameters(18).Value = dlPerComiCalc
+        '@TexNeg ntext ,
+        .Parameters(19).Value = Trim(TxtNegocio.Text)
+        '@TexObs ntext ,
+        .Parameters(20).Value = Trim(TxtObserva.Text)
+        '@ClasCor char(1),
+        
+        If Status.BackColor = &HFF00& Then
+            
+            .Parameters(21).Value = "G"
+            
+        Else
+        
+            If Status.BackColor = &HFF& Then
+                .Parameters(21).Value = "R"
+            Else
+                .Parameters(21).Value = "B"
+            End If
+            
+        End If
+        
+        '@IdxPDD decimal(6, 3),
+        .Parameters(22).Value = dlIdxPDD
+        '@NomTra varchar(40) ,
+        .Parameters(23).Value = Trim(TxtTransp.Text)
+        '@ChvDsc  Varchar(20)
+        .Parameters(24).Value = Trim(slChave)
+        '@SitPed char(1)
+        .Parameters(25).Value = "N"
+        '@DatPed char(1)
+        .Parameters(26).Value = Datped
+        '@FlgKit char(1)
+        
+        If ChkKit.Value = 1 Then
+            .Parameters(27).Value = "S"
+        Else
+            .Parameters(27).Value = "N"
+        End If
+        
+        '@VlrSimples decimal(10, 2),
+        .Parameters(28).Value = dlSimples
+        
+        '@FlgAlt char(1),
+        If Trim(slFlgAlt) = "" Then
+            
+            If iDscForaRegiao >= 1 Then
+               If dlMargemGeral < 9 Then
+                  .Parameters(29).Value = "F"
+               Else
+                  .Parameters(29).Value = Null
+               End If
+            Else
+               .Parameters(29).Value = Null
+            End If
+        
+    '        .Parameters(29).Value = Null
+        Else
+            .Parameters(29).Value = "A"
+        End If
+            
+        '@FlagOper char(1)
+        .Parameters(30).Value = Trim(sgFlagOper)
+        
+    End With
+    
+    Set Rs = Cmd.Execute
+    Set Rs = Nothing
+    Set Cmd = Nothing
+    
+    'DELETA TODOS OS ITENS
+    sgQuery = "Delete ITEM_ORCAMENTO where NroPed = '" & Trim(MskNroPedido.Text) & "'"
+    
+    Conexao.Execute sgQuery
+   
+    'GRAVA ITENS DO PEDIDO
+    
+    If GrdNotaCliente.rows > 1 Then
+    
+        For Linhas = 1 To GrdNotaCliente.rows - 1
+        
+            If Trim(GrdNotaCliente.TextMatrix(Linhas, 0)) > 0 Then
+            
+                Set Cmd = New Command
+                
+                With Cmd
+                
+                    .CommandText = "{call MNITEMORCAMENTO (?,?,?,?,?,?,?,?,?,?,?,?,?)}"
+                    .CommandType = adCmdText
+                    
+                    .ActiveConnection = Conexao
+                    
+                    .Parameters.Refresh
+                    
+                    '@NroPed varchar(7),
+                    .Parameters(0).Value = Trim(MskNroPedido.Text)
+                    '@CodPrd int,
+                    .Parameters(1).Value = Trim(GrdNotaCliente.TextMatrix(Linhas, 0))
+                    '@SeqIte int,
+                    .Parameters(2).Value = Linhas
+                    '@QtdPrd int,
+                    .Parameters(3).Value = Trim(GrdNotaCliente.TextMatrix(Linhas, 3))
+                    '@QtdEmb int,
+                    .Parameters(4).Value = Trim(GrdNotaCliente.TextMatrix(Linhas, 2))
+                    '@ValUnt decimal(10, 2),
+                    .Parameters(5).Value = Trim(GrdNotaCliente.TextMatrix(Linhas, 4))
+                    '@IdxDsc decimal(6, 3) ,
+                    .Parameters(6).Value = Trim(GrdNotaCliente.TextMatrix(Linhas, 6))
+                    '@VlrIte decimal(10, 2),
+                    .Parameters(7).Value = Trim(GrdNotaCliente.TextMatrix(Linhas, 18))
+                    '@FlgTab char(1)       ,
+                    .Parameters(8).Value = Trim(GrdNotaCliente.TextMatrix(Linhas, 5))
+                    '@ValUntN decimal(10, 2),
+                    .Parameters(9).Value = Trim(GrdNotaCliente.TextMatrix(Linhas, 12))
+                    '@MrgPrd decimal(6, 3) ,
+                    .Parameters(10).Value = Trim(GrdNotaCliente.TextMatrix(Linhas, 13))
+                    '@ValCusUnt decimal(10, 4),
+                    .Parameters(11).Value = Trim(GrdIndice.TextMatrix(Linhas, 9))
+                    '@IdxFix decimal(6, 3),
+                    .Parameters(12).Value = Trim(GrdIndice.TextMatrix(Linhas, 10))
+                    
+                End With
+                
+                Set Rs = Cmd.Execute
+                Set Rs = Nothing
+                Set Cmd = Nothing
+                
+            End If
+            
+        Next Linhas
+        
+    End If
+    
+   Conexao.CommitTrans
+   
+    Exit Function
+   
+TrataErro:
+
+    Rotina_Erro "GravaCTRCOrcamento"
+
+End Function
+
 Function GravaCTRC()
 
     On Error GoTo TrataErro
@@ -9677,6 +10228,7 @@ Function LimpaGeral()
     ''BtoExcNF.Enabled = False
     ''BtoLimpaNF.Enabled = False
     BtoGrava.Enabled = False
+    BtoGravaOrcamento(1).Enabled = False
     GrdNotaCliente.Enabled = False
     
     If APLICA = 1 Then
@@ -10227,6 +10779,55 @@ TrataErro:
     LeituraPadrao = False
     
 End Function
+
+Function ConsultaPedido() As Boolean
+    
+    Set Rs = Nothing
+    Dim sgQueryPedido As String
+    
+    sgQueryPedido = "select nroped from pedido"
+    sgQueryPedido = sgQueryPedido & "  where NroPed = " & IIf(MskNroPedido.Text = "", "99999999999", MskNroPedido.Text)
+    
+    Call Consulta(sgQueryPedido)
+    
+    If Rs.EOF = True Then
+        ConsultaPedido = False
+    Else
+        ConsultaPedido = True
+    End If
+        
+End Function
+
+Function ConsultaOrcamento() As Boolean
+    
+    Set Rs = Nothing
+    Dim sgQueryOrcamento As String
+    
+    sgQueryOrcamento = "select nroped from orcamento"
+    sgQueryOrcamento = sgQueryOrcamento & "  where NroPed = " & IIf(MskNroPedido.Text = "", "99999999999", MskNroPedido.Text)
+    
+    Call Consulta(sgQueryOrcamento)
+    
+    If Rs.EOF = True Then
+        ConsultaOrcamento = False
+    Else
+        ConsultaOrcamento = True
+    End If
+        
+End Function
+
+Private Sub DeletaOrcamento()
+    
+    Set Rs = Nothing
+    Dim sgQueryOrcamento As String
+    
+    sgQueryOrcamento = "DELETE ORCAMENTO WHERE NroPed = " & MskNroPedido.Text
+    
+    Conexao.Execute sgQueryOrcamento
+    
+    sgQueryOrcamento = "DELETE ITEM_ORCAMENTO WHERE NroPed = " & MskNroPedido.Text
+        
+End Sub
 
 Function LeituraCliente() As Boolean
 
@@ -12995,6 +13596,7 @@ End If
     
     If bgSimula = False Then
         BtoGrava.Enabled = True
+        BtoGravaOrcamento(1).Enabled = True
     End If
     
     GrdNotaCliente.Enabled = True
@@ -13430,6 +14032,15 @@ Private Sub BtoGrava_Click()
    
     LimpaGeral
     
+    '**********************************************************************************
+    'Se o pedido for um orçamento o sistema deleta o orçamento
+    '**********************************************************************************
+    If APLICA = 2 Then
+        If ConsultaOrcamento = True Then
+            DeletaOrcamento
+        End If
+    End If
+    
     Me.Refresh
    
 End Sub
@@ -13508,6 +14119,7 @@ Private Sub BtoSair_Click()
             
             If iDscForaRegiao < 1 Then
                 BtoGrava.Enabled = True
+                BtoGravaOrcamento(1).Enabled = True
             Else
                 If iDscForaRegiao > 1 Then
                 
@@ -14171,7 +14783,7 @@ Private Sub Form_Load()
     DefineClassificacao tubo_conexoes_pba
     
     'TUBOS E CONEXÕES PREDIAL
-    CarregaGrid "463,11,7,8,9,223,572,217,768,621,3418,62,61,60,59,574,601,45,44,39,38,101,116,108,341,78,77,76,75,107,216,469,80,81,92,82,96,97,98,272,46,47,64,48,63,65,49,66,102,128,127,126,114,129,130,222,255,306,606,443,607,446,445,461,310,368,601,116,608,609,610,611,612,471,3449,3448,334,600,598,599,3310,193,192,194,352,759", tubos_conexoes_predial
+    CarregaGrid "463,11,7,8,9,223,572,217,768,621,3418,62,61,60,59,574,601,45,44,39,38,101,116,108,341,78,77,76,75,107,216,469,80,81,92,82,96,97,98,272,46,47,64,48,63,65,49,66,102,128,127,126,114,129,130,222,255,306,606,443,607,446,445,461,310,368,601,116,608,609,610,611,612,471,3449,3448,334,600,598,599,3310,193,192,194,352,759,3308", tubos_conexoes_predial
     ConfiguraFlexGrid tubos_conexoes_predial
     DefineClassificacao tubos_conexoes_predial
     
@@ -14206,7 +14818,7 @@ Private Sub Form_Load()
     'Se o usuário tiver perfil de administrador, poderá ter acesso aos índices.
     '*************************************************************************************
     
-    If sgFlgUsu = "L" And APLICA = 0 Then
+    If sgFlgUsu = "L" And (APLICA = 2 Or APLICA = 0) Then
         FrmConhecimento.BorderStyle = 2
     End If
     
@@ -14418,6 +15030,18 @@ Private Sub Form_Load()
     ''BtoExcNF.Enabled = False
     ''BtoLimpaNF.Enabled = False
     BtoGrava.Enabled = False
+    BtoGravaOrcamento(1).Enabled = False
+    
+    If APLICA = 1 Then
+        
+        BtoGravaOrcamento(1).Visible = False
+        BtoGrava.Height = 975
+        BtoGrava.Top = 7560
+        BtoGrava.Left = 6600
+        BtoGrava.Width = 1695
+        
+    End If
+    
     GrdNotaCliente.Enabled = False
     Opt_FOB.Enabled = False
     Opt_CIF.Enabled = False
@@ -14839,6 +15463,7 @@ Private Sub MskNroPedido_LostFocus()
             blModificar = False
             ChkKit.Enabled = False
             BtoGrava.Enabled = True
+            BtoGravaOrcamento(1).Enabled = True
             GrdNotaCliente.Enabled = True
             
             ilNumTab = 0
@@ -14861,6 +15486,7 @@ Private Sub MskNroPedido_LostFocus()
         blModificar = False
         ChkKit.Enabled = False
         BtoGrava.Enabled = False
+        BtoGravaOrcamento(1).Enabled = False
         'GrdNotaCliente.Enabled = False
         
         If blImpr = False Then

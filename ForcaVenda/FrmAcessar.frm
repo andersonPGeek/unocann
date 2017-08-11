@@ -315,7 +315,9 @@ Private Sub Form_Load()
     End If
     
     Close #1
-   
+    
+    'sgRepresentante = 999
+    
     '*****************************************************************************************
     'Se o código encontrado no arquivo for 999, significa que o usuário é um Administrador e o
     'valor 0 (zero) da variável APLICA indica isso. Se o valor for qualquer outro, entende-se
@@ -326,6 +328,10 @@ Private Sub Form_Load()
         APLICA = 0
     Else
         APLICA = 1
+    End If
+    
+    If sgRepresentante = 888 Then
+        APLICA = 2
     End If
     
     '*****************************************************************************************

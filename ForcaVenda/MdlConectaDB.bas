@@ -123,8 +123,8 @@ Public Sub AbreConexao()
                 .ConnectionString = "PROVIDER=SQLOLEDB;SERVER=NOTE-ALACIR\SQLEXPRESS;DATABASE=Unocann;UID=sa;PWD=sysadmpss1"
            Case Else
 '                .ConnectionString = "PROVIDER=SQLOLEDB;SERVER=ti01\SQLEXPRESS;DATABASE=Unocann"
-.ConnectionString = "PROVIDER=SQLOLEDB;SERVER=UNOCANN-PC;DATABASE=Unocann;UID=sa;PWD=unocann2017"
-'.ConnectionString = "PROVIDER=SQLOLEDB;SERVER=UNODATA1;DATABASE=Unocann;UID=sa;PWD=#unoforte5600!"
+'.ConnectionString = "PROVIDER=SQLOLEDB;SERVER=UNOCANN-PC;DATABASE=Unocann;UID=sa;PWD=unocann2017"
+.ConnectionString = "PROVIDER=SQLOLEDB;SERVER=192.168.254.11\SQLEXPRESS;DATABASE=Unocann;UID=sa;PWD=#unoforte5600!"
            End Select
         .Open
     End With
