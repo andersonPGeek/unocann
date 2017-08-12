@@ -2,10 +2,10 @@ VERSION 5.00
 Begin VB.MDIForm MDIProjUNO 
    BackColor       =   &H8000000C&
    Caption         =   "V1.05 -  U N O C A N N   T U B O S   E   C O N E X Õ E S  -  Força de Venda    "
-   ClientHeight    =   7845
+   ClientHeight    =   7560
    ClientLeft      =   165
    ClientTop       =   -690
-   ClientWidth     =   13035
+   ClientWidth     =   8790
    LinkTopic       =   "MDIForm1"
    MousePointer    =   99  'Custom
    Picture         =   "MDIForm1.frx":0000
@@ -139,7 +139,7 @@ Private Sub MDIForm_Activate()
 '    'representante, o programa abre a janela com indicadores.
 '    '*****************************************************************************
 '
-    If bgabertura = False And APLICA = 1 Then
+    If bgabertura = False And (APLICA = 1 Or APLICA = 2) Then
     
     
     sgQuery = "select a.nroped, a.datped, a.codcli, c.NomCli, sum(b.vlrite) - sum(distinct a.vlrsimples) as Valor, d.DscCnd,"
@@ -225,7 +225,7 @@ TrataErro:
     'usuário atual é um administrador.
     '*****************************************************************************
     
-    If APLICA = 1 Then
+    If APLICA = 1 Or APLICA = 2 Then
         mnuComunica.Visible = False
         mnuChave.Visible = False
         mnuImprime.Visible = False
@@ -354,7 +354,7 @@ Private Sub mnuInterface_Click()
 
    
 
-    If bgabertura = False And APLICA = 1 Then
+    If bgabertura = False And (APLICA = 1 Or APLICA = 2) Then
     
     
     '*****************************************************************************

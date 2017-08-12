@@ -9,12 +9,12 @@ Begin VB.Form FrmPosiPed
    ClientHeight    =   8460
    ClientLeft      =   -210
    ClientTop       =   1515
-   ClientWidth     =   15240
+   ClientWidth     =   8790
    LinkTopic       =   "Form1"
    MDIChild        =   -1  'True
    Moveable        =   0   'False
    ScaleHeight     =   8460
-   ScaleWidth      =   15240
+   ScaleWidth      =   8790
    WindowState     =   2  'Maximized
    Begin MSMask.MaskEdBox MskNroPedido 
       Height          =   375
@@ -356,7 +356,50 @@ Function CompoeGridPed() As Boolean
     sgQuery = sgQuery & "    group by a.nroped, a.datped, a.codcli, c.NomCli, a.codcnd,a.codrep, d.DscCnd,"
     sgQuery = sgQuery & "             a.NomTra, a.codrep, a.sitPed, a.datlib, a.datenv,"
     sgQuery = sgQuery & "             a.TipNot , a.NroNot, a.dateminot, a.flgalt"
-    sgQuery = sgQuery & "    order by 2 desc, 1 desc"
+    
+    If APLICA = 1 Then
+        sgQuery = sgQuery & "    order by 2 desc, 1 desc"
+    End If
+    
+    If APLICA = 2 Then
+        
+        sgQuery = sgQuery & " UNION ALL "
+        sgQuery = sgQuery & " select a.nroped, a.datped, a.codcli,c.NomCli, sum(b.vlrite) - sum(distinct a.vlrsimples) as Valor,a.codcnd,a.codrep, d.DscCnd,"
+        sgQuery = sgQuery & "       a.NomTra , a.codrep, a.sitPed, a.datlib, a.datenv, TipNot, NroNot, dateminot, a.flgalt"
+        sgQuery = sgQuery & "  from orcamento a, Item_orcamento b, Cliente c, Condicao d"
+        sgQuery = sgQuery & "  Where (a.datlib is null or a.flgalt = 'N')"
+        sgQuery = sgQuery & "    and a.nroped = b.nroped"
+        sgQuery = sgQuery & "    and a.codcli = c.codcli"
+        sgQuery = sgQuery & "    and a.codcnd = d.codcnd"
+        sgQuery = sgQuery & "    and Year(a.datped) > 2012"
+        
+        If MskNroPedido.Text <> "" Then
+            sgQuery = sgQuery & "    and a.nroped = '" & Trim(MskNroPedido.Text) & "'"
+        End If
+        
+        If APLICA = 1 Then
+            sgQuery = sgQuery & "    and a.codrep = " & sgRepresentante
+        End If
+        
+        If Trim(ActDtini.Text) <> "" Then
+            sgQuery = sgQuery & "    and a.datped between convert(datetime,'" & Trim(ActDtini.Text) & "',103)"
+            sgQuery = sgQuery & "                     and convert(datetime,'" & Trim(ActDtfim.Text) & "',103)"
+        End If
+        
+        If ilCodCli <> 0 Then
+            sgQuery = sgQuery & "    and a.codcli = " & ilCodCli
+        End If
+        
+        If ChkNotif.Value = 1 And MskNroPedido.Text = "" Then
+            sgQuery = sgQuery & " and a.flgalt is not null "
+        End If
+        
+        sgQuery = sgQuery & "    group by a.nroped, a.datped, a.codcli, c.NomCli, a.codcnd,a.codrep, d.DscCnd,"
+        sgQuery = sgQuery & "             a.NomTra, a.codrep, a.sitPed, a.datlib, a.datenv,"
+        sgQuery = sgQuery & "             a.TipNot , a.NroNot, a.dateminot, a.flgalt"
+        sgQuery = sgQuery & "    order by 2 desc, 1 desc"
+
+    End If
     
     Consulta sgQuery
     
@@ -446,6 +489,14 @@ Function CompoeGridPed() As Boolean
             
         End If
         
+        If Trim(Rs!SitPed) = "O" Then
+            
+            GrdPedido.col = 0
+            GrdPedido.CellBackColor = &HFF0000    'Azul
+            GrdPedido.CellForeColor = &HFFFF&
+            
+        End If
+        
         Rs.MoveNext
         
     Loop
@@ -490,9 +541,54 @@ Function CompoeGridPed() As Boolean
     sgQuery = sgQuery & "    group by a.nroped, a.datped, a.codcli, c.NomCli, a.codcnd,a.codrep, d.DscCnd,"
     sgQuery = sgQuery & "             a.NomTra, a.codrep, a.sitPed, a.datlib, a.datenv,"
     sgQuery = sgQuery & "             a.TipNot , a.NroNot, a.dateminot, a.flgalt"
-    sgQuery = sgQuery & "    order by 2 desc, 1 desc"
+    
+    If APLICA = 1 Then
+        sgQuery = sgQuery & "    order by 2 desc, 1 desc"
+    End If
+    
+    If APLICA = 2 Then
+        'Demais Pedidos
+        sgQuery = sgQuery & " UNION ALL "
+        sgQuery = sgQuery & "select a.nroped, a.datped, a.codcli,c.NomCli, sum(b.vlrite) - sum(distinct a.vlrsimples) as Valor,a.codcnd,a.codrep, d.DscCnd,"
+        sgQuery = sgQuery & "       a.NomTra , a.codrep, a.sitPed, a.datlib, a.datenv, TipNot, NroNot, dateminot, a.flgalt"
+        sgQuery = sgQuery & "  from orcamento a, Item_orcamento b, Cliente c, Condicao d"
+        
+        If ChkNotif.Value = 1 And MskNroPedido.Text = "" Then
+            sgQuery = sgQuery & " Where a.datlib is not null and a.FlgAlt is not null and a.FlgAlt <> 'N' "
+        Else
+            sgQuery = sgQuery & "  Where a.datlib is not null and (a.FlgAlt <> 'N' or a.flgalt is null) "
+        End If
+        
+        sgQuery = sgQuery & "    and a.nroped = b.nroped"
+        sgQuery = sgQuery & "    and a.codcli = c.codcli"
+        sgQuery = sgQuery & "    and a.codcnd = d.codcnd"
+        sgQuery = sgQuery & "    and Year(a.datped) > 2012"
+        
+        If MskNroPedido.Text <> "" Then
+            sgQuery = sgQuery & "    and a.nroped = '" & Trim(MskNroPedido.Text) & "'"
+        End If
+        
+        sgQuery = sgQuery & "    and a.codrep = " & sgRepresentante
+        
+        If Trim(ActDtini.Text) <> "" Then
+            sgQuery = sgQuery & "    and a.datped between convert(datetime,'" & Trim(ActDtini.Text) & "',103)"
+            sgQuery = sgQuery & "                     and convert(datetime,'" & Trim(ActDtfim.Text) & "',103)"
+        End If
+        
+        If ilCodCli <> 0 Then
+            sgQuery = sgQuery & "    and a.codcli = " & ilCodCli
+        End If
+        
+        sgQuery = sgQuery & "    group by a.nroped, a.datped, a.codcli, c.NomCli, a.codcnd,a.codrep, d.DscCnd,"
+        sgQuery = sgQuery & "             a.NomTra, a.codrep, a.sitPed, a.datlib, a.datenv,"
+        sgQuery = sgQuery & "             a.TipNot , a.NroNot, a.dateminot, a.flgalt"
+        sgQuery = sgQuery & "    order by 2 desc, 1 desc"
+        
+    End If
     
     Consulta sgQuery
+    
+    
     
     If Rs.EOF = True Then
         
@@ -529,14 +625,14 @@ Function CompoeGridPed() As Boolean
         GrdPedido.TextMatrix(blI, 13) = IIf(IsNull(Rs!flgalt), "", Rs!flgalt)
         GrdPedido.row = blI
         
-        If Not IsNull(Rs!DatEnv) And IsNull(Rs!DatEmiNot) Then
+        If Not IsNull(Rs!DatEnv) And IsNull(Rs!DatEmiNot) And Rs!SitPed <> "O" Then
             
             GrdPedido.col = 0
             GrdPedido.CellBackColor = vbYellow
                     
         End If
         
-        If Not IsNull(Rs!DatEmiNot) Then
+        If Not IsNull(Rs!DatEmiNot) And Rs!SitPed <> "O" Then
             
             GrdPedido.col = 0
             GrdPedido.CellBackColor = &HFF00& 'Verde
@@ -576,7 +672,7 @@ Function CompoeGridPed() As Boolean
         GrdPedido.col = 15
         GrdPedido.CellBackColor = &HFFFFFF 'Branco
         
-        If Not IsNull(Rs!DatEmiNot) And Trim(Rs!SitPed) <> "U" And Trim(Rs!SitPed) <> "C" Then
+        If Not IsNull(Rs!DatEmiNot) And Trim(Rs!SitPed) <> "U" And Trim(Rs!SitPed) <> "C" And Trim(Rs!SitPed) <> "O" Then
             
             sgQuery = "SELECT IsNull(Count(*), 0) As Conta FROM "
             sgQuery = sgQuery & "(SELECT A.CodPrd, A.QtdPrd, A.QtdPrdFat + IsNull(D.Sum_Saldo_Entregue,0) As TotEntreg "
@@ -608,6 +704,14 @@ Function CompoeGridPed() As Boolean
             
             GrdPedido.col = 0
             GrdPedido.CellBackColor = &H80000012 'Preto
+            GrdPedido.CellForeColor = &HFFFF&
+            
+        End If
+        
+        If Trim(Rs!SitPed) = "O" Then
+            
+            GrdPedido.col = 0
+            GrdPedido.CellBackColor = &HFF0000    'Azul
             GrdPedido.CellForeColor = &HFFFF&
             
         End If

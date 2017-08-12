@@ -6281,6 +6281,7 @@ Private Sub Bto_aplica_tubos_conexoes_agua_Click()
             'Atribui valor ao Preço Unitário
             tubos_conexoes_agua.TextMatrix(i, 6) = desconto_tubos_conexoes_agua
             PopularVariaveisCalculo row, tubos_conexoes_agua
+            LeituraCliente
             CalculaDesconto
             
             If desconto_tubos_conexoes_agua > dlSumDscItem Then
@@ -6335,6 +6336,7 @@ Private Sub Bto_aplica_tubos_conexoes_defofo_Click()
             'Atribui valor ao Preço Unitário
             tubo_conexoes_defofo.TextMatrix(i, 6) = desconto_tubos_conexoes_defofo
             PopularVariaveisCalculo row, tubo_conexoes_defofo
+            LeituraCliente
             CalculaDesconto
             
             If desconto_tubos_conexoes_defofo > dlSumDscItem Then
@@ -6388,6 +6390,7 @@ Private Sub Bto_aplica_tubos_conexoes_coletor_esgoto_ocre_Click()
             'Atribui valor ao Preço Unitário
             tubo_tubos_conexoes_coletor_esgoto.TextMatrix(i, 6) = desconto_tubos_conexoes_coletor_esgoto_ocre
             PopularVariaveisCalculo row, tubo_tubos_conexoes_coletor_esgoto
+            LeituraCliente
             CalculaDesconto
             
             If desconto_tubos_conexoes_coletor_esgoto_ocre > dlSumDscItem Then
@@ -6441,6 +6444,7 @@ Private Sub Bto_aplica__tubos_conexoes_predial_Click()
             'Atribui valor ao Preço Unitário
             tubos_conexoes_predial.TextMatrix(i, 6) = desconto_tubos_conexoes_predial
             PopularVariaveisCalculo row, tubos_conexoes_predial
+            LeituraCliente
             CalculaDesconto
             
             If desconto_tubos_conexoes_predial > dlSumDscItem Then
@@ -6711,6 +6715,7 @@ Private Sub Bto_aplica__tubos_conexoes_roscaveis_Click()
             'Atribui valor ao Preço Unitário
             tubos_conexoes_roscaveis.TextMatrix(i, 6) = desconto_tubos_conexoes_roscaveis
             PopularVariaveisCalculo row, tubos_conexoes_roscaveis
+            LeituraCliente
             CalculaDesconto
             
             If desconto_tubos_conexoes_roscaveis > dlSumDscItem Then
@@ -6763,6 +6768,7 @@ Private Sub Bto_Aplica_tubos_conexoes_irri_azuis_Click()
             'Atribui valor ao Preço Unitário
             tubos_conexoes_irri_azuis.TextMatrix(i, 6) = desconto_tubos_conexoes_irri_azuis
             PopularVariaveisCalculo row, tubos_conexoes_irri_azuis
+            LeituraCliente
             CalculaDesconto
             
             If desconto_tubos_conexoes_irri_azuis > dlSumDscItem Then
@@ -7943,6 +7949,13 @@ Private Sub CarregaTemporaria()
         
         Consulta sgQuery
         
+        If APLICA = 2 And Rs.EOF Then
+            sgQuery = "Select a.Datped From ORCAMENTO a, CLIENTE b, CONDICAO c"
+            sgQuery = sgQuery & " Where a.NroPed = '" & Trim(igNroPed) & "' And a.CodCli = b.CodCli and a.codcnd = c.codcnd"
+        End If
+        
+        Consulta sgQuery
+        
         If Not Rs.EOF Then
             
             Datped = Trim(Rs!Datped)
@@ -8198,6 +8211,70 @@ Private Sub DefineClassificacao(grid As MSFlexGrid)
     Dim valorTotal As Double
     Dim x As Integer
     Dim sgQuery As String
+    
+    sgQuery = "select * from REPRESENTANTE where CodRep = " & Trim(ilCodRep)
+    
+    Call Consulta2(sgQuery)
+    
+    If Not Rs2.EOF Then
+    
+        slNomRep = IIf(IsNull(Rs2!NomRep), "", Trim(Rs2!NomRep))
+        slUFRep = IIf(IsNull(Rs2!UFRep), "", Trim(Rs2!UFRep))
+        dlPerCusFrt = IIf(IsNull(Rs2!PerCusFrt), 0, Trim(Rs2!PerCusFrt))
+        dlPerComiN = IIf(IsNull(Rs2!PerComiN), 0, Trim(Rs2!PerComiN))
+        dlPerComiA = IIf(IsNull(Rs2!PerComiA), 0, Trim(Rs2!PerComiA))
+        dlPerComiB = IIf(IsNull(Rs2!PerComiB), 0, Trim(Rs2!PerComiB))
+        dlPerDesFOB = IIf(IsNull(Rs2!PerDesFOB), 0, Trim(Rs2!PerDesFOB))
+        slFlgSugComi = IIf(IsNull(Rs2!FlgSugComi), "", Trim(Rs2!FlgSugComi))
+        dlIdxPDD = IIf(IsNull(Rs2!IdxPDD), 0, Trim(Rs2!IdxPDD))
+        dlIdxAzul = IIf(IsNull(Rs2!IdxAzul), 0, Trim(Rs2!IdxAzul))
+        dlPerComiCalc = dlPerComiN
+        dlPerTubo100Rep = IIf(IsNull(Rs2!PerTubo100), 0, Trim(Rs2!PerTubo100))
+        dlValPedMin = IIf(IsNull(Rs2!ValPedMin), 0, Trim(Rs2!ValPedMin))
+        dlValLimPrz1 = IIf(IsNull(Rs2!ValLimPrz1), 0, Trim(Rs2!ValLimPrz1))
+        dlValParMin = IIf(IsNull(Rs2!ValParMin), 0, Trim(Rs2!ValParMin))
+        ilPrzMed1 = IIf(IsNull(Rs2!PrzMed1), 0, Trim(Rs2!PrzMed1))
+        ilPrzMed2 = IIf(IsNull(Rs2!PrzMed2), 0, Trim(Rs2!PrzMed2))
+    
+    End If
+    
+    dlAlqICMContr = 0
+    dlAlqICMNContr = 0
+    dlAlqICMContrKIT = 0
+    dlAlqICMNContrKIT = 0
+    dlAlqICMSimplesKIT = 0
+    PerCusIcm = 0
+
+    sgQuery = "SELECT * from TRIBUTACAO"
+    sgQuery = sgQuery & "   WHERE UFOri = '" & Trim(slUFOri) & "' "
+    sgQuery = sgQuery & "     and UFDes = '" & Trim(slUFOri) & "' "
+    sgQuery = sgQuery & "     and datativ = (select max(datativ) from TRIBUTACAO"
+    sgQuery = sgQuery & "                     WHERE UFOri = '" & Trim(slUFOri) & "' "
+    sgQuery = sgQuery & "                       and UFDes = '" & Trim(slUFOri) & "' )"
+    
+    Call Consulta(sgQuery)
+    
+    '*****************************************************************************************
+    'Deve sempre haver uma definição de tributos para cada origem e destino onde a Unocann
+    'atua. Se nenhum registro for encontrado é porque há algum problema. Caso contrário, se
+    'houverem tributos cadastrados para o perfil da venda em questão, os dados desses tributos
+    'encontrados são armazenados em variáveis.
+    '*****************************************************************************************
+    
+    If Rs.EOF = False Then
+        
+        If slPedSimples = "S" Then
+            dlAlqICMContr = IIf(IsNull(Rs!AlqICMSimples), 0, Trim(Rs!AlqICMSimples))
+        Else
+            dlAlqICMContr = IIf(IsNull(Rs!AlqICMContr), 0, Trim(Rs!AlqICMContr))
+        End If
+        
+        dlAlqICMNContr = IIf(IsNull(Rs!AlqICMNContr), 0, Trim(Rs!AlqICMNContr))
+        dlAlqICMContrKIT = IIf(IsNull(Rs!AlqICMContrKit), 0, Trim(Rs!AlqICMContrKit))
+        dlAlqICMNContrKIT = IIf(IsNull(Rs!AlqICMNContrKit), 0, Trim(Rs!AlqICMNContrKit))
+        dlAlqICMSimplesKIT = IIf(IsNull(Rs!AlqICMSimplesKit), 0, Trim(Rs!AlqICMSimplesKit))
+    
+    End If
     
     sgQuery = "SELECT b.PerCusFin, b.PerDesCnd, a.QtdParCnd, a.PrzMed "
     sgQuery = sgQuery + " from CONDICAO a, CUSTO_CONDICAO b "
@@ -8677,7 +8754,12 @@ Function Numero_Ped() As Boolean
                 pedidoCompleto = Val(Mid(Rs("pedido"), 1, 1)) & pedido - 1
             End If
         Else
-            pedidoCompleto = Val(Mid(Rs("pedido"), 1, 1)) & pedido - 1
+            'sgQuery = "select max(nroped) as pedido from PEDIDO where CodRep = " & Trim(ilCodRep) & "And NroPed < 897000"
+            sgQuery = "select max(nroped) as pedido from PEDIDO where CodRep = " & Trim(ilCodRep)
+            
+            Call Consulta(sgQuery)
+            
+            pedidoCompleto = Rs("pedido")
         End If
         
         If IsNull(pedidoCompleto) = True Then
@@ -9148,6 +9230,7 @@ Function CarregaTela() As Boolean
         If ConsultaOrcamento = True Then
             sgQuery = "Select a.*, b.NomCli, c.DscCnd From ORCAMENTO a, CLIENTE b, CONDICAO c"
             sgQuery = sgQuery & " Where a.NroPed = '" & Trim(MskNroPedido.Text) & "' And a.CodCli = b.CodCli and a.codcnd = c.codcnd"
+            BtoGravaOrcamento(1).Enabled = True
         End If
     End If
     
@@ -9354,19 +9437,36 @@ Function CarregaTela() As Boolean
         '*********************************************************************************
         'Monta o grid com dados referentes aos itens do pedido.
         '*********************************************************************************
-
-        sgQuery = "Select a.*, b.DscPrd, b.IdeGrp, b.PesUnt,  b.FlgKit,"
-        sgQuery = sgQuery + "        c.MrgPrd as MrgPrdPro, c.ValUntN as ValUntNPro,"
-        sgQuery = sgQuery + "        c.valcusuntqtd , c.valcusadicqtd, c.alqimpfed"
-        sgQuery = sgQuery + "  From ITEM_PEDIDO a, PRODUTO b, PRECO_PRODUTO c"
-        sgQuery = sgQuery + "  Where a.NroPed = '" & Trim(MskNroPedido.Text) & "'"
-        sgQuery = sgQuery + "    and a.CodPrd = b.CodPrd"
-        sgQuery = sgQuery + "    and b.codprd = c.codprd"
-        sgQuery = sgQuery + "    and c.datativ = (select max(datativ) from preco_produto"
-        sgQuery = sgQuery + "                     Where codprd = c.codprd"
-        sgQuery = sgQuery + "                       and datativ <= convert(datetime,'" & Trim(Datped) & "',103))"
-        sgQuery = sgQuery + "    order by a.SeqIte"
-       
+        
+        If ConsultaPedido = True Then
+        
+            sgQuery = "Select a.*, b.DscPrd, b.IdeGrp, b.PesUnt,  b.FlgKit,"
+            sgQuery = sgQuery + "        c.MrgPrd as MrgPrdPro, c.ValUntN as ValUntNPro,"
+            sgQuery = sgQuery + "        c.valcusuntqtd , c.valcusadicqtd, c.alqimpfed"
+            sgQuery = sgQuery + "  From ITEM_PEDIDO a, PRODUTO b, PRECO_PRODUTO c"
+            sgQuery = sgQuery + "  Where a.NroPed = '" & Trim(MskNroPedido.Text) & "'"
+            sgQuery = sgQuery + "    and a.CodPrd = b.CodPrd"
+            sgQuery = sgQuery + "    and b.codprd = c.codprd"
+            sgQuery = sgQuery + "    and c.datativ = (select max(datativ) from preco_produto"
+            sgQuery = sgQuery + "                     Where codprd = c.codprd"
+            sgQuery = sgQuery + "                       and datativ <= convert(datetime,'" & Trim(Datped) & "',103))"
+            sgQuery = sgQuery + "    order by a.SeqIte"
+        Else
+            
+            sgQuery = "Select a.*, b.DscPrd, b.IdeGrp, b.PesUnt,  b.FlgKit,"
+            sgQuery = sgQuery + "        c.MrgPrd as MrgPrdPro, c.ValUntN as ValUntNPro,"
+            sgQuery = sgQuery + "        c.valcusuntqtd , c.valcusadicqtd, c.alqimpfed"
+            sgQuery = sgQuery + "  From ITEM_ORCAMENTO a, PRODUTO b, PRECO_PRODUTO c"
+            sgQuery = sgQuery + "  Where a.NroPed = '" & Trim(MskNroPedido.Text) & "'"
+            sgQuery = sgQuery + "    and a.CodPrd = b.CodPrd"
+            sgQuery = sgQuery + "    and b.codprd = c.codprd"
+            sgQuery = sgQuery + "    and c.datativ = (select max(datativ) from preco_produto"
+            sgQuery = sgQuery + "                     Where codprd = c.codprd"
+            sgQuery = sgQuery + "                       and datativ <= convert(datetime,'" & Trim(Datped) & "',103))"
+            sgQuery = sgQuery + "    order by a.SeqIte"
+            
+        End If
+        
         Consulta sgQuery
         
         GrdNotaCliente.rows = 1
@@ -9876,7 +9976,7 @@ Function GravaCTRCOrcamento()
         '@ChvDsc  Varchar(20)
         .Parameters(24).Value = Trim(slChave)
         '@SitPed char(1)
-        .Parameters(25).Value = "N"
+        .Parameters(25).Value = "O"
         '@DatPed char(1)
         .Parameters(26).Value = Datped
         '@FlgKit char(1)
@@ -12876,6 +12976,7 @@ Private Sub CalculaMargem(grid As MSFlexGrid)
     Dim ilSumQtd As Double
     Dim dlCusCompo As Double
     
+    Dim dVlrMin As Double
     '*************************************************************************************
     'Zera as variáveis de cálculos.
     '*************************************************************************************
@@ -12968,16 +13069,6 @@ Private Sub CalculaMargem(grid As MSFlexGrid)
         
         If grid.TextMatrix(Linhas, 12) = 113 Then
         
-            If Datped < #7/5/2010# Then
-            
-                sgQuery = "select a.*, b.* from GRUPO_PRODUTO a, CUSTO_GRUPO_PRODUTO b"
-                sgQuery = sgQuery + "    Where a.IdeGrp = " & Trim(grid.TextMatrix(Linhas, 12))
-                sgQuery = sgQuery + "      and a.IdeGrp = b.IdeGrp"
-                sgQuery = sgQuery + "      and b.datativ = (select max(datativ) from CUSTO_GRUPO_PRODUTO"
-                sgQuery = sgQuery + "                        Where IdeGrp = " & Trim(grid.TextMatrix(Linhas, 12))
-                sgQuery = sgQuery + "                          and datativ <= convert(datetime,'" & "05/07/2010" & "',103))"
-                
-            Else
         
                 sgQuery = "select a.*, b.* from GRUPO_PRODUTO a, CUSTO_GRUPO_PRODUTO b"
                 sgQuery = sgQuery + "    Where a.IdeGrp = " & Trim(grid.TextMatrix(Linhas, 12))
@@ -12985,8 +13076,6 @@ Private Sub CalculaMargem(grid As MSFlexGrid)
                 sgQuery = sgQuery + "      and b.datativ = (select max(datativ) from CUSTO_GRUPO_PRODUTO"
                 sgQuery = sgQuery + "                        Where IdeGrp = " & Trim(grid.TextMatrix(Linhas, 12))
                 sgQuery = sgQuery + "                          and datativ <= convert(datetime,GETDATE(),103))"
-                
-            End If
             
         Else
         
@@ -13022,7 +13111,8 @@ Private Sub CalculaMargem(grid As MSFlexGrid)
         'Define custo de frete. Se for FOB, custo zero; se não, informa-se o preço cobrado.
         '*************************************************************************************
         
-        dlPerCusFrtCalc = 0
+        dlPerCusFrtCalc = dlPerCusFrt
+        PerCusIcm = dlAlqICMContr
         
         '*************************************************************************************
         'Armazena em variáveis, respectivamente: custo unitário de aquisição do produto, custo
@@ -13032,6 +13122,12 @@ Private Sub CalculaMargem(grid As MSFlexGrid)
         dlCusUntQtd = Trim(grid.TextMatrix(Linhas, 15))
         dlCusAdiQtd = Trim(grid.TextMatrix(Linhas, 16))
         dlAlqImpFed = Trim(grid.TextMatrix(Linhas, 17))
+        
+        If dlCusUntQtd > 0 Then
+            blVlUnt = True
+        Else
+            blVlUnt = False
+        End If
         
         '*************************************************************************************
         'Armazena a margem de lucro obtida para o produto.
@@ -13096,6 +13192,16 @@ Private Sub CalculaMargem(grid As MSFlexGrid)
         dlSumPes = Trim(grid.TextMatrix(Linhas, 13))
         
         '*************************************************************************************
+        'Multiplica o custo do composto para o produto (após os outros custos e a margem de
+        'lucro) pelo peso total do produto. O resultado é o preço mínimo aceitável para o
+        'produto em questão.
+        '*************************************************************************************
+        
+        If blVlUnt = True Then
+            dVlrMin = Format((dlIDX * ilSumQtd) + (ilSumQtd * dlCusAdiQtd), "##,###,##0.00")
+        End If
+        
+        '*************************************************************************************
         'Calcula a margem de lucro.
         '*************************************************************************************
         
@@ -13118,39 +13224,89 @@ Private Sub CalculaMargem(grid As MSFlexGrid)
         'consideração se o produto foi adquirido para revenda ou produzido pela Unocann.
         '*************************************************************************************
         
-        '*********************************************************************************
-        'Calcula outros custos multiplicando o preço líqüido do produto pelo fator de
-        'cálculo e dividinho o resultado por 100. Essa conta faz sentido, já que o fator
-        'de cálculo foi obtido a partir da composição de preço do produto sem a margem de
-        'lucro.
-        '*********************************************************************************
-        dlOutrosCus = Format((dlSumGrd * dlIDX) / 100, "####0.00")
-        
-        '*********************************************************************************
-        'Calcula o custo do composto multiplicando o preço cobrado pelo fornecedor externo
-        'pela quantidade vendida; multiplica-se também a quantidade vendida pelo custo
-        'adicional de aquisição do produto. O custo do composto é a soma dos dois
-        'resultados.
-        '*********************************************************************************
-        dlCusCompo = (dlCusUntQtd * ilSumQtd) + (ilSumQtd * dlCusAdiQtd)
-        
-        '*********************************************************************************
-        'Calcula a margem de lucro em moeda subtraindo o preço líqüido do produto pelo
-        'resultado da soma dos custos (composto e outros).
-        '*********************************************************************************
-        dlValMargem = dlSumGrd - (dlOutrosCus + dlCusCompo)
-        dlValMargem = Format(dlValMargem, "0.00")
-        
-        '*********************************************************************************
-        'Calcula a margem real de lucro (em percentual) dividindo o valor do lucro em
-        'moeda pelo preço total líqüido e dividindo seu resultado por 100.
-        '*********************************************************************************
-        dlMargemReal = (dlValMargem / dlSumGrd) * 100
-        
         '*************************************************************************************
-        'Armazena no grid dos índices, pela ordem: margem real de lucro (em percentual), valor
-        'da margem de lucro (em moeda) e a soma dos fatores que compõe o preço (sem margem).
+        'Avalia se o produto foi adquirido para revenda.
         '*************************************************************************************
+        
+        If blVlUnt = True Then
+            
+            '*********************************************************************************
+            'Calcula outros custos multiplicando o preço líqüido do produto pelo fator de
+            'cálculo e dividinho o resultado por 100. Essa conta faz sentido, já que o fator
+            'de cálculo foi obtido a partir da composição de preço do produto sem a margem de
+            'lucro.
+            '*********************************************************************************
+            dlOutrosCus = Format((dlSumGrd * dlIDX) / 100, "####0.00")
+            
+            '*********************************************************************************
+            'Calcula o custo do composto multiplicando o preço cobrado pelo fornecedor externo
+            'pela quantidade vendida; multiplica-se também a quantidade vendida pelo custo
+            'adicional de aquisição do produto. O custo do composto é a soma dos dois
+            'resultados.
+            '*********************************************************************************
+            dlCusCompo = (dlCusUntQtd * ilSumQtd) + (ilSumQtd * dlCusAdiQtd)
+            
+            '*********************************************************************************
+            'Calcula a margem de lucro em moeda subtraindo o preço líqüido do produto pelo
+            'resultado da soma dos custos (composto e outros).
+            '*********************************************************************************
+            dlValMargem = dlSumGrd - (dlOutrosCus + dlCusCompo)
+            dlValMargem = Format(dlValMargem, "0.00")
+            
+            '*********************************************************************************
+            'Calcula a margem real de lucro (em percentual) dividindo o valor do lucro em
+            'moeda pelo preço total líqüido e dividindo seu resultado por 100.
+            '*********************************************************************************
+            
+            '*********************************************************************************
+            'Trecho incluido para contemplar o novo grupo 3500 09/07
+            '*********************************************************************************
+            'dlMargemReal = (dlValMargem / dlSumGrd) * 100
+            
+            If ilIdeGrp = 3500 Then
+               dlMargemReal = ((dlSumGrd / dVlrMin) - 1) * 100
+                               
+            Else
+                dlMargemReal = (dlValMargem / dlSumGrd) * 100
+            End If
+            
+        Else
+            '*********************************************************************************
+            'Calcula outros custos multiplicando o preço líqüido do produto pelo fator de
+            'cálculo e dividinho o resultado por 100. Essa conta faz sentido, já que o fator
+            'de cálculo foi obtido a partir da composição de preço do produto sem a margem de
+            'lucro.
+            '*********************************************************************************
+            dlOutrosCus = Format((dlSumGrd * dlIDX) / 100, "####0.00")
+            
+            '*********************************************************************************
+            'Calcula o custo do composto multiplicando o preço cobrado pelo fornecedor externo
+            'pela quantidade vendida; multiplica-se também a quantidade vendida pelo custo
+            'adicional de aquisição do produto. O custo do composto é a soma dos dois
+            'resultados.
+            '*********************************************************************************
+            
+            dlCusCompo = Rs!ValCusUnt * dlSumPes + (ilSumQtd * dlCusAdiQtd)
+            
+            '*********************************************************************************
+            'Calcula a margem de lucro em moeda subtraindo o preço líqüido do produto pelo
+            'resultado da soma dos custos (composto e outros).
+            '*********************************************************************************
+            dlValMargem = dlSumGrd - (dlOutrosCus + dlCusCompo)
+            dlValMargem = Format(dlValMargem, "0.00")
+            
+            '*********************************************************************************
+            'Calcula a margem real de lucro (em percentual) dividindo o valor do lucro em
+            'moeda pelo preço total líqüido e dividindo seu resultado por 100.
+            '*********************************************************************************
+            dlMargemReal = (dlValMargem / dlSumGrd) * 100
+            
+            '*************************************************************************************
+            'Armazena no grid dos índices, pela ordem: margem real de lucro (em percentual), valor
+            'da margem de lucro (em moeda) e a soma dos fatores que compõe o preço (sem margem).
+            '*************************************************************************************
+        End If
+        
         grid.TextMatrix(Linhas, 15) = Format(dlMargemReal, "##0.00")
             
         Rs.Close
@@ -14015,7 +14171,13 @@ Private Sub BtoGrava_Click()
     End If
        
     If bgConsultaPed = True Then
-    
+        
+        If APLICA = 2 Then
+            If ConsultaOrcamento = True Then
+                DeletaOrcamento
+            End If
+        End If
+        
         Unload Me
         
         Set FrmConhecimento = Nothing
@@ -14567,6 +14729,10 @@ Private Sub CmdImpr_Click()
             .Connect = "DSN=" & "unocann" & ";UID=" & "sa" & ";PWD=" & "#unoforte5600!"
         End If
         
+        If Environ("COMPUTERNAME") = "UNOCANN-PC" Then
+            .Connect = "DSN=" & "unocann" & ";UID=" & "sa" & ";PWD=" & "unocann2017"
+        End If
+        
         If APLICA = 1 Then
             .WindowState = crptMaximized
         Else
@@ -14767,6 +14933,16 @@ Private Sub Form_Load()
         Activate_Ped
     End If
     
+    'TUBOS E CONEXÕES PBA
+    CarregaGrid "386,228,637,734,735,641,687,688,1094,226,399,398,397,256,388,383,384,195,197,198,202,203,286,213,118,237,119,385,172,157,229,361,402,401,156,360,357,359,358,354,212,257,374,79,99,209,209,362,155", tubo_conexoes_pba
+    DefineClassificacao tubo_conexoes_pba
+    ConfiguraFlexGrid tubo_conexoes_pba
+    
+    'TUBOS E CONEXÕES PREDIAL
+    CarregaGrid "9,463,11,7,8,223,572,217,768,621,3418,62,61,60,59,574,601,45,44,39,38,101,116,108,341,78,77,76,75,107,216,469,80,81,92,82,96,97,98,272,46,47,64,48,63,65,49,66,102,128,127,126,114,129,130,222,255,306,606,443,607,446,445,461,310,368,601,116,608,609,610,611,612,471,3449,3448,334,600,598,599,3310,193,192,194,352,759,3308", tubos_conexoes_predial
+    ConfiguraFlexGrid tubos_conexoes_predial
+    DefineClassificacao tubos_conexoes_predial
+    
     'TUBOS E CONEXÕES COLETOR ESGOTO OCRE
     CarregaGrid "531,530,532,591,245,246,247,593,403,1093,439,633,1207,508,442,273,444,325,211,335,495,435,516,515,221,513,251,433,324,252,501,509,253,285,511,470,510,499,494", tubo_tubos_conexoes_coletor_esgoto
     ConfiguraFlexGrid tubo_tubos_conexoes_coletor_esgoto
@@ -14776,16 +14952,6 @@ Private Sub Form_Load()
     CarregaGrid "526,527,528,529,618,617,512,248,249,523", tubo_conexoes_defofo
     ConfiguraFlexGrid tubo_conexoes_defofo
     DefineClassificacao tubo_conexoes_defofo
-    
-    'TUBOS E CONEXÕES PBA
-    CarregaGrid "637,734,735,641,687,688,1094,226,399,398,397,228,256,386,388,383,384,195,197,198,202,203,286,213,118,237,119,385,172,157,229,361,402,401,156,360,357,359,358,354,212,257,374,79,99,209,209,362,155", tubo_conexoes_pba
-    ConfiguraFlexGrid tubo_conexoes_pba
-    DefineClassificacao tubo_conexoes_pba
-    
-    'TUBOS E CONEXÕES PREDIAL
-    CarregaGrid "463,11,7,8,9,223,572,217,768,621,3418,62,61,60,59,574,601,45,44,39,38,101,116,108,341,78,77,76,75,107,216,469,80,81,92,82,96,97,98,272,46,47,64,48,63,65,49,66,102,128,127,126,114,129,130,222,255,306,606,443,607,446,445,461,310,368,601,116,608,609,610,611,612,471,3449,3448,334,600,598,599,3310,193,192,194,352,759,3308", tubos_conexoes_predial
-    ConfiguraFlexGrid tubos_conexoes_predial
-    DefineClassificacao tubos_conexoes_predial
     
     'TUBOS E CONEXÕES ROSCÁVEIS
     CarregaGrid "12,13,67,68,14,103,171,159,160,173,174,177,178", tubos_conexoes_roscaveis
@@ -15463,7 +15629,7 @@ Private Sub MskNroPedido_LostFocus()
             blModificar = False
             ChkKit.Enabled = False
             BtoGrava.Enabled = True
-            BtoGravaOrcamento(1).Enabled = True
+            'BtoGravaOrcamento(1).Enabled = True
             GrdNotaCliente.Enabled = True
             
             ilNumTab = 0
