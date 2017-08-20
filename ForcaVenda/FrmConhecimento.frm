@@ -10886,7 +10886,7 @@ Function ConsultaPedido() As Boolean
     Dim sgQueryPedido As String
     
     sgQueryPedido = "select nroped from pedido"
-    sgQueryPedido = sgQueryPedido & "  where NroPed = " & IIf(MskNroPedido.Text = "", "99999999999", MskNroPedido.Text)
+    sgQueryPedido = sgQueryPedido & "  where NroPed = '" & IIf(MskNroPedido.Text = "", "99999999999", MskNroPedido.Text) & "'"
     
     Call Consulta(sgQueryPedido)
     
@@ -10904,7 +10904,7 @@ Function ConsultaOrcamento() As Boolean
     Dim sgQueryOrcamento As String
     
     sgQueryOrcamento = "select nroped from orcamento"
-    sgQueryOrcamento = sgQueryOrcamento & "  where NroPed = " & IIf(MskNroPedido.Text = "", "99999999999", MskNroPedido.Text)
+    sgQueryOrcamento = sgQueryOrcamento & "  where NroPed = '" & IIf(MskNroPedido.Text = "", "99999999999", MskNroPedido.Text) & "'"
     
     Call Consulta(sgQueryOrcamento)
     
@@ -14166,6 +14166,12 @@ Private Sub BtoGrava_Click()
         Exit Sub
         
     Else
+    
+        If APLICA = 2 Then
+            If ConsultaOrcamento = True Then
+                sgFlagOper = "I"
+            End If
+        End If
         
         GravaCTRC
     End If
@@ -14671,19 +14677,37 @@ Private Sub CmdImpr_Click()
     
     #Const fDebug = True
     
-    If APLICA = 1 Then
+    If APLICA = 1 Or APLICA = 2 Then
         
-        sgQuery = " SELECT"
-        sgQuery = sgQuery & " PEDIDO.NroPed, PEDIDO.Datped, PEDIDO.CIFOB, PEDIDO.NomTra, PEDIDO.TexObs,PEDIDO.ChvDsc,"
-        sgQuery = sgQuery & " ITEM_PEDIDO.VlrIte, CONDICAO.DscCnd,CLIENTE.CodCli, CLIENTE.NomCli, CLIENTE.EndCli, CLIENTE.BaiCli,CLIENTE.CidCli, CLIENTE.CepCli,"
-        sgQuery = sgQuery & " CLIENTE.CgcCli , CLIENTE.InsCli, CLIENTE.UFCli, CLIENTE.FlgContr, CLIENTE.FlgSIMBa, REPRESENTANTE.NomRep"
-        sgQuery = sgQuery & " From"
-        sgQuery = sgQuery & " PEDIDO , ITEM_PEDIDO , CONDICAO , CLIENTE, REPRESENTANTE "
-        sgQuery = sgQuery & " where PEDIDO.nroped = ITEM_PEDIDO.nroped"
-        sgQuery = sgQuery & "   and PEDIDO.codcnd = CONDICAO.codcnd"
-        sgQuery = sgQuery & "   and PEDIDO.codcli = CLIENTE.codcli"
-        sgQuery = sgQuery & "   and PEDIDO.CodRep = REPRESENTANTE.CodRep"
-        sgQuery = sgQuery & "   and PEDIDO.nroped = '" & Trim(MskNroPedido.Text) & "'"
+        If ConsultaPedido = True Then
+        
+            sgQuery = " SELECT"
+            sgQuery = sgQuery & " PEDIDO.NroPed, PEDIDO.Datped, PEDIDO.CIFOB, PEDIDO.NomTra, PEDIDO.TexObs,PEDIDO.ChvDsc,"
+            sgQuery = sgQuery & " ITEM_PEDIDO.VlrIte, CONDICAO.DscCnd,CLIENTE.CodCli, CLIENTE.NomCli, CLIENTE.EndCli, CLIENTE.BaiCli,CLIENTE.CidCli, CLIENTE.CepCli,"
+            sgQuery = sgQuery & " CLIENTE.CgcCli , CLIENTE.InsCli, CLIENTE.UFCli, CLIENTE.FlgContr, CLIENTE.FlgSIMBa, REPRESENTANTE.NomRep"
+            sgQuery = sgQuery & " From"
+            sgQuery = sgQuery & " PEDIDO , ITEM_PEDIDO , CONDICAO , CLIENTE, REPRESENTANTE "
+            sgQuery = sgQuery & " where PEDIDO.nroped = ITEM_PEDIDO.nroped"
+            sgQuery = sgQuery & "   and PEDIDO.codcnd = CONDICAO.codcnd"
+            sgQuery = sgQuery & "   and PEDIDO.codcli = CLIENTE.codcli"
+            sgQuery = sgQuery & "   and PEDIDO.CodRep = REPRESENTANTE.CodRep"
+            sgQuery = sgQuery & "   and PEDIDO.nroped = '" & Trim(MskNroPedido.Text) & "'"
+            
+        Else
+            
+            sgQuery = " SELECT"
+            sgQuery = sgQuery & " ORCAMENTO.NroPed, ORCAMENTO.Datped, ORCAMENTO.CIFOB, ORCAMENTO.NomTra, ORCAMENTO.TexObs,ORCAMENTO.ChvDsc,"
+            sgQuery = sgQuery & " CONDICAO.DscCnd,CLIENTE.CodCli, CLIENTE.NomCli, CLIENTE.EndCli, CLIENTE.BaiCli,CLIENTE.CidCli, CLIENTE.CepCli,"
+            sgQuery = sgQuery & " CLIENTE.CgcCli , CLIENTE.InsCli, CLIENTE.UFCli, CLIENTE.FlgContr, CLIENTE.FlgSIMBa, REPRESENTANTE.NomRep"
+            sgQuery = sgQuery & " From"
+            sgQuery = sgQuery & " ORCAMENTO , ITEM_ORCAMENTO , CONDICAO , CLIENTE, REPRESENTANTE "
+            sgQuery = sgQuery & " where ORCAMENTO.nroped = ITEM_ORCAMENTO.nroped"
+            sgQuery = sgQuery & "   and ORCAMENTO.codcnd = CONDICAO.codcnd"
+            sgQuery = sgQuery & "   and ORCAMENTO.codcli = CLIENTE.codcli"
+            sgQuery = sgQuery & "   and ORCAMENTO.CodRep = REPRESENTANTE.CodRep"
+            sgQuery = sgQuery & "   and ORCAMENTO.nroped = '" & Trim(MskNroPedido.Text) & "'"
+        
+        End If
         
     Else
         
@@ -14711,7 +14735,7 @@ Private Sub CmdImpr_Click()
         
     End If
 
-    If APLICA = 1 Then
+    If APLICA = 1 Or APLICA = 2 Then
         slNomeImpr = App.Path & "\Relatorios\Pedido.rpt"
     Else
         slNomeImpr = App.Path & "\Relatorios\PedidoMatriz.rpt"
@@ -14733,7 +14757,7 @@ Private Sub CmdImpr_Click()
             .Connect = "DSN=" & "unocann" & ";UID=" & "sa" & ";PWD=" & "unocann2017"
         End If
         
-        If APLICA = 1 Then
+        If APLICA = 1 Or APLICA = 2 Then
             .WindowState = crptMaximized
         Else
             .Destination = crptToPrinter
@@ -14933,6 +14957,16 @@ Private Sub Form_Load()
         Activate_Ped
     End If
     
+    'TUBOS E CONEXÕES COLETOR ESGOTO OCRE
+    CarregaGrid "531,530,532,591,245,246,247,593,403,1093,439,633,1207,508,442,273,444,325,211,335,495,435,516,515,221,513,251,433,324,252,501,509,253,285,511,470,510,499,494", tubo_tubos_conexoes_coletor_esgoto
+    ConfiguraFlexGrid tubo_tubos_conexoes_coletor_esgoto
+    DefineClassificacao tubo_tubos_conexoes_coletor_esgoto
+    
+    'TUBOS E CONEXÕES IRRIGAÇÃO AZUIS
+    CarregaGrid "219,220,259,268,260,261,262,264,265,266,294,295,296,289,290,298,415,297,292,293,331,219,314,328,326,327,705,706,707,301,302,317,299,300,307,666,604,715,717,718,692,643,719,291", tubos_conexoes_irri_azuis
+    ConfiguraFlexGrid tubos_conexoes_irri_azuis
+    DefineClassificacao tubos_conexoes_irri_azuis
+    
     'TUBOS E CONEXÕES PBA
     CarregaGrid "386,228,637,734,735,641,687,688,1094,226,399,398,397,256,388,383,384,195,197,198,202,203,286,213,118,237,119,385,172,157,229,361,402,401,156,360,357,359,358,354,212,257,374,79,99,209,209,362,155", tubo_conexoes_pba
     DefineClassificacao tubo_conexoes_pba
@@ -14943,11 +14977,6 @@ Private Sub Form_Load()
     ConfiguraFlexGrid tubos_conexoes_predial
     DefineClassificacao tubos_conexoes_predial
     
-    'TUBOS E CONEXÕES COLETOR ESGOTO OCRE
-    CarregaGrid "531,530,532,591,245,246,247,593,403,1093,439,633,1207,508,442,273,444,325,211,335,495,435,516,515,221,513,251,433,324,252,501,509,253,285,511,470,510,499,494", tubo_tubos_conexoes_coletor_esgoto
-    ConfiguraFlexGrid tubo_tubos_conexoes_coletor_esgoto
-    DefineClassificacao tubo_tubos_conexoes_coletor_esgoto
-    
     'TUBOS E CONEXÕES DEFOFO
     CarregaGrid "526,527,528,529,618,617,512,248,249,523", tubo_conexoes_defofo
     ConfiguraFlexGrid tubo_conexoes_defofo
@@ -14957,11 +14986,6 @@ Private Sub Form_Load()
     CarregaGrid "12,13,67,68,14,103,171,159,160,173,174,177,178", tubos_conexoes_roscaveis
     ConfiguraFlexGrid tubos_conexoes_roscaveis
     DefineClassificacao tubos_conexoes_roscaveis
-    
-    'TUBOS E CONEXÕES IRRIGAÇÃO AZUIS
-    CarregaGrid "219,220,259,268,260,261,262,264,265,266,294,295,296,289,290,298,415,297,292,293,331,219,314,328,326,327,705,706,707,301,302,317,299,300,307,666,604,715,717,718,692,643,719,291", tubos_conexoes_irri_azuis
-    ConfiguraFlexGrid tubos_conexoes_irri_azuis
-    DefineClassificacao tubos_conexoes_irri_azuis
     
     'TUBOS E CONEXÕES ÁGUA
     CarregaGrid "1,2,3,4,5,6,89,93,94,110,100,490,57,58,186,122,123,722,224,488,485,484,504,503,699,700,502,492,33,34,35,43,36,111,106,113,83,84,85,86,87,88,188,214,184,37,41,50,40,42,109,115,121,483,481,482,696,697,698,708,227,460,720,313,721,3459,3460,3664,3462,3461,3463,496,497,475,459,468,465,467,440,474,709,710,711,712,713,714,726,727,728,3462", tubos_conexoes_agua

@@ -5,7 +5,7 @@ Begin VB.MDIForm MDIProjUNO
    ClientHeight    =   7560
    ClientLeft      =   165
    ClientTop       =   -690
-   ClientWidth     =   8790
+   ClientWidth     =   8115
    LinkTopic       =   "MDIForm1"
    MousePointer    =   99  'Custom
    Picture         =   "MDIForm1.frx":0000
@@ -44,6 +44,9 @@ Begin VB.MDIForm MDIProjUNO
    End
    Begin VB.Menu mnu_PosPed 
       Caption         =   "P&osição de Pedidos"
+   End
+   Begin VB.Menu mnu_PosOrc 
+      Caption         =   "Posição de Orçamentos"
    End
    Begin VB.Menu mnuImprime 
       Caption         =   "&Monitora Pedidos"
@@ -265,6 +268,16 @@ Private Sub mnu_pedido_Click()
     
 End Sub
 
+Private Sub mnu_PosOrc_Click()
+    
+    '*****************************************************************************
+    'Posições de Orçamentos (Telemarketing).
+    '*****************************************************************************
+    
+    FrmPosiOrc.Show
+    
+End Sub
+
 Private Sub mnu_PosPed_Click()
     
     '*****************************************************************************
@@ -378,7 +391,7 @@ Private Sub mnuInterface_Click()
 
 End If
     
-    FrmInterface.Show
+    'FrmInterface.Show
     
 End Sub
 

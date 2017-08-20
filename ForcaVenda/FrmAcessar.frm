@@ -326,13 +326,15 @@ Private Sub Form_Load()
    
     If sgRepresentante = 999 Then
         APLICA = 0
-    Else
-        APLICA = 1
     End If
     
-    If sgRepresentante = 888 Then
+    If (sgRepresentante = 2 Or sgRepresentante = 7 Or sgRepresentante = 8 Or sgRepresentante = 10 Or sgRepresentante = 600 Or sgRepresentante = 800 Or sgRepresentante = 905 Or sgRepresentante = 1001 Or sgRepresentante = 1900 Or sgRepresentante = 2100 Or sgRepresentante = 5000 Or sgRepresentante = 5001 Or sgRepresentante = 6000 Or sgRepresentante = 7050 Or sgRepresentante = 7060) Then
+        APLICA = 1
+    Else
         APLICA = 2
     End If
+    
+    'sgRepresentante = 9999
     
     '*****************************************************************************************
     'Armazena datas de modo que seja possível calcular a diferença de dias entre a data atual
